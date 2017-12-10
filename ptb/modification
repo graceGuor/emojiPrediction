@@ -1,0 +1,16 @@
+路径
+GPU个数：1--》0
+reader.py中train文件名
+small中字典大小,RNN mode
+reader.word_to_count
+reader将conf.num_steps改为句子最大长度
+
+根据http://blog.csdn.net/mydear_11000/article/details/52414342修改：
+self._cost = tf.reduce_sum(loss)  -->  self._cost = tf.reduce_sum(loss)/batce_size
+rnn mode？
+
+
+Question:
+epoch_size = ((len(data) // batch_size) - 1) // num_steps
+sv = tf.train.Supervisor(logdir=FLAGS.save_path)
+eval_config.num_steps = 1？
