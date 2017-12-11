@@ -1,9 +1,27 @@
 # -*- coding: UTF-8 -*-
 from __future__ import print_function
+import tensorflow as tf
+import pdb
 
-def getAccOfEmoji(y_pred,y_true):
-    acc = 0
-    return acc
+def getAccOfEmoji(logits,targets,emojiIndexList,errorCount,rightCount):
+
+    # pdb.set_trace()
+    correct_prediction = tf.equal(x=tf.argmax(logits, axis=2),y=tf.cast(targets, tf.int64))
+    correct_prediction = tf.cast(correct_prediction,tf.int64)
+    _sum = tf.reduce_sum(correct_prediction)
+    shape = targets.shape
+
+    # for target in targets:
+    #     pred = tf.argmax(logits,axis=2)
+    #     if target in emojiIndexList and pred != target:
+    #         errorCount = errorCount + 1
+    #     elif target in emojiIndexList and pred == target:
+    #         rightCount = rightCount + 1
+    #     elif target not in emojiIndexList and pred != target:
+    #         errorCount = errorCount + 1
+    # print(len(targets))
+    # return errorCount,rightCount
+    return _sum
 
 
 def do_eval(sess,acc_value,loss, input, y_true, x, y):
