@@ -1,4 +1,5 @@
-src_path = "/home/guorui/data"
+src_path = "/home/pubsrv/data/guorui/data"
+# src_path = "/home/guorui/data"
 data_path = src_path + "/Fold/0"
 save_path = src_path + "/Res/Fold/0"
 num_GPU = 1
