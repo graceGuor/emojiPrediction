@@ -111,6 +111,7 @@ class PTBInput(object):
     self.batch_size = batch_size = config.batch_size
     self.num_steps = num_steps = config.num_steps
     self.epoch_size = ((len(data) // batch_size) - 1) // num_steps
+    print("epoch_size：" + str(self.epoch_size))
     self.input_data, self.targets = reader.ptb_producer(
         data, batch_size, num_steps, name=name)
 
