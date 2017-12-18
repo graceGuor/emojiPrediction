@@ -69,7 +69,7 @@ import tensorflow as tf
 import ptb.reader as reader
 import ptb.util as util
 import ptb.conf as conf
-import Service.Evaluation as Eval
+import Service.ReadInfo as RI
 import pdb
 
 from tensorflow.python.client import device_lib
@@ -111,7 +111,7 @@ class PTBInput(object):
     self.batch_size = batch_size = config.batch_size
     self.num_steps = num_steps = config.num_steps
     self.epoch_size = ((len(data) // batch_size) - 1) // num_steps
-    print("epoch_size：" + str(self.epoch_size))
+    print(name + " epoch_size：" + str(self.epoch_size))
     self.input_data, self.targets = reader.ptb_producer(
         data, batch_size, num_steps, name=name)
 
@@ -119,7 +119,7 @@ class PTBInput(object):
 class PTBModel(object):
   """The PTB model."""
 
-  def __init__(self, is_training, config, input_):
+  def __init__(self, is_training, config, input_,dict_emb):
     self._is_training = is_training
     self._input = input_
     self._rnn_params = None
@@ -131,7 +131,9 @@ class PTBModel(object):
 
     with tf.device("/cpu:0"):
       embedding = tf.get_variable(
-          "embedding", [vocab_size, size], dtype=data_type())
+          "embedding", initializer=dict_emb, dtype=data_type())
+      # embedding = tf.get_variable(
+      #   "embedding", [vocab_size, size], dtype=data_type())
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
 
     if is_training and config.keep_prob < 1:
@@ -450,7 +452,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     rightCount_global += rightCount
     # allCount_global += allCount
 
-    if verbose and step % (model.input.epoch_size // 10) == 10:
+    if verbose and step % (model.input.epoch_size // 10) == 10:# 每完成10%的epoch即进行展示训练进度
       print("epoch_size: %d  step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps" %
             (model.input.epoch_size,
              step * 1.0 / model.input.epoch_size,
@@ -497,7 +499,7 @@ def main(_):
           % (len(gpus), FLAGS.num_gpus))
 
     raw_data = reader.ptb_raw_data(FLAGS.data_path)
-    train_data, valid_data, test_data, _ = raw_data
+    train_data, valid_data, test_data, _, dict_emb = raw_data
 
     config = get_config()
     eval_config = get_config()
@@ -511,21 +513,20 @@ def main(_):
       with tf.name_scope("Train"):
         train_input = PTBInput(config=config, data=train_data, name="TrainInput")
         with tf.variable_scope("Model", reuse=None, initializer=initializer):
-          m = PTBModel(is_training=True, config=config, input_=train_input)
+          m = PTBModel(is_training=True, config=config, input_=train_input, dict_emb = dict_emb)
         tf.summary.scalar("Training Loss", m.cost)
         tf.summary.scalar("Learning Rate", m.lr)
 
       with tf.name_scope("Valid"):
         valid_input = PTBInput(config=config, data=valid_data, name="ValidInput")
         with tf.variable_scope("Model", reuse=True, initializer=initializer):
-          mvalid = PTBModel(is_training=False, config=config, input_=valid_input)
+          mvalid = PTBModel(is_training=False, config=config, input_=valid_input, dict_emb = dict_emb)
         tf.summary.scalar("Validation Loss", mvalid.cost)
 
       with tf.name_scope("Test"):
         test_input = PTBInput(config=eval_config, data=test_data, name="TestInput")
         with tf.variable_scope("Model", reuse=True, initializer=initializer):
-          mtest = PTBModel(is_training=False, config=eval_config,
-                           input_=test_input)
+          mtest = PTBModel(is_training=False, config=eval_config, input_=test_input, dict_emb = dict_emb)
 
       models = {"Train": m, "Valid": mvalid, "Test": mtest}
       for name, model in models.items():

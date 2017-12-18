@@ -3,6 +3,7 @@ from __future__ import print_function
 import numpy as np
 import random
 from sklearn import preprocessing
+import pdb
 
 #得到文件中句子的最大长度
 def getMaxLexOfSeq(filename):
@@ -15,6 +16,21 @@ def getMaxLexOfSeq(filename):
             maxLenOfSeq = l
     f.close()
     return  maxLenOfSeq
+
+# 加载id特征向量文件至dict(embeddings_index){word:embedding}
+def loadEmbeddings(feaFile):
+    words = []
+    feaVec = []
+    f = open(feaFile, encoding="utf-8")
+    for line in f:
+        values = line.split()
+        words.append(values[0])
+        coefs = np.asarray(values[1:])
+        # coefs = np.asarray(values[:], dtype='float32')
+        feaVec.append(coefs)
+    f.close()
+    return dict(zip(words,feaVec))
+    # return np.array(words),np.array(feaVec)
 
 
 # 加载id特征向量文件至dict(embeddings_index){word:embedding}
@@ -234,3 +250,30 @@ def fromPtoR(pre_pro):
         pre_cla_one[index] = 1.
         pre_cla.append(pre_cla_one)
     return np.array(pre_cla)
+
+#将在word_to_id中的词的embedding取出来
+def getDictEmb(word_to_id,embedding):
+    ids = []
+    embs = []
+    count = 0
+    for (k, v) in embedding.items():
+        l = len(v)
+        print("embedding size:" + str(l))
+        break
+    for (word, id) in word_to_id.items():
+        ids.append(id)
+        if word in embedding:
+            embs.append(embedding[word])
+        else:
+            count = count + 1
+            embs.append(np.random.randn(l))
+    print("随机初始化的词：" + str(count))
+    print(len(ids))
+    print(len(embs))
+    ids = np.reshape(ids, [len(ids), 1])
+    dict_id_emb = np.concatenate([ids, embs], axis=1)
+    res = []
+    for f in dict_id_emb:
+        res.append([float(i) for i in f])
+    # pdb.set_trace()
+    return res

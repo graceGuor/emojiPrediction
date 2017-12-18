@@ -27,6 +27,7 @@ import Service.ReadInfo as RI
 import ptb.conf as conf
 
 import tensorflow as tf
+import pdb
 
 Py3 = sys.version_info[0] == 3
 
@@ -46,7 +47,7 @@ def _build_vocab(filename):
   count_pairs = sorted(counter.items(),reverse=True, key=lambda x: (-x[1], x[0]))
 
   # words, _ = list(zip(*count_pairs))
-  words, _ = list(zip(*count_pairs[0:9999]))
+  words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
   word_to_id = dict(zip(words, range(len(words))))
 
   return word_to_id
@@ -81,6 +82,11 @@ def ptb_raw_data(data_path=None):
   test_path = os.path.join(data_path, "test.txt")
 
   word_to_id = _build_vocab(train_path)
+  # pdb.set_trace()
+
+  embedding = RI.loadEmbeddings(conf.emb_path)
+  dict_emb = RI.getDictEmb(word_to_id,embedding)
+
   print("word_to_id.len:" + str(len(word_to_id)))
   maxLenOfSeq = RI.getMaxLexOfSeq(train_path)
   conf.num_steps = maxLenOfSeq
@@ -89,7 +95,7 @@ def ptb_raw_data(data_path=None):
   valid_data = _file_to_word_ids(valid_path, word_to_id)
   test_data = _file_to_word_ids(test_path, word_to_id)
   vocabulary = len(word_to_id)
-  return train_data, valid_data, test_data, vocabulary
+  return train_data, valid_data, test_data, vocabulary,dict_emb
 
 
 def ptb_producer(raw_data, batch_size, num_steps, name=None):
