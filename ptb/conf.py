@@ -3,7 +3,7 @@ src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
 save_path = src_path + "/Res/Fold1/0"
 emb_path = src_path + "/glove.twitter.27B/glove.twitter.27B.200d.txt"
-num_GPU = 0
+num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 200#400#20#需要修改
 
@@ -13,7 +13,7 @@ hidden_size = 200#400#20#需要修改
 # save_path = src_path + "\Res\Fold_head\/0"#src_path + "\Res\Fold\/0"
 # emb_path = src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
 # num_GPU = 0
-# max_max_epoch = 1#13#55#需要修改
+# max_max_epoch = 2#13#55#需要修改
 # hidden_size = 25#400#20#需要修改
 
 model = "small"
