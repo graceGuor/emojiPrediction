@@ -18,7 +18,7 @@ hidden_size = 200#400#20#需要修改
 
 model = "small"
 rnn_mode = "BASIC"
-vocab_size = 10000
+vocab_size = 20000
 init_scale = 0.1
 learning_rate = 1.0
 max_grad_norm = 5
