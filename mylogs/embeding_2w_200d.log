@@ -1,0 +1,11 @@
+当前的日期和时间是 2017-12-21 11:42:56.038824
+keep_prob:0.5
+embedding size:200
+随机初始化的词：17217
+19999
+19999
+word_to_id.len:19999
+maxLenOfSeq:406      conf.num_steps:406
+TrainInput epoch_size：2561
+ValidInput epoch_size：322
+TestInput epoch_size：129579
