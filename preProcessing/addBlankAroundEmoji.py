@@ -1,13 +1,7 @@
 import re
 import string
 import ptb.conf as conf
-
-def testAddBlankAroundEmoji():
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo.txt'
-    # srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc.txt'
-    # resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_blankEmo.txt'
-    addBlankAroundEmoji(srcPath, resPath)
+import os
 
 #字母数字，标点符号，emojis除外都过滤掉
 def addBlankAroundEmoji(srcPath, resPath):
@@ -56,4 +50,12 @@ def addBlankAroundEmoji(srcPath, resPath):
     f_res.writelines(res)
 
 if __name__ == "__main__":
-    testAddBlankAroundEmoji()
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc/0.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo'
+    # srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc.txt'
+    # resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_blankEmo.txt'
+    if not os.path.exists(resPath):
+        os.mkdir(resPath)
+        print('Successfully created directory', resPath)
+    resPath = resPath + '0.txt'
+    addBlankAroundEmoji(srcPath, resPath)
