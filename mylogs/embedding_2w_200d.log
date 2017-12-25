@@ -1,0 +1,184 @@
+当前的日期和时间是 2017-12-21 14:35:29.282323
+keep_prob:0.5
+embedding size:200
+随机初始化的词：17217
+19999
+19999
+word_to_id.len:19999
+maxLenOfSeq:406      conf.num_steps:406
+TrainInput epoch_size：2561
+ValidInput epoch_size：322
+TestInput epoch_size：129579
+Epoch: 1 Learning rate: 1.000
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 19956.581 speed: 3854 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 17585.424 speed: 7532 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 16391.779 speed: 7690 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 15843.685 speed: 7744 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 15511.865 speed: 7767 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 15287.769 speed: 7783 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 15125.840 speed: 7795 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 14989.934 speed: 7803 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 14892.414 speed: 7808 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 14805.022 speed: 7814 wps
+Epoch: 1 Train Perplexity: 14738.429 train_acc 233.000:
+Epoch: 1 Valid Perplexity: 13896.047 valid_acc 11.000:
+Epoch: 2 Learning rate: 1.000
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 13900.184 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 13909.194 speed: 7853 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 13911.452 speed: 7855 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 13918.009 speed: 7854 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 13921.316 speed: 7852 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 13922.534 speed: 7851 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 13922.148 speed: 7851 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 13912.441 speed: 7849 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 13912.488 speed: 7846 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 13907.383 speed: 7847 wps
+Epoch: 2 Train Perplexity: 13906.266 train_acc 244.000:
+Epoch: 2 Valid Perplexity: 13761.555 valid_acc 44.000:
+Epoch: 3 Learning rate: 1.000
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 13580.609 speed: 7806 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 13083.835 speed: 7839 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 13181.897 speed: 7846 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 13305.225 speed: 7844 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 13359.326 speed: 7848 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 13412.218 speed: 7847 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 13478.450 speed: 7848 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 13497.788 speed: 7844 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 13521.559 speed: 7845 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 13532.742 speed: 7846 wps
+Epoch: 3 Train Perplexity: 13548.100 train_acc 432.000:
+Epoch: 3 Valid Perplexity: 13773.016 valid_acc 44.000:
+Epoch: 4 Learning rate: 1.000
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 13516.972 speed: 7846 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 12163.120 speed: 7849 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 12303.614 speed: 7847 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 12487.583 speed: 7845 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 12596.605 speed: 7848 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 12697.220 speed: 7847 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 12771.521 speed: 7844 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 12823.631 speed: 7842 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 12876.250 speed: 7842 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 12905.887 speed: 7842 wps
+Epoch: 4 Train Perplexity: 12927.156 train_acc 784.000:
+Epoch: 4 Valid Perplexity: 13696.063 valid_acc 69.000:
+Epoch: 5 Learning rate: 0.500
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 13050.022 speed: 7786 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 11219.516 speed: 7834 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 11292.631 speed: 7845 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 11460.501 speed: 7844 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 11548.620 speed: 7824 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11645.819 speed: 7829 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11730.851 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11793.585 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11862.057 speed: 7834 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11901.250 speed: 7834 wps
+Epoch: 5 Train Perplexity: 11925.212 train_acc 1591.000:
+Epoch: 5 Valid Perplexity: 13774.867 valid_acc 224.000:
+Epoch: 6 Learning rate: 0.250
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 12356.820 speed: 7864 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 10966.813 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 11011.571 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 11132.572 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 11194.514 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11250.177 speed: 7837 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11306.876 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11349.406 speed: 7840 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11395.739 speed: 7840 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11414.805 speed: 7838 wps
+Epoch: 6 Train Perplexity: 11422.822 train_acc 2176.000:
+Epoch: 6 Valid Perplexity: 14049.386 valid_acc 284.000:
+Epoch: 7 Learning rate: 0.125
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 12084.823 speed: 7826 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 10799.732 speed: 7837 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 10798.825 speed: 7834 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 10913.348 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 10982.136 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11033.000 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11076.740 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11112.066 speed: 7839 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11148.479 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11159.539 speed: 7839 wps
+Epoch: 7 Train Perplexity: 11153.812 train_acc 2649.000:
+Epoch: 7 Valid Perplexity: 14017.898 valid_acc 324.000:
+Epoch: 8 Learning rate: 0.062
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 12095.035 speed: 7819 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 10764.608 speed: 7827 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 10701.830 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 10805.972 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 10871.709 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 10920.249 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 10972.567 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11001.325 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11033.179 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11041.186 speed: 7829 wps
+Epoch: 8 Train Perplexity: 11041.039 train_acc 2895.000:
+Epoch: 8 Valid Perplexity: 13931.468 valid_acc 339.000:
+Epoch: 9 Learning rate: 0.031
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 11711.491 speed: 7834 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 10963.949 speed: 7843 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 10894.403 speed: 7835 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 10981.202 speed: 7840 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 11018.713 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11044.978 speed: 7837 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11077.714 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11094.411 speed: 7834 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11111.396 speed: 7823 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11106.682 speed: 7824 wps
+Epoch: 9 Train Perplexity: 11101.226 train_acc 3078.000:
+Epoch: 9 Valid Perplexity: 13963.486 valid_acc 356.000:
+Epoch: 10 Learning rate: 0.016
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 11884.219 speed: 7862 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 11635.132 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 11372.019 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 11379.868 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 11375.708 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11371.039 speed: 7837 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11379.100 speed: 7837 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11377.376 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11377.219 speed: 7839 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11348.523 speed: 7837 wps
+Epoch: 10 Train Perplexity: 11332.595 train_acc 3083.000:
+Epoch: 10 Valid Perplexity: 13804.742 valid_acc 367.000:
+Epoch: 11 Learning rate: 0.008
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 11829.283 speed: 7805 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 12116.938 speed: 7827 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 12012.605 speed: 7838 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 11945.587 speed: 7839 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 11871.136 speed: 7840 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 11819.712 speed: 7836 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 11786.692 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 11746.406 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 11725.655 speed: 7833 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 11675.029 speed: 7833 wps
+Epoch: 11 Train Perplexity: 11640.790 train_acc 3063.000:
+Epoch: 11 Valid Perplexity: 13634.006 valid_acc 357.000:
+Epoch: 12 Learning rate: 0.004
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 11986.030 speed: 7827 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 12637.109 speed: 7822 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 12667.875 speed: 7823 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 12577.862 speed: 7826 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 12436.134 speed: 7827 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 12304.335 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 12230.749 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 12158.607 speed: 7832 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 12115.231 speed: 7829 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 12043.495 speed: 7830 wps
+Epoch: 12 Train Perplexity: 11999.793 train_acc 3066.000:
+Epoch: 12 Valid Perplexity: 13324.318 valid_acc 389.000:
+Epoch: 13 Learning rate: 0.002
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.004 perplexity: 11761.728 speed: 7807 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.104 perplexity: 12994.368 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.204 perplexity: 12981.180 speed: 7826 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.304 perplexity: 12889.470 speed: 7824 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.404 perplexity: 12829.720 speed: 7827 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.504 perplexity: 12719.396 speed: 7829 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.604 perplexity: 12615.730 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.704 perplexity: 12528.887 speed: 7829 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.804 perplexity: 12449.050 speed: 7831 wps
+epoch_size: 2561  step / (model.input.epoch_size // 10): 0.904 perplexity: 12354.775 speed: 7831 wps
+Epoch: 13 Train Perplexity: 12308.273 train_acc 2986.000:
+Epoch: 13 Valid Perplexity: 13084.021 valid_acc 407.000:
+Test Perplexity: 13090.619 test_rightCount: 0.000 test_acc 437.000:
+Saving model to /home/pubsrv/data/guorui/data/Res/Fold1/embeddding_2w_200d.
+Finished!
+当前的日期和时间是 2017-12-21 15:19:21.803812
