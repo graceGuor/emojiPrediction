@@ -3,8 +3,10 @@ import string
 import ptb.conf as conf
 
 def testAddBlankAroundEmoji():
-    srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc.txt'
-    resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_blankEmo.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo.txt'
+    # srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc.txt'
+    # resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_blankEmo.txt'
     addBlankAroundEmoji(srcPath, resPath)
 
 #字母数字，标点符号，emojis除外都过滤掉

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mylogs/embedding_1w_200d.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mylogs/embedding_2w_200d.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mylogs/random_2w_200d.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" afterPath="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/reader.py" afterPath="$PROJECT_DIR$/ptb/reader.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -63,7 +60,7 @@
       <file leaf-file-name="getEmojiUnicode.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="484">
               <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
               <folding />
             </state>
@@ -83,8 +80,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="243">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,9 +172,9 @@
         <option value="$PROJECT_DIR$/preProcessing/emojiList.py" />
         <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
-        <option value="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
         <option value="$PROJECT_DIR$/preProcessing/segFile.py" />
         <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
       </list>
     </option>
   </component>
@@ -812,20 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="592" column="26" lean-forward="false" selection-start-line="592" selection-start-column="26" selection-end-line="592" selection-end-column="26" />
-          <folding>
-            <element signature="e#2368#2406#0" expanded="true" />
-            <element signature="e#8358#9445#0" expanded="false" />
-            <element signature="e#11523#11587#0" expanded="false" />
-            <element signature="e#14534#14800#0" expanded="false" />
-            <element signature="e#14832#15106#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/logs/preProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -840,14 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -888,6 +863,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="592" column="26" lean-forward="false" selection-start-line="592" selection-start-column="26" selection-end-line="592" selection-end-column="26" />
+          <folding>
+            <element signature="e#2368#2406#0" expanded="true" />
+            <element signature="e#8358#9445#0" expanded="false" />
+            <element signature="e#11523#11587#0" expanded="false" />
+            <element signature="e#14534#14800#0" expanded="false" />
+            <element signature="e#14832#15106#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/segFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -899,7 +896,7 @@
     <entry file="file://$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -908,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
