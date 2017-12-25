@@ -51,14 +51,14 @@ def addBlankAroundEmoji(srcPath, resPath):
 if __name__ == "__main__":
     i = datetime.datetime.now()
     print("开始时间是 %s" % i)
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc/8.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc/9.txt'
     resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo'
     # srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc.txt'
     # resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_blankEmo.txt'
     if not os.path.exists(resPath):
         os.mkdir(resPath)
         print('Successfully created directory', resPath)
-    resPath = resPath + '/8.txt'
+    resPath = resPath + '/9.txt'
     addBlankAroundEmoji(srcPath, resPath)
     i = datetime.datetime.now()
     print("结束时间是 %s" % i)
