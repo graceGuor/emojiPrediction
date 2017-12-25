@@ -35,7 +35,7 @@ def _read_words(filename):
   with tf.gfile.GFile(filename, "r") as f:
     if Py3:
       # print(f.read())
-      return f.read().replace("\n", "<eos>").split()
+      return f.read().replace("\n", "<eos> ").split()
     else:
       return f.read().decode("utf-8").replace("\n", "<eos>").split()
 
@@ -46,8 +46,8 @@ def _build_vocab(filename):
   counter = collections.Counter(data)
   count_pairs = sorted(counter.items(),reverse=True, key=lambda x: (-x[1], x[0]))
 
-  # words, _ = list(zip(*count_pairs))
-  words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
+  words, _ = list(zip(*count_pairs))
+  # words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
   word_to_id = dict(zip(words, range(len(words))))
 
   return word_to_id

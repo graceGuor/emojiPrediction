@@ -140,6 +140,22 @@ class PTBModel(object):
       inputs = tf.nn.dropout(inputs, config.keep_prob)
 
     output, state = self._build_rnn_graph(inputs, config, is_training)
+    states = self.initial_state
+    with tf.name_scope('attention'):
+      word_attention = tf.Variable(
+        tf.random_normal([conf.hidden_size,conf.hidden_size],mean=0.0,
+                         stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
+        name="word_attention",dtype=tf.float32)
+      w_context = tf.Variable(
+        tf.random_normal([conf.hidden_size], mean=0.0,
+                         stddev=np.sqrt(2. / (conf.hidden_size + 1))),
+        name="w_context", dtype=tf.float32)
+
+      user_word = tf.tanh(tf.matmul(tf.reshape(state, [-1, conf.hidden_size]), word_attention))
+      user_attscore = tf.matmul(user_word, tf.reshape(w_context, [-1, 1]))
+      exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])
+      alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1])
+      user_att = tf.reduce_sum(state * tf.reshape(alphas, [-1, conf.num_steps, 1]), 1)
 
     softmax_w = tf.get_variable(
         "softmax_w", [size, vocab_size], dtype=data_type())
@@ -424,6 +440,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
   iters = 0
   rightCount_global = 0
   allCount_global = 0
+  costDiff = 10000
   state = session.run(model.initial_state)
 
   fetches = {

@@ -266,6 +266,7 @@ def getDictEmb(word_to_id,embedding):
             embs.append(embedding[word])
         else:
             count = count + 1
+            print(word)
             embs.append(np.random.randn(l))
     print("随机初始化的词：" + str(count))
     print(len(ids))
