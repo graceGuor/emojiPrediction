@@ -2,11 +2,6 @@ import re
 import string
 import ptb.conf as conf
 
-def testFilterSpecCha():
-    srcPath = 'E:\Data\EmojiPrediction\\testGr.txt'
-    resPath = 'E:\Data\EmojiPrediction\\testGrRes.txt'
-    filterSpecCha(srcPath, resPath)
-
 #字母数字，标点符号，emojis除外都过滤掉
 def filterSpecCha(srcPath, resPath):
     f_src = open(srcPath,'r',encoding='utf8')
@@ -33,5 +28,10 @@ def filterSpecCha(srcPath, resPath):
     f_res.writelines(res)
 
 if __name__ == "__main__":
-    testFilterSpecCha()
+    srcPath = 'E:\Data\EmojiPrediction\\testGr.txt'
+    resPath = 'E:\Data\EmojiPrediction\\testGrRes.txt'
+
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
+    filterSpecCha(srcPath, resPath)
     print('Finished!')
