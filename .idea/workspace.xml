@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" afterPath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" afterPath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/removeStopwords.py" afterPath="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" afterPath="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +23,7 @@
       <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="591">
               <caret line="592" column="27" lean-forward="false" selection-start-line="592" selection-start-column="27" selection-end-line="592" selection-end-column="27" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
@@ -34,23 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filterSpecCha.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preProcessing/filterSpecCha.py">
+      <file leaf-file-name="segFile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preProcessing/segFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="replaceSparseWithUnk.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="243">
+              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -58,43 +48,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addQuotationMarks.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preProcessing/addQuotationMarks.py">
+      <file leaf-file-name="delUnkProportion.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preProcessing/delUnkProportion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="330">
+              <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptb/conf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Service/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="removeStopwords.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="removeStopwords.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ptb/conf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataDivision.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,21 +155,23 @@
         <option value="$PROJECT_DIR$/ptb/logs/preProcessing.py" />
         <option value="$PROJECT_DIR$/preProcessing/emojiList.py" />
         <option value="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
-        <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
         <option value="$PROJECT_DIR$/preProcessing/mergeFile.py" />
         <option value="$PROJECT_DIR$/preProcessing/segFile.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
-        <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
         <option value="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
         <option value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
-        <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
+        <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
         <option value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
+        <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/preProcessing/delUnkProportion.py" />
+        <option value="$PROJECT_DIR$/preProcessing/dataDivision.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="845" />
-    <option name="y" value="119" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="157" />
+    <option name="y" value="100" />
     <option name="width" value="1936" />
     <option name="height" value="931" />
   </component>
@@ -263,8 +257,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.removeStopwords">
-    <configuration name="addQuotationMarks" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.dataDivision">
+    <configuration name="dataDivision" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -276,12 +270,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rnn" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/dataDivision.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="mergeFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="delUnkProportion" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -293,7 +287,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rnn" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/mergeFile.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/delUnkProportion.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="filterSpecCha" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preProcessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnn" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -332,37 +343,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Service" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rnn" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Service/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
-      <item index="2" class="java.lang.String" itemvalue="Python.mergeFile" />
-      <item index="3" class="java.lang.String" itemvalue="Python.removeStopwords" />
-      <item index="4" class="java.lang.String" itemvalue="Python.addQuotationMarks" />
+      <item index="0" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
+      <item index="1" class="java.lang.String" itemvalue="Python.removeStopwords" />
+      <item index="2" class="java.lang.String" itemvalue="Python.filterSpecCha" />
+      <item index="3" class="java.lang.String" itemvalue="Python.delUnkProportion" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dataDivision" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.removeStopwords" />
-        <item index="1" class="java.lang.String" itemvalue="Python.addQuotationMarks" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.mergeFile" />
-        <item index="4" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
+        <item index="0" class="java.lang.String" itemvalue="Python.dataDivision" />
+        <item index="1" class="java.lang.String" itemvalue="Python.delUnkProportion" />
+        <item index="2" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
+        <item index="3" class="java.lang.String" itemvalue="Python.filterSpecCha" />
+        <item index="4" class="java.lang.String" itemvalue="Python.removeStopwords" />
       </list>
     </recent_temporary>
   </component>
@@ -397,7 +391,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="157" y="100" width="1936" height="931" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13113007" sideWeight="0.4941691" order="0" side_tool="false" content_ui="combo" />
@@ -405,11 +399,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3460283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.390642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45214105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15618336" sideWeight="0.5058309" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32208923" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37279597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -521,14 +515,19 @@
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/preProcessing/removeStopwords.py</url>
           <line>34</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/preProcessing/delUnkProportion.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/preProcessing/delUnkProportion.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -538,25 +537,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/training/saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45711">
-          <caret line="1730" column="4" lean-forward="false" selection-start-line="1730" selection-start-column="4" selection-end-line="1730" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001909.GRACE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -814,26 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python36/Lib/site-packages/nltk/downloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-227">
@@ -842,60 +807,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/segFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Service/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="592" column="27" lean-forward="false" selection-start-line="592" selection-start-column="27" selection-end-line="592" selection-end-column="27" />
-          <folding>
-            <element signature="e#2368#2406#0" expanded="true" />
-            <element signature="e#8358#9445#0" expanded="false" />
-            <element signature="e#11523#11587#0" expanded="false" />
-            <element signature="e#14534#14800#0" expanded="false" />
-            <element signature="e#14832#15106#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/filterSpecCha.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/addQuotationMarks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -908,23 +823,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py">
+    <entry file="file://$PROJECT_DIR$/preProcessing/filterSpecCha.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        <state relative-caret-position="132">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Service/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/delUnkProportion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/segFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
+    <entry file="file://$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="32" column="65" lean-forward="false" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="592" column="27" lean-forward="false" selection-start-line="592" selection-start-column="27" selection-end-line="592" selection-end-column="27" />
+          <folding>
+            <element signature="e#2368#2406#0" expanded="true" />
+            <element signature="e#8358#9445#0" expanded="false" />
+            <element signature="e#11523#11587#0" expanded="false" />
+            <element signature="e#14534#14800#0" expanded="false" />
+            <element signature="e#14832#15106#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

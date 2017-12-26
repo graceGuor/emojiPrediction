@@ -13,7 +13,7 @@ def removeStopwords(srcPath,resPath):
 
     for line in srcLines:
         resLine = ""
-        print(count)
+        # print(count)
         count += 1
         items = line.split()
         for item in items:

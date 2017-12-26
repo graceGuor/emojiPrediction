@@ -37,10 +37,10 @@ def filterSpecCha(srcPath, resPath):
 if __name__ == "__main__":
 
 
-    srcPath = 'E:\Data\EmojiPrediction\\testGr.txt'
-    resPath = 'E:\Data\EmojiPrediction\\testGrRes.txt'
+    srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_head.txt'
+    resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_head_filter.txt'
 
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
+    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge.txt'
+    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
     filterSpecCha(srcPath, resPath)
     print('Finished!')
