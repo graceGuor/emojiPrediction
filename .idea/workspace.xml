@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/delUnkProportion.py" afterPath="$PROJECT_DIR$/preProcessing/delUnkProportion.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/ptb_word_lm.py" afterPath="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="134" column="36" lean-forward="true" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
+            <state relative-caret-position="258">
+              <caret line="131" column="29" lean-forward="true" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
                 <element signature="e#8396#9483#0" expanded="false" />
@@ -70,8 +71,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="162">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -80,7 +81,7 @@
       <file leaf-file-name="dataDivision.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="267">
               <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -160,9 +161,9 @@
         <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
         <option value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
         <option value="$PROJECT_DIR$/preProcessing/dataDivision.py" />
-        <option value="$PROJECT_DIR$/ptb/conf.py" />
-        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
         <option value="$PROJECT_DIR$/preProcessing/delUnkProportion.py" />
+        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
+        <option value="$PROJECT_DIR$/ptb/conf.py" />
       </list>
     </option>
   </component>
@@ -254,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.delUnkProportion">
+  <component name="RunManager" selected="Python.ptb_word_lm">
     <configuration name="dataDivision" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,8 +350,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.delUnkProportion" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.delUnkProportion" />
         <item index="2" class="java.lang.String" itemvalue="Python.dataDivision" />
         <item index="3" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
         <item index="4" class="java.lang.String" itemvalue="Python.filterSpecCha" />
@@ -874,24 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/segFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -910,10 +893,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="134" column="36" lean-forward="true" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
+        <state relative-caret-position="258">
+          <caret line="131" column="29" lean-forward="true" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
           <folding>
             <element signature="e#2368#2406#0" expanded="true" />
             <element signature="e#8396#9483#0" expanded="false" />
