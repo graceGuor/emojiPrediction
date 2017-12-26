@@ -11,7 +11,7 @@ def filterSpecCha(srcPath, resPath):
 
     for line in srcLines:
         resLine = ""
-        print(line)
+        # print(line)
         items = line.split()
         for item in items:
             if item in conf.emojiList:#emojis
@@ -22,7 +22,7 @@ def filterSpecCha(srcPath, resPath):
                 resLine = resLine + item + " "
             else:
                 resLine = resLine + "<unk> "
-        print(resLine)
+        # print(resLine)
         res.append(resLine.strip() + '\n')
     f_res = open(resPath,'w',encoding='utf8')
     f_res.writelines(res)
