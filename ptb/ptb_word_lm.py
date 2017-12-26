@@ -130,32 +130,35 @@ class PTBModel(object):
     vocab_size = config.vocab_size
 
     with tf.device("/cpu:0"):
-      embedding = tf.get_variable(
-          "embedding", initializer=dict_emb, dtype=data_type())
       # embedding = tf.get_variable(
-      #   "embedding", [vocab_size, size], dtype=data_type())
+      #     "embedding", initializer=dict_emb, dtype=data_type())
+      embedding = tf.get_variable(
+        "embedding", [vocab_size, size], dtype=data_type())
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
 
     if is_training and config.keep_prob < 1:
       inputs = tf.nn.dropout(inputs, config.keep_prob)
 
     output, state = self._build_rnn_graph(inputs, config, is_training)
-    states = self.initial_state
-    with tf.name_scope('attention'):
-      word_attention = tf.Variable(
-        tf.random_normal([conf.hidden_size,conf.hidden_size],mean=0.0,
-                         stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
-        name="word_attention",dtype=tf.float32)
-      w_context = tf.Variable(
-        tf.random_normal([conf.hidden_size], mean=0.0,
-                         stddev=np.sqrt(2. / (conf.hidden_size + 1))),
-        name="w_context", dtype=tf.float32)
 
-      user_word = tf.tanh(tf.matmul(tf.reshape(state, [-1, conf.hidden_size]), word_attention))
-      user_attscore = tf.matmul(user_word, tf.reshape(w_context, [-1, 1]))
-      exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])
-      alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1])
-      user_att = tf.reduce_sum(state * tf.reshape(alphas, [-1, conf.num_steps, 1]), 1)
+
+    # states = self.initial_state
+    # with tf.name_scope('attention'):
+    #   word_attention = tf.Variable(
+    #     tf.random_normal([conf.hidden_size,conf.hidden_size],mean=0.0,
+    #                      stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
+    #     name="word_attention",dtype=tf.float32)
+    #   w_context = tf.Variable(
+    #     tf.random_normal([conf.hidden_size], mean=0.0,
+    #                      stddev=np.sqrt(2. / (conf.hidden_size + 1))),
+    #     name="w_context", dtype=tf.float32)
+    #
+    #   user_word = tf.tanh(tf.matmul(tf.reshape(state, [-1, conf.hidden_size]), word_attention))
+    #   user_attscore = tf.matmul(user_word, tf.reshape(w_context, [-1, 1]))
+    #   exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])
+    #   alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1])
+    #   user_att = tf.reduce_sum(state * tf.reshape(alphas, [-1, conf.num_steps, 1]), 1)
+
 
     softmax_w = tf.get_variable(
         "softmax_w", [size, vocab_size], dtype=data_type())
