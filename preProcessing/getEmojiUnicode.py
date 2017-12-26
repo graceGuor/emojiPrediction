@@ -54,3 +54,4 @@ if __name__ == "__main__":
     resPath = 'E:\Data\EmojiPrediction\emoji_Unicode.txt'
     # getEmojiUnicode(srcPath, resPath)
     test(srcPath, resPath)
+    print('Finished!')

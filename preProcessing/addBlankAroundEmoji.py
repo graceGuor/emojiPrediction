@@ -62,3 +62,4 @@ if __name__ == "__main__":
     addBlankAroundEmoji(srcPath, resPath)
     i = datetime.datetime.now()
     print("结束时间是 %s" % i)
+    print('Finished!')

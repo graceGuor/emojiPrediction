@@ -34,3 +34,4 @@ def filterSpecCha(srcPath, resPath):
 
 if __name__ == "__main__":
     testFilterSpecCha()
+    print('Finished!')
