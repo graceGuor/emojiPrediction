@@ -29,8 +29,8 @@ if __name__ == "__main__":
     srcPath = 'E:\Data\EmojiPrediction\\testGr.txt'
     resPath = 'E:\Data\EmojiPrediction\\testGrRes.txt'
 
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords.txt'
+    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
+    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords.txt'
     removeStopwords(srcPath, resPath)
     print('Finished!')
 
