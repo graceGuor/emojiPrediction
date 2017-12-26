@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" afterPath="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" afterPath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" afterPath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" afterPath="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/mergeFile.py" afterPath="$PROJECT_DIR$/preProcessing/mergeFile.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="81">
+              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -106,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mergeFile.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mergeFile.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="27">
+              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -186,8 +180,8 @@
         <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
         <option value="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
-        <option value="$PROJECT_DIR$/preProcessing/mergeFile.py" />
         <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/preProcessing/mergeFile.py" />
       </list>
     </option>
   </component>
@@ -924,21 +918,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
+    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="81">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
+    <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="27">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

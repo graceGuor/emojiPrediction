@@ -5,8 +5,8 @@ import os
 def segFile(srcPath,resPath,N):
     res = []
     for i in range(N):
-        f = open(srcPath + '\\' + str(i) + '.txt', 'r', encoding='utf8')
-        # f = open(srcPath + '/' + str(i) + '.txt', 'r', encoding='utf8')
+        # f = open(srcPath + '\\' + str(i) + '.txt', 'r', encoding='utf8')
+        f = open(srcPath + '/' + str(i) + '.txt', 'r', encoding='utf8')
         lines = f.readlines()
         res += lines
         # res.append(lines)
