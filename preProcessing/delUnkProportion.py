@@ -7,6 +7,8 @@ def delUnkProportion(srcPath, resPath):
     lines = f_sour.readlines()
     for line in lines:
         items = line.split()
+        if len(items) == 0:
+            continue
         count = 0
         for item in items:
             if item == '<unk>':
