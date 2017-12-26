@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" afterPath="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" afterPath="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/removeStopwords.py" afterPath="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getEmojiUnicode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
+      <file leaf-file-name="addQuotationMarks.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preProcessing/addQuotationMarks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="240">
+              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -70,8 +71,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="324">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,8 +91,8 @@
       <file leaf-file-name="removeStopwords.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="324">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -163,12 +164,13 @@
         <option value="$PROJECT_DIR$/preProcessing/emojiList.py" />
         <option value="$PROJECT_DIR$/preProcessing/addBlankAroundEmoji.py" />
         <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
-        <option value="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
-        <option value="$PROJECT_DIR$/ptb/conf.py" />
         <option value="$PROJECT_DIR$/preProcessing/mergeFile.py" />
         <option value="$PROJECT_DIR$/preProcessing/segFile.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
         <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
+        <option value="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
+        <option value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
+        <option value="$PROJECT_DIR$/ptb/conf.py" />
         <option value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
       </list>
     </option>
@@ -262,6 +264,23 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.removeStopwords">
+    <configuration name="addQuotationMarks" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preProcessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnn" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="mergeFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -313,23 +332,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="segFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preProcessing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rnn" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/segFile.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,18 +351,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.segFile" />
-      <item index="2" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
-      <item index="3" class="java.lang.String" itemvalue="Python.mergeFile" />
-      <item index="4" class="java.lang.String" itemvalue="Python.removeStopwords" />
+      <item index="1" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
+      <item index="2" class="java.lang.String" itemvalue="Python.mergeFile" />
+      <item index="3" class="java.lang.String" itemvalue="Python.removeStopwords" />
+      <item index="4" class="java.lang.String" itemvalue="Python.addQuotationMarks" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.removeStopwords" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.mergeFile" />
-        <item index="3" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
-        <item index="4" class="java.lang.String" itemvalue="Python.segFile" />
+        <item index="1" class="java.lang.String" itemvalue="Python.addQuotationMarks" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mergeFile" />
+        <item index="4" class="java.lang.String" itemvalue="Python.replaceSparseWithUnk" />
       </list>
     </recent_temporary>
   </component>
@@ -541,14 +543,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/builtins.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -820,14 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/mergeFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -874,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -908,18 +884,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/addQuotationMarks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="324">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="324">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
