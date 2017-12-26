@@ -269,8 +269,8 @@ def getDictEmb(word_to_id,embedding):
             print(word)
             embs.append(np.random.randn(l))
     print("随机初始化的词：" + str(count))
-    print(len(ids))
-    print(len(embs))
+    # print(len(ids))
+    # print(len(embs))
     ids = np.reshape(ids, [len(ids), 1])
     dict_id_emb = np.concatenate([ids, embs], axis=1)
     res = []

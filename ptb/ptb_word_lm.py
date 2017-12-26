@@ -130,10 +130,10 @@ class PTBModel(object):
     vocab_size = config.vocab_size
 
     with tf.device("/cpu:0"):
-      # embedding = tf.get_variable(
-      #     "embedding", initializer=dict_emb, dtype=data_type())
       embedding = tf.get_variable(
-        "embedding", [vocab_size, size], dtype=data_type())
+          "embedding", initializer=dict_emb, dtype=data_type())
+      # embedding = tf.get_variable(
+      #   "embedding", [vocab_size, size], dtype=data_type())
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
 
     if is_training and config.keep_prob < 1:
@@ -473,12 +473,13 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     # allCount_global += allCount
 
     if verbose and step % (model.input.epoch_size // 10) == 10:# 每完成10%的epoch即进行展示训练进度
-      print("epoch_size: %d  step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps" %
+      print("epoch_size: %d  step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps cost: % .0f" %
             (model.input.epoch_size,
              step * 1.0 / model.input.epoch_size,
              np.exp(costs / iters),
              iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
-             (time.time() - start_time)))
+             (time.time() - start_time),
+             cost))
 
   return np.exp(costs / iters),0,rightCount_global
 

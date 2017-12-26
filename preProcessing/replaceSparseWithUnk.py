@@ -22,18 +22,19 @@ def replaceSparseWithUnk(srcPath, resPath):
             if item in words:
                 resLine = resLine + item + " "
             else:
-                resLine = resLine + "<unk> "
+                resLine = resLine + " <unk> "
         # print(resLine)
         res.append(resLine.strip() + '\n')
     f_res = open(resPath,'w',encoding='utf8')
     f_res.writelines(res)
 
 if __name__ == "__main__":
-    # srcPath = 'E:\Data\EmojiPrediction\emoji_sample_withBlankbeforePunc_head_filter.txt'
-    # resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk.txt'
+    # srcPath = 'E:\Data\EmojiPrediction\/testGr.txt'
+    srcPath = 'E:\Data\EmojiPrediction\emoji_sample_withBlankbeforePunc_head_filter.txt'
+    resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk.txt'
 
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk.txt'
+    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords.txt'
+    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk.txt'
 
     replaceSparseWithUnk(srcPath,resPath)
     print('Finished!')
