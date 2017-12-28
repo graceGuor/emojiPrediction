@@ -1,4 +1,5 @@
 import ptb.conf as conf
+import sys
 
 #去除unk比例高于一定值的句子
 def delUnkProportion(srcPath, resPath):
@@ -20,12 +21,13 @@ def delUnkProportion(srcPath, resPath):
     print('after delUnkProportion size:' + str(len(res)))
     f_res.writelines(res)
 
-if __name__ == "__main__":
+def delUnkProportion_main():
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk.txt'
     resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion.txt'
+    delUnkProportion(srcPath, resPath)
 
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk_delProportion.txt'
-
-    delUnkProportion(srcPath,resPath)
-    print('Finished!')
+if __name__ == "__main__":
+    delUnkProportion_main()
+    print(sys.argv[0] + 'Finished!')

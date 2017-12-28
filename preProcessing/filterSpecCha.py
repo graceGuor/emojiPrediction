@@ -3,7 +3,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 import ptb.conf as conf
-
+import sys
 #字母数字，标点符号，emojis除外都过滤掉，包括停用词
 def filterSpecCha(srcPath, resPath):
     f_src = open(srcPath,'r',encoding='utf8')
@@ -34,13 +34,13 @@ def filterSpecCha(srcPath, resPath):
     f_res = open(resPath,'w',encoding='utf8')
     f_res.writelines(res)
 
-if __name__ == "__main__":
-
-
+def filterSpecCha_main():
     srcPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_head.txt'
     resPath = 'E:\Data\EmojiPrediction\\emoji_sample_withBlankbeforePunc_head_filter.txt'
-
-    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge.txt'
-    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
     filterSpecCha(srcPath, resPath)
-    print('Finished!')
+
+if __name__ == "__main__":
+    filterSpecCha_main()
+    print(sys.argv[0] + 'Finished!')

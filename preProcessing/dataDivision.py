@@ -1,5 +1,6 @@
 import ptb.conf as conf
 import os
+import sys
 
 #对数据集进行划分
 def dataDivision811(srcPath,resPath, fold):
@@ -31,12 +32,13 @@ def dataDivision811(srcPath,resPath, fold):
     f_res = open(resPath + '/' + str(f) + '/train.txt', 'w', encoding='utf8')
     f_res.writelines(lines[sizeOfFold * 2:])
 
-if __name__ == "__main__":
+def dataDivision811_main():
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion.txt'
     resPath = 'E:\Data\EmojiPrediction\Fold'
-
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk_delProportion.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion.txt'
     resPath = conf.src_path + '/Fold'
+    dataDivision811(srcPath, resPath, conf.fold)
 
-    dataDivision811(srcPath,resPath,conf.fold)
-    print('Finished!')
+if __name__ == "__main__":
+    dataDivision811_main()
+    print(sys.argv[0] + 'Finished!')

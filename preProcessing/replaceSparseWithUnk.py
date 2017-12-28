@@ -1,6 +1,7 @@
 import tensorflow as tf
 import collections
 import ptb.conf as conf
+import sys
 
 #将数据集中出现频率除TopK之外的词都用<unk>代替
 def replaceSparseWithUnk(srcPath, resPath):
@@ -28,13 +29,14 @@ def replaceSparseWithUnk(srcPath, resPath):
     f_res = open(resPath,'w',encoding='utf8')
     f_res.writelines(res)
 
-if __name__ == "__main__":
+def replaceSparseWithUnk_main():
     # srcPath = 'E:\Data\EmojiPrediction\/testGr.txt'
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_withBlankbeforePunc_head_filter.txt'
     resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk.txt'
+    replaceSparseWithUnk(srcPath, resPath)
 
-    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords.txt'
-    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_stopwords_unk.txt'
-
-    replaceSparseWithUnk(srcPath,resPath)
-    print('Finished!')
+if __name__ == "__main__":
+    replaceSparseWithUnk_main()
+    print('Finished!' + sys.argv[0])
