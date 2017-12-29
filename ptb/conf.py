@@ -1,7 +1,7 @@
 # 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-save_path = src_path + "/Res/emb_1w_200d_prePro"
+save_path = src_path + "/Res/rand_1w_200d_prePro"#"/Res/emb_1w_200d_prePro"
 emb_path = src_path + "/glove.twitter.27B/glove.twitter.27B.200d.txt"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改

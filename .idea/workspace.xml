@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/lowerCha.py" afterPath="$PROJECT_DIR$/preProcessing/lowerCha.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/preProcess_main.py" afterPath="$PROJECT_DIR$/preProcessing/preProcess_main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/ptb_word_lm.py" afterPath="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +20,8 @@
       <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="133" column="43" lean-forward="false" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="43" />
+            <state relative-caret-position="459">
+              <caret line="144" column="33" lean-forward="true" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
                 <element signature="e#8396#9483#0" expanded="false" />
@@ -49,8 +46,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="81">
+              <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -122,7 +119,6 @@
         <option value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
         <option value="$PROJECT_DIR$/Service/ReadInfo.py" />
         <option value="$PROJECT_DIR$/ptb/reader.py" />
-        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
         <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
         <option value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
         <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
@@ -132,6 +128,7 @@
         <option value="$PROJECT_DIR$/preProcessing/lowerCha.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
         <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
       </list>
     </option>
   </component>
@@ -876,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="133" column="43" lean-forward="false" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="43" />
+        <state relative-caret-position="459">
+          <caret line="144" column="33" lean-forward="true" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
           <folding>
             <element signature="e#2368#2406#0" expanded="true" />
             <element signature="e#8396#9483#0" expanded="false" />
@@ -890,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="81">
+          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
           <folding />
         </state>
       </provider>
