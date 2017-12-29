@@ -15,10 +15,10 @@ def lowerCha(srcPath, resPath):
 def lowerCha_main():
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion.txt'
     resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion_lower.txt'
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower.txt'
+    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter.txt'
+    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower.txt'
     lowerCha(srcPath, resPath)
 
 if __name__ == "__main__":
     lowerCha_main()
-    print(sys.argv[0] + 'Finished!')
+    print(sys.argv[0] + '  Finished!')
