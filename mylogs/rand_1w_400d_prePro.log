@@ -1,0 +1,785 @@
+2017-12-29 19:01:03.755340: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-29 19:01:03.755370: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-29 19:01:03.755378: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-29 19:01:03.755383: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-29 19:01:03.755388: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-29 19:01:10.113409: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 03c6:00:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-12-29 19:01:10.113458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-12-29 19:01:10.113466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-12-29 19:01:10.113482: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 03c6:00:00.0)
+2017-12-29 19:02:39.629770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 03c6:00:00.0)
+当前的日期和时间是 2017-12-29 19:01:03.755132
+keep_prob:0.5
+embedding size:200
+wιтн
+geт
+aռɖ
+waѕ
+don'т
+i’m
+oυт
+lιĸe
+aт
+💼
+people's
+himmost
+goт
+don’t
+himworst
+dad's
+one's
+meloudest
+mefunniest
+we'd
+himage
+memost
+it’s
+they'd
+👥
+woman's
+child's
+sister's
+ex's
+she'd
+they've
+🍳
+walgreen's
+something's
+else's
+children's
+5am
+must've
+3pm
+veteran's
+prob'ly
+life's
+god's
+wнaт
+why's
+22nd
+📿
+women's
+8pm
+19th
+14th
+sub's
+8am
+6am
+5pm
+4pm
+why'd
+nobody's
+he'd
+2pm
+10am
+10$
+i'ma
+20th
+100$
+mom's
+9am
+7pm
+5$
+🦃
+25th
+6pm
+30th
+30pm
+20$
+12th
+what'd
+15th
+men's
+everything's
+2x
+everyone's
+7am
+17th
+13th
+🍪
+wendy's
+101
+where'd
+280
+52
+🚘
+mommy's
+someone's
+16th
+a1
+1500
+we've
+🚗
+🐈
+21st
+11th
+🔊
+98
+2014
+it'd
+51
+49
+would've
+95
+🍗
+110
+mcdonald's
+🚫
+1130
+could've
+baby's
+9th
+350
+ww2
+today's
+10th
+🍟
+1030
+6th
+360
+🍂
+🅱
+700
+📲
+2day
+👠
+7th
+85
+18th
+5th
+🐻
+🌻
+💄
+230
+🍔
+when's
+she'll
+oĸ
+🌟
+65
+46
+2016
+🙅🏾
+930
+that'd
+lularoe
+800
+2015
+600
+they'll
+47
+🐼
+🎅
+69
+📌
+💧
+07
+730
+💭
+830
+44
+💁🏽
+‼
+330
+120
+🚶
+48
+43
+🦁
+130
+630
+430
+41
+530
+🌊
+ma's
+4th
+🍁
+400
+🎼
+💉
+🍃
+daddy's
+🐟
+🏆
+🌿
+here's
+🌈
+8th
+05
+👭
+🌍
+99
+250
+👏🏻
+42
+2000
+🙏🏼
+37
+✌🏽
+👈
+🌼
+bihhh
+55
+👼
+🏌
+🅿
+🤷🏼
+🐕
+👽
+🎧
+b4
+70
+2018
+🍼
+39
+38
+👌🏻
+🤷🏻
+👸
+youuuu
+🍀
+mannnn
+🎯
+💁🏾
+2k
+1000
+🙏🏿
+🌷
+👂
+🐸
+🙌🏻
+09
+💫
+🚨
+🙏🏻
+36
+🤞
+08
+🍨
+👊🏿
+90
+3rd
+omgggg
+he'll
+ayyy
+how'd
+🌎
+damnnn
+🙌🏿
+80
+🐱
+💃🏾
+34
+500
+🍒
+000
+75
+🏈
+33
+🙅
+🍓
+🤦🏼
+🥂
+💵
+😿
+150
+😸
+💲
+💐
+🍦
+omggg
+👹
+👌🏼
+32
+youuu
+👊🏾
+str8
+🍕
+🎇
+ps4
+aweee
+🎵
+🤷🏿
+🤞🏾
+ayeee
+🎀
+yhui
+👫
+yasssss
+nahhh
+🏃🏾
+31
+💤
+2nd
+it'll
+👉
+👌🏽
+🤘🏾
+💣
+🦄
+29
+🌸
+👏🏼
+ughhhh
+🐶
+🤦🏻
+✌🏾
+🎄
+27
+🤞🏽
+heyyyyy
+yesssssss
+🤒
+🏀
+ummmm
+😦
+👇
+60
+yeahhh
+26
+🔒
+🎆
+yayyy
+👏🏽
+28
+1st
+lmfaoooo
+🙏🏽
+🙉
+💑
+200
+🚮
+yeaaa
+🍰
+🍹
+babyyy
+🤧
+🎤
+👏🏾
+35
+🤦🏿
+wdym
+ohhhhh
+🍺
+👶
+👻
+🤕
+🍸
+💃🏽
+👣
+yassss
+💪🏽
+🖕🏻
+🇺🇸
+🤥
+😧
+awwwwww
+💅
+🍫
+🌞
+🙌🏽
+🤠
+👎
+💎
+23
+🤷
+2017
+🕺
+22
+💪🏿
+👌🏾
+🍷
+🙏🏾
+where's
+ughhh
+😰
+😹
+yessssss
+lmaoooo
+yasss
+💸
+ohhhh
+19
+there's
+👐
+👆
+🔪
+😵
+🍑
+🙋
+👿
+💏
+24
+💪🏼
+🤑
+🤓
+wat's
+45
+🍻
+21
+👄
+heyyyy
+🍾
+14
+13
+they're
+we're
+😻
+💁
+🤦
+🤷🏽
+👁
+🤐
+🙌🏾
+🌹
+we'll
+🤷🏾
+18
+🕯
+🖕🏽
+🤡
+👋
+🖕🏿
+😖
+40
+🎶
+😨
+💪🏾
+16
+🔫
+🏃
+yesssss
+💨
+25
+17
+😓
+💟
+🤢
+💃
+💰
+300
+🙁
+😤
+50
+who's
+i'd
+😶
+🤘
+🖕🏼
+😟
+💥
+100
+00
+😬
+😲
+heyyy
+😯
+💩
+🙊
+🖕🏾
+🖤
+😳
+🔐
+😷
+🙃
+i've
+🤤
+🤦🏽
+🍆
+yessss
+😌
+😫
+😪
+😠
+15
+🤦🏾
+💝
+0
+🗣
+20
+12
+😮
+🙂
+🙈
+😈
+😛
+😆
+💛
+🎊
+😞
+let's
+11
+👑
+💘
+😃
+😕
+😣
+😗
+👏
+9
+👍
+🎁
+👊
+😄
+😝
+8
+😥
+👅
+how's
+💍
+💓
+30
+😽
+6
+🙌
+😴
+💚
+😐
+7
+💞
+💔
+😀
+💗
+🙏
+😩
+10
+😱
+ain't
+he's
+😇
+👌
+😜
+💪
+💦
+😙
+4
+5
+😡
+😅
+💋
+🔥
+😏
+😑
+3
+1
+🎈
+can't
+y'all
+😒
+🖕
+💕
+😢
+😉
+😔
+😎
+🎉
+😋
+🤗
+💙
+🙄
+🎂
+💜
+2
+what's
+😚
+💖
+i'll
+💀
+🤔
+👀
+that's
+😁
+😊
+💯
+🤣
+😭
+i'm
+😘
+😍
+😂
+<eos>
+随机初始化的词：588
+word_to_id.len:7206
+maxLenOfSeq:1024      conf.num_steps:1024
+TrainInput epoch_size：22885
+ValidInput epoch_size：2861
+TestInput epoch_size：1147376
+Epoch: 1 Learning rate: 1.000
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 6819.433 speed: 2830 wps cost:  147
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 102.824 speed: 7365 wps cost:  85
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 84.930 speed: 7393 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 77.061 speed: 7404 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 72.853 speed: 7412 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 70.035 speed: 7411 wps cost:  91
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 68.162 speed: 7412 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 66.560 speed: 7413 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 65.389 speed: 7412 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 64.431 speed: 7411 wps cost:  87
+Epoch: 1 Train Perplexity: 63.627 train_acc 3120031.000:
+Epoch: 1 Valid Perplexity: 53.583 valid_acc 403455.000:
+Epoch: 2 Learning rate: 1.000
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 67.738 speed: 7393 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 56.239 speed: 7401 wps cost:  84
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 56.420 speed: 7397 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 56.112 speed: 7394 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 55.994 speed: 7394 wps cost:  81
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 55.860 speed: 7394 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 55.831 speed: 7392 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 55.688 speed: 7392 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 55.625 speed: 7393 wps cost:  81
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 55.544 speed: 7392 wps cost:  81
+Epoch: 2 Train Perplexity: 55.490 train_acc 3194840.000:
+Epoch: 2 Valid Perplexity: 49.787 valid_acc 404629.000:
+Epoch: 3 Learning rate: 1.000
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 50.454 speed: 7397 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 54.494 speed: 7393 wps cost:  81
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 54.662 speed: 7391 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 54.465 speed: 7392 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 54.442 speed: 7379 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 54.336 speed: 7380 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 54.337 speed: 7381 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 54.212 speed: 7383 wps cost:  84
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 54.167 speed: 7385 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 54.149 speed: 7383 wps cost:  79
+Epoch: 3 Train Perplexity: 54.112 train_acc 3208453.000:
+Epoch: 3 Valid Perplexity: 46.140 valid_acc 420100.000:
+Epoch: 4 Learning rate: 1.000
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 44.132 speed: 7415 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 53.300 speed: 7402 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 53.675 speed: 7398 wps cost:  92
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 53.434 speed: 7390 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 53.467 speed: 7393 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 53.420 speed: 7394 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 53.493 speed: 7394 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 53.421 speed: 7392 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 53.375 speed: 7390 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 53.366 speed: 7391 wps cost:  84
+Epoch: 4 Train Perplexity: 53.325 train_acc 3217532.000:
+Epoch: 4 Valid Perplexity: 45.762 valid_acc 424673.000:
+Epoch: 5 Learning rate: 0.500
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 52.912 speed: 7360 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 46.942 speed: 7380 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 46.947 speed: 7317 wps cost:  81
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 46.631 speed: 7346 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 46.509 speed: 7356 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 46.349 speed: 7362 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 46.300 speed: 7366 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 46.178 speed: 7366 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 46.102 speed: 7369 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 46.024 speed: 7370 wps cost:  78
+Epoch: 5 Train Perplexity: 45.951 train_acc 3392982.000:
+Epoch: 5 Valid Perplexity: 42.024 valid_acc 433824.000:
+Epoch: 6 Learning rate: 0.250
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 41.198 speed: 7428 wps cost:  72
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 44.890 speed: 7380 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 45.010 speed: 7375 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 44.774 speed: 7381 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 44.730 speed: 7384 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 44.607 speed: 7387 wps cost:  69
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 44.609 speed: 7387 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 44.531 speed: 7388 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 44.481 speed: 7388 wps cost:  71
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 44.436 speed: 7389 wps cost:  78
+Epoch: 6 Train Perplexity: 44.385 train_acc 3428882.000:
+Epoch: 6 Valid Perplexity: 41.182 valid_acc 436807.000:
+Epoch: 7 Learning rate: 0.125
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 41.679 speed: 7324 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 44.046 speed: 7183 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 44.163 speed: 7284 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.975 speed: 7319 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.921 speed: 7339 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.824 speed: 7349 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.841 speed: 7353 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.773 speed: 7359 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 43.731 speed: 7364 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 43.690 speed: 7367 wps cost:  65
+Epoch: 7 Train Perplexity: 43.652 train_acc 3445787.000:
+Epoch: 7 Valid Perplexity: 40.873 valid_acc 438943.000:
+Epoch: 8 Learning rate: 0.062
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 40.876 speed: 7443 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.576 speed: 7398 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.691 speed: 7393 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.545 speed: 7393 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.512 speed: 7393 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.424 speed: 7387 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.444 speed: 7388 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.384 speed: 7386 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 43.349 speed: 7388 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 43.314 speed: 7389 wps cost:  73
+Epoch: 8 Train Perplexity: 43.286 train_acc 3455466.000:
+Epoch: 8 Valid Perplexity: 40.712 valid_acc 440712.000:
+Epoch: 9 Learning rate: 0.031
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 47.355 speed: 7423 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.357 speed: 7390 wps cost:  72
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.470 speed: 7395 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.314 speed: 7392 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.294 speed: 7390 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.207 speed: 7389 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.236 speed: 7390 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.184 speed: 7392 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 43.149 speed: 7391 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 43.117 speed: 7383 wps cost:  81
+Epoch: 9 Train Perplexity: 43.090 train_acc 3459669.000:
+Epoch: 9 Valid Perplexity: 40.636 valid_acc 441000.000:
+Epoch: 10 Learning rate: 0.016
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 39.762 speed: 7395 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.193 speed: 7400 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.361 speed: 7394 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.204 speed: 7376 wps cost:  72
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.188 speed: 7381 wps cost:  72
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.102 speed: 7382 wps cost:  67
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.134 speed: 7383 wps cost:  76
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.077 speed: 7385 wps cost:  79
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 43.046 speed: 7386 wps cost:  71
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 43.018 speed: 7386 wps cost:  75
+Epoch: 10 Train Perplexity: 42.993 train_acc 3462325.000:
+Epoch: 10 Valid Perplexity: 40.593 valid_acc 441018.000:
+Epoch: 11 Learning rate: 0.008
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 42.070 speed: 7277 wps cost:  71
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.165 speed: 7395 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.331 speed: 7395 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.182 speed: 7379 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.146 speed: 7381 wps cost:  71
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.052 speed: 7380 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.084 speed: 7383 wps cost:  70
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.033 speed: 7368 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 42.991 speed: 7369 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 42.966 speed: 7372 wps cost:  76
+Epoch: 11 Train Perplexity: 42.940 train_acc 3464030.000:
+Epoch: 11 Valid Perplexity: 40.576 valid_acc 441105.000:
+Epoch: 12 Learning rate: 0.004
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 42.662 speed: 7413 wps cost:  70
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.150 speed: 7403 wps cost:  77
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.281 speed: 7397 wps cost:  72
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.131 speed: 7398 wps cost:  82
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.101 speed: 7394 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.024 speed: 7395 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.054 speed: 7394 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 43.006 speed: 7392 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 42.962 speed: 7392 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 42.934 speed: 7394 wps cost:  81
+Epoch: 12 Train Perplexity: 42.909 train_acc 3464219.000:
+Epoch: 12 Valid Perplexity: 40.568 valid_acc 441179.000:
+Epoch: 13 Learning rate: 0.002
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.000 perplexity: 47.076 speed: 7320 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.100 perplexity: 43.117 speed: 7388 wps cost:  69
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.200 perplexity: 43.284 speed: 7382 wps cost:  75
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.300 perplexity: 43.122 speed: 7383 wps cost:  80
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.400 perplexity: 43.084 speed: 7390 wps cost:  81
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.500 perplexity: 43.001 speed: 7392 wps cost:  78
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.600 perplexity: 43.030 speed: 7357 wps cost:  73
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.700 perplexity: 42.990 speed: 7361 wps cost:  83
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.800 perplexity: 42.946 speed: 7365 wps cost:  74
+epoch_size: 22885  step / (model.input.epoch_size // 10): 0.900 perplexity: 42.919 speed: 7370 wps cost:  77
+Epoch: 13 Train Perplexity: 42.898 train_acc 3464372.000:
+Epoch: 13 Valid Perplexity: 40.567 valid_acc 441185.000:
+Test Perplexity: 40.080 test_rightCount: 0.000 test_acc 443442.000:
+Saving model to /home/pubsrv/data/guorui/data/Res/rand_1w_400d_prePro.
+Finished!
+当前的日期和时间是 2017-12-30 00:50:13.343081
