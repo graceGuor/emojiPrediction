@@ -62,6 +62,7 @@ from __future__ import print_function
 
 import time
 import datetime
+import os
 
 import numpy as np
 import tensorflow as tf
@@ -126,14 +127,17 @@ class PTBModel(object):
     self._cell = None
     self.batch_size = input_.batch_size
     self.num_steps = input_.num_steps
+
     size = config.hidden_size
     vocab_size = config.vocab_size
 
     with tf.device("/cpu:0"):
-      # embedding = tf.get_variable(
-      #     "embedding", initializer=dict_emb, dtype=data_type())
-      embedding = tf.get_variable(
-        "embedding", [vocab_size, size], dtype=data_type())
+      if conf.isRandomIni:
+        embedding = tf.get_variable(
+          "embedding", [vocab_size, size], dtype=data_type())
+      else:
+        embedding = tf.get_variable(
+            "embedding", initializer=dict_emb, dtype=data_type())
       inputs = tf.nn.embedding_lookup(embedding, input_.input_data)
 
     if is_training and config.keep_prob < 1:
@@ -141,35 +145,12 @@ class PTBModel(object):
 
     output, state = self._build_rnn_graph(inputs, config, is_training)
 
-
-    # states = self.initial_state
-    # with tf.name_scope('attention'):
-    #   word_attention = tf.Variable(
-    #     tf.random_normal([conf.hidden_size,conf.hidden_size],mean=0.0,
-    #                      stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
-    #     name="word_attention",dtype=tf.float32)
-    #   w_context = tf.Variable(
-    #     tf.random_normal([conf.hidden_size], mean=0.0,
-    #                      stddev=np.sqrt(2. / (conf.hidden_size + 1))),
-    #     name="w_context", dtype=tf.float32)
-    #
-    #   user_word = tf.tanh(tf.matmul(tf.reshape(state, [-1, conf.hidden_size]), word_attention))
-    #   user_attscore = tf.matmul(user_word, tf.reshape(w_context, [-1, 1]))
-    #   exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])
-    #   alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1])
-    #   user_att = tf.reduce_sum(state * tf.reshape(alphas, [-1, conf.num_steps, 1]), 1)
-
-
     softmax_w = tf.get_variable(
         "softmax_w", [size, vocab_size], dtype=data_type())
     softmax_b = tf.get_variable("softmax_b", [vocab_size], dtype=data_type())
-    logits = tf.nn.xw_plus_b(output, softmax_w, softmax_b)
+    logits = tf.nn.xw_plus_b(output, softmax_w, softmax_b, name='logits')
     # Reshape logits to be a 3-D tensor for sequence loss
-    logits = tf.reshape(logits, [self.batch_size, self.num_steps, vocab_size])
-
-    errorCount = 0
-    rightCount = 0
-    emojiIndexList = {5,10}
+    logits = tf.reshape(logits, [self.batch_size, self.num_steps, vocab_size], name='logits_reshape')
 
     # Use the contrib sequence loss and average over the batches
     loss = tf.contrib.seq2seq.sequence_loss(
@@ -179,18 +160,37 @@ class PTBModel(object):
         average_across_timesteps=False,
         average_across_batch=True)
 
-    # acc = Eval.getAccOfEmoji(logits,input_.targets,emojiIndexList,errorCount,rightCount)# emojis metrics
-    acc = tf.cast(tf.equal(x=tf.argmax(logits, axis=2), y=tf.cast(input_.targets, tf.int64)), tf.int32)
-    # allCount = tf.equal(x=tf.argmax(logits, axis=2), y=tf.cast(input_.targets, tf.int64)).shape
-    # pdb.set_trace()
-    # print(allCount)
+    # rightCount = tf.cast(tf.equal(x=tf.argmax(logits, axis=2, name='logits_argmax'),
+    #                               y=tf.cast(input_.targets, tf.int64, name='input_target_cast'), name='rightCount_cal'),
+    #                      tf.int32, name='rightCount_cast')
+
+    rightCountTopK0 = tf.cast(tf.nn.in_top_k(tf.reshape(logits, [-1, conf.vocab_size]),
+                                                           tf.reshape(input_.targets, [-1]),
+                                                           conf.topK[0],
+                                                           name='rightCountTopk0'),
+                                            tf.int32)
+    rightCountTopK1 = tf.cast(tf.nn.in_top_k(tf.reshape(logits, [-1, conf.vocab_size]),
+                                                           tf.reshape(input_.targets, [-1]),
+                                                           conf.topK[1],
+                                                           name='rightCountTopk1'),
+                                            tf.int32)
+    rightCountTopK2 = tf.cast(tf.nn.in_top_k(tf.reshape(logits, [-1, conf.vocab_size]),
+                                                           tf.reshape(input_.targets, [-1]),
+                                                           conf.topK[2],
+                                                           name='rightCountTopk2'),
+                                            tf.int32)
+    allCount = tf.cast(tf.equal(x=tf.argmax(logits, axis=2, name='logits_argmax'),
+                                y=tf.argmax(logits, axis=2, name='logits_argmax'), name='allCount_cal'),
+                       tf.int32, name='allCount_cast')
 
     # Update the cost
     self._cost = tf.reduce_sum(loss, name='cost') #对整个batch求平均
     # print(tf.shape(self._cost))
     self._final_state = state
-    self._rightCount = tf.reduce_sum(acc, name='acc')
-    # self._allCount = allCount
+    self._rightCountTopK = [tf.reduce_sum(rightCountTopK0),
+                            tf.reduce_sum(rightCountTopK1),
+                            tf.reduce_sum(rightCountTopK2)]
+    self._allCount = tf.reduce_sum(allCount, name='allCount')
     if not is_training:
       return
 
@@ -279,7 +279,8 @@ class PTBModel(object):
     outputs = []
     with tf.variable_scope("RNN"):
       for time_step in range(self.num_steps):
-        if time_step > 0: tf.get_variable_scope().reuse_variables()
+        if time_step > 0:
+          tf.get_variable_scope().reuse_variables()
         (cell_output, state) = cell(inputs[:, time_step, :], state)
         outputs.append(cell_output)
     output = tf.reshape(tf.concat(outputs, 1), [-1, config.hidden_size])
@@ -339,8 +340,8 @@ class PTBModel(object):
     return self._cost
 
   @property
-  def rightCount(self):
-    return self._rightCount
+  def rightCountTopK(self):
+    return self._rightCountTopK
 
   @property
   def allCount(self):
@@ -441,22 +442,21 @@ def run_epoch(session, model, eval_op=None, verbose=False):
   start_time = time.time()
   costs = 0.0
   iters = 0
-  rightCount_global = 0
+  rightCountTopK_global = [0, 0, 0]
   allCount_global = 0
-  costDiff = 10000
   state = session.run(model.initial_state)
 
   fetches = {
       "cost": model.cost,
       "final_state": model.final_state,
-      "rightCount": model.rightCount,
-      # "allCount": model.allCount
+      "rightCountTopK": model.rightCountTopK,
+      "allCount": model.allCount,
   }
   if eval_op is not None:
     fetches["eval_op"] = eval_op
 
   for step in range(model.input.epoch_size):
-    feed_dict = {}
+    feed_dict = {}#之前的隐层和输出，c为隐层，h为输出
     for i, (c, h) in enumerate(model.initial_state):
       feed_dict[c] = state[i].c
       feed_dict[h] = state[i].h
@@ -464,25 +464,24 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     vals = session.run(fetches, feed_dict)
     cost = vals["cost"]
     state = vals["final_state"]
-    rightCount = vals["rightCount"]
-    # allCount = vals["allCount"]
+    rightCountTopK = vals["rightCountTopK"]
+    allCount = vals["allCount"]
 
     costs += cost
     iters += model.input.num_steps
-    rightCount_global += rightCount
-    # allCount_global += allCount
+    rightCountTopK_global = [rightCountTopK_global[i] + rightCountTopK[i] for i in range(len(rightCountTopK))]
+    allCount_global += allCount
 
     if verbose and step % (model.input.epoch_size // 10) == 10:# 每完成10%的epoch即进行展示训练进度
-      print("epoch_size: %d  step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps cost: % .0f" %
-            (model.input.epoch_size,
-             step * 1.0 / model.input.epoch_size,
+      print("step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps cost: % .0f" %
+            (step * 1.0 / model.input.epoch_size,
              np.exp(costs / iters),
              iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
              (time.time() - start_time),
              cost))
-
-  return np.exp(costs / iters),0,rightCount_global
-
+      session.run()
+  acc_global = [format(rightCountTopK_global[i] / allCount_global, '.4f') for i in range(len(rightCountTopK))]
+  return np.exp(costs / iters), rightCountTopK_global, allCount_global, acc_global
 
 def get_config():
   """Get model config."""
@@ -525,29 +524,50 @@ def main(_):
     config = get_config()
     eval_config = get_config()
     eval_config.batch_size = 1
-    eval_config.num_steps = 1
+    # eval_config.num_steps = 1
 
-    with tf.Graph().as_default():
+    with tf.Graph().as_default() as graph:
+
+      # tensorboard图
+      # train_input = PTBInput(config=config, data=train_data, name="TrainInput")
+      # m = PTBModel(is_training=True, config=config, input_=train_input, dict_emb=dict_emb)
+      # file_writer = tf.summary.FileWriter(FLAGS.save_path, graph=graph)
+      # file_writer.close()
+
       initializer = tf.random_uniform_initializer(-config.init_scale,
                                                   config.init_scale)
 
       with tf.name_scope("Train"):
         train_input = PTBInput(config=config, data=train_data, name="TrainInput")
         with tf.variable_scope("Model", reuse=None, initializer=initializer):
-          m = PTBModel(is_training=True, config=config, input_=train_input, dict_emb = dict_emb)
+          m = PTBModel(is_training=True, config=config, input_=train_input, dict_emb=dict_emb)
+          file_writer = tf.summary.FileWriter(FLAGS.save_path, graph=graph)
+          file_writer.close()
         tf.summary.scalar("Training Loss", m.cost)
         tf.summary.scalar("Learning Rate", m.lr)
+        tf.summary.scalar("Training allCount",m.allCount)
+        tf.summary.scalar("Training rightCount0", m.rightCountTopK[0])
+        tf.summary.scalar("Training rightCount1", m.rightCountTopK[1])
+        tf.summary.scalar("Training rightCount2", m.rightCountTopK[2])
 
       with tf.name_scope("Valid"):
         valid_input = PTBInput(config=config, data=valid_data, name="ValidInput")
         with tf.variable_scope("Model", reuse=True, initializer=initializer):
           mvalid = PTBModel(is_training=False, config=config, input_=valid_input, dict_emb = dict_emb)
         tf.summary.scalar("Validation Loss", mvalid.cost)
+        tf.summary.scalar("Validation allCount", mvalid.allCount)
+        tf.summary.scalar("Validation rightCount0", mvalid.rightCountTopK[0])
+        tf.summary.scalar("Validation rightCount1", mvalid.rightCountTopK[1])
+        tf.summary.scalar("Validation rightCount2", mvalid.rightCountTopK[2])
 
       with tf.name_scope("Test"):
         test_input = PTBInput(config=eval_config, data=test_data, name="TestInput")
         with tf.variable_scope("Model", reuse=True, initializer=initializer):
           mtest = PTBModel(is_training=False, config=eval_config, input_=test_input, dict_emb = dict_emb)
+        tf.summary.scalar("Test allCount", mtest.allCount)
+        tf.summary.scalar("Test rightCount0", mtest.rightCountTopK[0])
+        tf.summary.scalar("Test rightCount1", mtest.rightCountTopK[1])
+        tf.summary.scalar("Test rightCount2", mtest.rightCountTopK[2])
 
       models = {"Train": m, "Valid": mvalid, "Test": mtest}
       for name, model in models.items():
@@ -560,30 +580,31 @@ def main(_):
       if FLAGS.num_gpus > 1:
         soft_placement = True
         util.auto_parallel(metagraph, m)
-      file_writer = tf.summary.FileWriter('logs/', graph=tf.get_default_graph())
-      file_writer.close()
 
     # with tf.Graph().as_default():
 
       # tf.train.import_meta_graph(metagraph)
       for model in models.values():
         model.import_ops()
-      sv = tf.train.Supervisor(logdir=FLAGS.save_path)
-      config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
-      with sv.managed_session(config=config_proto) as session:
+      sv = tf.train.Supervisor(logdir=FLAGS.save_path, save_summaries_secs=3)
+      config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)#对session进行参数配置
+      with sv.managed_session(config=config_proto) as session:#自动去logdir中找checkpoint，如果没有的话自动初始化
         for i in range(config.max_max_epoch):
           lr_decay = config.lr_decay ** max(i + 1 - config.max_epoch, 0.0)
           m.assign_lr(session, config.learning_rate * lr_decay)
 
           print("Epoch: %d Learning rate: %.3f" % (i + 1, session.run(m.lr)))
-          train_perplexity ,_train,train_acc = run_epoch(session, m, eval_op=m.train_op,
-                                       verbose=True)
-          print("Epoch: %d Train Perplexity: %.3f train_acc %.3f:" % (i + 1, train_perplexity,train_acc))
-          valid_perplexity ,_val,val_acc = run_epoch(session, mvalid)
-          print("Epoch: %d Valid Perplexity: %.3f valid_acc %.3f:" % (i + 1, valid_perplexity,val_acc))
+          train_perplexity, train_rightCountTopK, train_allCount , train_acc \
+            = run_epoch(session, m, eval_op=m.train_op,verbose=True)
+          print("Epoch: %d Train Perplexity: %.3f train_allCount: %s train_acc: %s rightCountTopK : %s" %
+                (i + 1, train_perplexity, train_allCount, train_acc, train_rightCountTopK))
+          valid_perplexity, val_rightCountTopK, valid_allCount , valid_acc = run_epoch(session, mvalid)
+          print("Epoch: %d Valid Perplexity: %.3f valid_allCount: %s valid_acc: %s rightCountTopK : %s" %
+                (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
 
-        test_perplexity,_test_rightCount,test_acc = run_epoch(session, mtest)
-        print("Test Perplexity: %.3f test_rightCount: %.3f test_acc %.3f:" % (test_perplexity,_test_rightCount,test_acc))
+        test_perplexity, test_rightCountTopK, test_allCount ,test_acc = run_epoch(session, mtest)
+        print("Test Perplexity: %.3f test_allCount: %.3f test_acc: %s rightCountTopK : %s" %
+              (test_perplexity,test_allCount, test_acc, test_rightCountTopK))
 
         if FLAGS.save_path:
           print("Saving model to %s." % FLAGS.save_path)

@@ -83,13 +83,15 @@ def ptb_raw_data(data_path=None):
 
   word_to_id = _build_vocab(train_path)
   # pdb.set_trace()
-
-  embedding = RI.loadEmbeddings(conf.emb_path)
-  dict_emb = RI.getDictEmb(word_to_id,embedding)
+  if not conf.isRandomIni:
+    embedding = RI.loadEmbeddings(conf.emb_path)
+    dict_emb = RI.getDictEmb(word_to_id, embedding)
+  else:
+    dict_emb = None
 
   print("word_to_id.len:" + str(len(word_to_id)))
   maxLenOfSeq = RI.getMaxLexOfSeq(train_path)
-  conf.num_steps = maxLenOfSeq
+  # conf.num_steps = maxLenOfSeq
   print("maxLenOfSeq:" + str(maxLenOfSeq) + "      conf.num_steps:" + str(conf.num_steps))
   train_data = _file_to_word_ids(train_path, word_to_id)
   valid_data = _file_to_word_ids(valid_path, word_to_id)
@@ -120,10 +122,10 @@ def ptb_producer(raw_data, batch_size, num_steps, name=None):
   with tf.name_scope(name, "PTBProducer", [raw_data, batch_size, num_steps]):
     raw_data = tf.convert_to_tensor(raw_data, name="raw_data", dtype=tf.int32)
 
-    data_len = tf.size(raw_data)
+    data_len = tf.size(raw_data,name='data_len')
     batch_len = data_len // batch_size
     data = tf.reshape(raw_data[0 : batch_size * batch_len],
-                      [batch_size, batch_len])
+                      [batch_size, batch_len],name='raw_data_reshape')
 
     epoch_size = (batch_len - 1) // num_steps
     assertion = tf.assert_positive(
@@ -133,8 +135,8 @@ def ptb_producer(raw_data, batch_size, num_steps, name=None):
       epoch_size = tf.identity(epoch_size, name="epoch_size")
 
     i = tf.train.range_input_producer(epoch_size, shuffle=False).dequeue()
-    x = tf.strided_slice(data, [0, i * num_steps], [batch_size, (i + 1) * num_steps])
+    x = tf.strided_slice(data, [0, i * num_steps], [batch_size, (i + 1) * num_steps], name='x_strided_slice')
     x.set_shape([batch_size, num_steps])
-    y = tf.strided_slice(data, [0, i * num_steps + 1], [batch_size, (i + 1) * num_steps + 1])
+    y = tf.strided_slice(data, [0, i * num_steps + 1], [batch_size, (i + 1) * num_steps + 1], name='y_strided_slice')
     y.set_shape([batch_size, num_steps])
     return x, y

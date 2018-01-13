@@ -2,7 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513151610.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513152323.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513152720.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/embedding_1w_200d.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/embedding_2w_200d.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/random_2w_200d.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000506.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000575.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000780.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000835.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001191.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001342.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001387.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001433.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001477.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001523.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001569.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001614.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001652.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001702.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001754.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001805.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001857.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001909.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513152095.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513152185.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513251734.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513598216.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513599171.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513599644.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513601735.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513602195.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514268776.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514268910.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514272270.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514272321.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274032.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274208.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274555.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274923.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514278543.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514278604.GRACE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/preProcessing.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/ReadInfo.py" afterPath="$PROJECT_DIR$/Service/ReadInfo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/ptb_word_lm.py" afterPath="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/reader.py" afterPath="$PROJECT_DIR$/ptb/reader.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,27 +64,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+      <file leaf-file-name="emoji_att.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ptb/emoji_att.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="144" column="33" lean-forward="true" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+            <state relative-caret-position="289">
+              <caret line="560" column="20" lean-forward="true" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
-                <element signature="e#8396#9483#0" expanded="false" />
-                <element signature="e#11561#11625#0" expanded="false" />
-                <element signature="e#14572#14838#0" expanded="false" />
-                <element signature="e#14870#15144#0" expanded="false" />
+                <element signature="e#9858#10221#0" expanded="false" />
+                <element signature="e#13470#13534#0" expanded="false" />
+                <element signature="e#13570#14221#0" expanded="false" />
+                <element signature="e#16550#16816#0" expanded="false" />
+                <element signature="e#16848#17122#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Service/test.py">
+      <file leaf-file-name="reader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ptb/reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="2079">
+              <caret line="89" column="19" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -45,9 +94,21 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Service/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,19 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>num_steps</find>
-      <find>dropoutwrapper</find>
-      <find>keep_prob</find>
-      <find>multirnn</find>
-      <find>embedding</find>
-      <find>dropout</find>
-      <find>device</find>
-      <find>cpu</find>
-      <find>gpu</find>
-      <find>is_training</find>
-      <find>sequence_loss</find>
-      <find>cost</find>
-      <find>assign</find>
       <find>assign_lr</find>
       <find>getMaxLexOfSeq</find>
       <find>def init</find>
@@ -93,6 +141,19 @@
       <find>run_ep</find>
       <find>config</find>
       <find>print</find>
+      <find>run_epoch</find>
+      <find>tf</find>
+      <find>import_ops</find>
+      <find>export_ops</find>
+      <find>np</find>
+      <find>num_steps</find>
+      <find>rnn_params</find>
+      <find>Saving model to E:\Data\EmojiPrediction\Res\Fold_head\/0.</find>
+      <find>E:\Data\EmojiPrediction\Res\Fold_head\/0\logs</find>
+      <find>summary</find>
+      <find>tf.round</find>
+      <find>_initial_state</find>
+      <find>build_rnn_graph</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,8 +177,6 @@
         <option value="$PROJECT_DIR$/preProcessing/segFile.py" />
         <option value="$PROJECT_DIR$/preProcessing/getEmojiUnicode.py" />
         <option value="$PROJECT_DIR$/preProcessing/addQuotationMarks.py" />
-        <option value="$PROJECT_DIR$/Service/ReadInfo.py" />
-        <option value="$PROJECT_DIR$/ptb/reader.py" />
         <option value="$PROJECT_DIR$/preProcessing/filterSpecCha.py" />
         <option value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
         <option value="$PROJECT_DIR$/preProcessing/replaceSparseWithUnk.py" />
@@ -125,16 +184,19 @@
         <option value="$PROJECT_DIR$/preProcessing/dataDivision.py" />
         <option value="$PROJECT_DIR$/preProcessing/preProcess_main.py" />
         <option value="$PROJECT_DIR$/preProcessing/lowerCha.py" />
-        <option value="$PROJECT_DIR$/Service/test.py" />
+        <option value="$PROJECT_DIR$/Service/ReadInfo.py" />
+        <option value="$PROJECT_DIR$/ptb/reader.py" />
         <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
+        <option value="$PROJECT_DIR$/Service/test.py" />
+        <option value="$PROJECT_DIR$/ptb/emoji_att.py" />
         <option value="$PROJECT_DIR$/ptb/conf.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="267" />
-    <option name="width" value="1936" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="867" />
+    <option name="y" value="187" />
+    <option name="width" value="1426" />
     <option name="height" value="930" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -165,11 +227,6 @@
             <path>
               <item name="rnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="rnn" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rnn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rnn" type="462c0819:PsiDirectoryNode" />
               <item name="preProcessing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,19 +248,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../emojiPridiction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../rnn" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Code\models-master\tutorials\rnn\ptb" />
       <recent name="E:\Code\models-master\tutorials\rnn" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Code\models-master\tutorials\rnn" />
     </key>
   </component>
@@ -219,7 +277,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.emoji_att">
+    <configuration name="emoji_att" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ptb" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rnn" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ptb/emoji_att.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="lowerCha" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -271,23 +346,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="removeStopwords" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preProcessing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rnn" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preProcessing/removeStopwords.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,18 +365,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
-      <item index="1" class="java.lang.String" itemvalue="Python.removeStopwords" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lowerCha" />
-      <item index="4" class="java.lang.String" itemvalue="Python.preProcess_main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lowerCha" />
+      <item index="3" class="java.lang.String" itemvalue="Python.preProcess_main" />
+      <item index="4" class="java.lang.String" itemvalue="Python.emoji_att" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.preProcess_main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.lowerCha" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
-        <item index="4" class="java.lang.String" itemvalue="Python.removeStopwords" />
+        <item index="0" class="java.lang.String" itemvalue="Python.emoji_att" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
+        <item index="3" class="java.lang.String" itemvalue="Python.preProcess_main" />
+        <item index="4" class="java.lang.String" itemvalue="Python.lowerCha" />
       </list>
     </recent_temporary>
   </component>
@@ -353,19 +411,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13432837" sideWeight="0.4941691" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09808102" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23612623" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3460283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21109901" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15618336" sideWeight="0.5058309" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37214363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065565035" sideWeight="0.5123239" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38193688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -412,54 +470,9 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
-          <line>537</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
-          <line>535</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/reader.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/reader.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Service/ReadInfo.py</url>
           <line>32</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/reader.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/reader.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/logs/preProcessing.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ptb/logs/preProcessing.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/preProcessing/getEmojiUnicode.py</url>
@@ -496,6 +509,16 @@
           <line>15</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Service/test.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
+          <line>472</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -504,126 +527,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="124" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ptb/modification">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/init_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5778">
-          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/framework/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132057">
-          <caret line="4925" column="0" lean-forward="false" selection-start-line="4925" selection-start-column="0" selection-end-line="4925" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/array_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-795">
-          <caret line="593" column="4" lean-forward="false" selection-start-line="593" selection-start-column="4" selection-end-line="593" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/training/input.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="238" column="4" lean-forward="false" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translate/seq2seq_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translate/translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translate/data_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-423161853/numpy/core/umath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="1399" column="4" lean-forward="false" selection-start-line="1399" selection-start-column="4" selection-end-line="1399" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/embedding_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="262" column="4" lean-forward="false" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Service/Evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/lib/io/file_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="121" column="30" lean-forward="false" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="748" column="0" lean-forward="false" selection-start-line="748" selection-start-column="0" selection-end-line="748" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/variable_scope.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="1186" column="28" lean-forward="false" selection-start-line="1186" selection-start-column="17" selection-end-line="1186" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-423161853/numpy/core/multiarray.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="560" column="4" lean-forward="false" selection-start-line="560" selection-start-column="4" selection-end-line="560" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="137" column="4" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-423161853/numpy/random/mtrand.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -631,31 +539,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/training/supervisor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7506">
-          <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/training/monitored_session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-211">
           <caret line="949" column="6" lean-forward="false" selection-start-line="949" selection-start-column="6" selection-end-line="949" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/gen_array_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103977">
-          <caret line="3864" column="4" lean-forward="false" selection-start-line="3864" selection-start-column="4" selection-end-line="3864" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56592">
-          <caret line="2126" column="4" lean-forward="false" selection-start-line="2126" selection-start-column="4" selection-end-line="2126" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -681,20 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="38" column="55" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python36/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="307" column="40" lean-forward="true" selection-start-line="307" selection-start-column="40" selection-end-line="307" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python36/Lib/re.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -709,23 +582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-423161853/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12474">
-          <caret line="462" column="4" lean-forward="false" selection-start-line="462" selection-start-column="4" selection-end-line="462" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/logs/preProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="62" column="42" lean-forward="true" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/logs/preProcessing.py" />
     <entry file="file://$PROJECT_DIR$/preProcessing/emojiList.py" />
     <entry file="file://$PROJECT_DIR$/ptb/executeMy.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -763,24 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Service/ReadInfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="254" column="4" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="4" />
-          <folding>
-            <element signature="e#24#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preProcessing/removeStopwords.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -795,9 +634,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,9 +642,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1053">
           <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1539">
           <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,38 +688,223 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Service/ReadInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7209">
+          <caret line="267" column="29" lean-forward="true" selection-start-line="267" selection-start-column="29" selection-end-line="267" selection-end-column="29" />
           <folding>
-            <element signature="e#0#10#0" expanded="false" />
+            <element signature="e#24#61#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Service/test.py">
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/gen_math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        <state relative-caret-position="38988">
+          <caret line="1457" column="4" lean-forward="false" selection-start-line="1457" selection-start-column="4" selection-end-line="1457" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/eager/context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="115" column="6" lean-forward="false" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/variable_scope.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="1186" column="28" lean-forward="false" selection-start-line="1186" selection-start-column="17" selection-end-line="1186" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/array_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="1403" column="4" lean-forward="false" selection-start-line="1403" selection-start-column="4" selection-end-line="1403" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/numpy/random/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2673">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/numpy/core/numeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="149" column="4" lean-forward="false" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="368" column="38" lean-forward="false" selection-start-line="368" selection-start-column="38" selection-end-line="368" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/platform/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/summary/writer/writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-873">
+          <caret line="287" column="6" lean-forward="false" selection-start-line="287" selection-start-column="6" selection-end-line="287" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/core/protobuf/config_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="740" column="0" lean-forward="false" selection-start-line="740" selection-start-column="0" selection-end-line="740" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="2621" column="0" lean-forward="false" selection-start-line="2621" selection-start-column="0" selection-end-line="2621" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="888" column="0" lean-forward="false" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/embedding_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-549">
+          <caret line="262" column="4" lean-forward="false" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="193" column="4" lean-forward="false" selection-start-line="193" selection-start-column="4" selection-end-line="193" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="2280" column="4" lean-forward="false" selection-start-line="2280" selection-start-column="4" selection-end-line="2280" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="312" column="25" lean-forward="true" selection-start-line="312" selection-start-column="25" selection-end-line="312" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="144" column="33" lean-forward="true" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+        <state relative-caret-position="253">
+          <caret line="352" column="0" lean-forward="true" selection-start-line="352" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
           <folding>
             <element signature="e#2368#2406#0" expanded="true" />
-            <element signature="e#8396#9483#0" expanded="false" />
-            <element signature="e#11561#11625#0" expanded="false" />
-            <element signature="e#14572#14838#0" expanded="false" />
-            <element signature="e#14870#15144#0" expanded="false" />
+            <element signature="e#8972#10059#0" expanded="false" />
+            <element signature="e#10826#11037#0" expanded="false" />
+            <element signature="e#15166#15432#0" expanded="false" />
+            <element signature="e#15464#15738#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="89" column="19" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/ops/gen_array_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="5598" column="38" lean-forward="true" selection-start-line="5598" selection-start-column="4" selection-end-line="5598" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-423161853/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="3620" column="8" lean-forward="false" selection-start-line="3620" selection-start-column="8" selection-end-line="3620" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/python/training/supervisor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="590" column="44" lean-forward="false" selection-start-line="590" selection-start-column="44" selection-end-line="590" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Service/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/emoji_att.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="560" column="20" lean-forward="true" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
+          <folding>
+            <element signature="e#2368#2406#0" expanded="true" />
+            <element signature="e#9858#10221#0" expanded="false" />
+            <element signature="e#13470#13534#0" expanded="false" />
+            <element signature="e#13570#14221#0" expanded="false" />
+            <element signature="e#16550#16816#0" expanded="false" />
+            <element signature="e#16848#17122#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding />
         </state>
       </provider>
