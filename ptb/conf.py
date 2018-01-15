@@ -1,8 +1,8 @@
 import os
-# # 服务器
+# 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-save_path = src_path + "/Res/w2v_1w_400d_prePro"#"rand_1w_400d_att_prePro"
+save_path = src_path + "/Res/rand_1w_400d_prePro/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -36,7 +36,7 @@ topK = [1, 3, 5]
 
 unkProportion = 0.8
 fold = 10
-isRandomIni = False#True#是否随机初始化
+isRandomIni = True#False#是否随机初始化
 
 
 #word2vec
