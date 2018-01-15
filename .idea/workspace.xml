@@ -2,55 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513151610.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513152323.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1513152720.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/embedding_1w_200d.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/embedding_2w_200d.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mylogs/random_2w_200d.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000506.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000575.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000780.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513000835.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001191.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001342.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001387.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001433.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001477.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001523.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001569.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001614.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001652.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001702.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001754.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001805.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001857.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513001909.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513152095.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513152185.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513251734.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513598216.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513599171.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513599644.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513601735.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1513602195.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514268776.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514268910.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514272270.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514272321.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274032.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274208.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274555.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514274923.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514278543.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/events.out.tfevents.1514278604.GRACE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ptb/logs/preProcessing.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/ReadInfo.py" afterPath="$PROJECT_DIR$/Service/ReadInfo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/emoji_att.py" afterPath="$PROJECT_DIR$/ptb/emoji_att.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/ptb_word_lm.py" afterPath="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/reader.py" afterPath="$PROJECT_DIR$/ptb/reader.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="emoji_att.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="emoji_att.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/emoji_att.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="560" column="20" lean-forward="true" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
+            <state relative-caret-position="413">
+              <caret line="510" column="19" lean-forward="false" selection-start-line="510" selection-start-column="19" selection-end-line="510" selection-end-column="19" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
                 <element signature="e#9858#10221#0" expanded="false" />
@@ -76,6 +30,22 @@
                 <element signature="e#13570#14221#0" expanded="false" />
                 <element signature="e#16550#16816#0" expanded="false" />
                 <element signature="e#16848#17122#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="481" column="21" lean-forward="true" selection-start-line="481" selection-start-column="21" selection-end-line="481" selection-end-column="21" />
+              <folding>
+                <element signature="e#2368#2406#0" expanded="true" />
+                <element signature="e#8972#10059#0" expanded="false" />
+                <element signature="e#10826#11037#0" expanded="false" />
+                <element signature="e#15166#15432#0" expanded="false" />
+                <element signature="e#15464#15738#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="243">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,14 +156,14 @@
         <option value="$PROJECT_DIR$/preProcessing/lowerCha.py" />
         <option value="$PROJECT_DIR$/Service/ReadInfo.py" />
         <option value="$PROJECT_DIR$/ptb/reader.py" />
-        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
         <option value="$PROJECT_DIR$/Service/test.py" />
-        <option value="$PROJECT_DIR$/ptb/emoji_att.py" />
         <option value="$PROJECT_DIR$/ptb/conf.py" />
+        <option value="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
+        <option value="$PROJECT_DIR$/ptb/emoji_att.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="867" />
     <option name="y" value="187" />
     <option name="width" value="1426" />
@@ -411,7 +381,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09808102" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
@@ -527,7 +497,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="124" />
+      <option name="time" value="125" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -831,20 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="352" column="0" lean-forward="true" selection-start-line="352" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
-          <folding>
-            <element signature="e#2368#2406#0" expanded="true" />
-            <element signature="e#8972#10059#0" expanded="false" />
-            <element signature="e#10826#11037#0" expanded="false" />
-            <element signature="e#15166#15432#0" expanded="false" />
-            <element signature="e#15464#15738#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2079">
@@ -886,10 +842,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="481" column="21" lean-forward="true" selection-start-line="481" selection-start-column="21" selection-end-line="481" selection-end-column="21" />
+          <folding>
+            <element signature="e#2368#2406#0" expanded="true" />
+            <element signature="e#8972#10059#0" expanded="false" />
+            <element signature="e#10826#11037#0" expanded="false" />
+            <element signature="e#15166#15432#0" expanded="false" />
+            <element signature="e#15464#15738#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ptb/emoji_att.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="560" column="20" lean-forward="true" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
+        <state relative-caret-position="413">
+          <caret line="510" column="19" lean-forward="false" selection-start-line="510" selection-start-column="19" selection-end-line="510" selection-end-column="19" />
           <folding>
             <element signature="e#2368#2406#0" expanded="true" />
             <element signature="e#9858#10221#0" expanded="false" />
@@ -898,14 +876,6 @@
             <element signature="e#16550#16816#0" expanded="false" />
             <element signature="e#16848#17122#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
