@@ -20,7 +20,7 @@ emb_path = os.path.join(src_path, 'w2v_400d.txt')  #src_path + "\glove.twitter.2
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
 
 model = "small"
-rnn_mode = "BASIC"
+rnn_mode = "basic"
 vocab_size = 10000
 init_scale = 0.1
 learning_rate = 1.0
