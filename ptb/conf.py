@@ -1,8 +1,8 @@
+import os
 # 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-save_path = src_path + "/Res/rand_1w_400d_att_prePro"#"/Res/emb_1w_200d_prePro"
-emb_path = src_path + "/glove.twitter.27B/glove.twitter.27B.200d.txt"
+save_path = src_path + "/Res/rand_1w_400d_prePro/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -12,14 +12,15 @@ hidden_size = 400#400#20#需要修改
 # src_path = "E:\Data\EmojiPrediction"
 # data_path = src_path + "\Fold_head\/0"
 # save_path = src_path + "\Res\Fold_head_att\/0"
-# emb_path = src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
 # num_GPU = 0
-# max_max_epoch = 13#13#55#需要修改
+# max_max_epoch = 1#13#55#需要修改
 # hidden_size = 25#400#20#需要修改
 
+emb_path = os.path.join(src_path, 'w2v_400d.txt')  #src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
+emb_model_savePath = os.path.join(src_path, 'w2v_400d')
 
 model = "small"
-rnn_mode = "BASIC"
+rnn_mode = "basic"
 vocab_size = 10000
 init_scale = 0.1
 learning_rate = 1.0
@@ -35,7 +36,25 @@ topK = [1, 3, 5]
 
 unkProportion = 0.8
 fold = 10
-isRandomIni = True#是否随机初始化
+isRandomIni = True#False#是否随机初始化
+
+
+#word2vec
+embedding_size = 400
+learning_rate = 0.2
+num_neg_samples = 100
+batch_size = 16
+concurrent_steps = 12
+window_size = 5
+min_count = 0
+subsample = 1e-3
+interactive = False
+statistics_interval = 5
+summary_interval = 5
+checkpoint_interval = 600
+workers = 4
+
+
 
 english_stopwords = ["i","me","my","myself","we","our","ours","ourselves","you","you're","you've","you'll","you'd","your","yours","yourself","yourselves","he","him","his","himself","she","she's","her","hers","herself","it","it's","its","itself","they","them","their","theirs","themselves","what","which","who","whom","this","that","that'll","these","those","am","is","are","was","were","be","been","being","have","has","had","having","do","does","did","doing","a","an","the","and","but","if","or","because","as","until","while","of","at","by","for","with","about","against","between","into","through","during","before","after","above","below","to","from","up","down","in","out","on","off","over","under","again","further","then","once","here","there","when","where","why","how","all","any","both","each","few","more","most","other","some","such","no","nor","not","only","own","same","so","than","too","very","s","t","can","will","just","don","don't","should","should've","now","d","ll","m","o","re","ve","y","ain","aren","aren't","couldn","couldn't","didn","didn't","doesn","doesn't","hadn","hadn't","hasn","hasn't","haven","haven't","isn","isn't","ma","mightn","mightn't","mustn","mustn't","needn","needn't","shan","shan't","shouldn","shouldn't","wasn","wasn't","weren","weren't","won","won't","wouldn","wouldn't"]
 

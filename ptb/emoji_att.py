@@ -272,40 +272,41 @@ class PTBModel(object):
         for i in range(conf.num_steps):   #第一次初始化outputs
             outputs_his.append(output)
 
-    with tf.name_scope('attention'):
-        word_attention = tf.Variable(
-            tf.random_normal([conf.hidden_size, conf.num_steps], mean=0.0,
-                             stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
-            name="word_attention", dtype=tf.float32)  # 25 * 10
-        v_context = tf.Variable(
-            tf.random_normal([conf.num_steps], mean=0.0,
-                             stddev=np.sqrt(2. / (conf.hidden_size + 1))),
-            name="v_context", dtype=tf.float32)  # 10 * 1
-
     outputs = []
     outputs_att = []
     with tf.variable_scope("RNN"):
-      for time_step in range(self.num_steps):
-        if time_step > 0:tf.get_variable_scope().reuse_variables()
-        (cell_output, state) = cell(inputs[:, time_step, :], state)
-        outputs.append(cell_output)
-        outputs_his.append(cell_output)
-        outputs_his.pop(0)
-        self._outputs = outputs_his
+        with tf.name_scope('attention'):
+            word_attention = tf.Variable(
+                tf.random_normal([conf.hidden_size, conf.num_steps], mean=0.0,
+                                 stddev=np.sqrt(2. / (conf.hidden_size + conf.hidden_size))),
+                name="word_attention", dtype=tf.float32)  # 25 * 10
+            v_context = tf.Variable(
+                tf.random_normal([conf.num_steps], mean=0.0,
+                                 stddev=np.sqrt(2. / (conf.hidden_size + 1))),
+                name="v_context", dtype=tf.float32)  # 10 * 1
+        for time_step in range(self.num_steps):
+            if time_step > 0: tf.get_variable_scope().reuse_variables()
+            (cell_output, state) = cell(inputs[:, time_step, :], state)
+            outputs.append(cell_output)
+            outputs_his.append(cell_output)
+            outputs_his.pop(0)
+            self._outputs = outputs_his
 
-        output_his = tf.reshape(tf.concat(outputs_his, 1), [-1, config.hidden_size])   #200 * 25
-        # attention
-        user_word = tf.tanh(
-            tf.matmul(tf.reshape(output_his, [-1, conf.hidden_size], name='output_reshape'), word_attention),
-            name='user_word')  # tanh(200 * 10)
-        user_attscore = tf.matmul(user_word, tf.reshape(v_context, [-1, 1], name='v_context_reshape'))  # 200 * 1
-        exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])  # 20 * 10
-        alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1], name='sum_exps_reshape')  # 200 * 1
-        alphas = tf.tile(tf.reshape(alphas, [-1, 1], name='alphas_reshape'), [1, conf.hidden_size], name='alphas_tile')  # repeat 200 * 25
-        output_att = tf.reduce_sum(tf.reshape(output_his, [-1, conf.num_steps, 1], name='output_his_reshape') *
-                               tf.reshape(alphas, [-1, conf.num_steps, 1], name='alphas1_reshape'), 1, name='output_att')   #20 * 25
+            output_his = tf.reshape(tf.concat(outputs_his, 1), [-1, config.hidden_size])  # 200 * 25
+            # attention
+            user_word = tf.tanh(
+                tf.matmul(tf.reshape(output_his, [-1, conf.hidden_size], name='output_reshape'), word_attention),
+                name='user_word')  # tanh(200 * 10)
+            user_attscore = tf.matmul(user_word, tf.reshape(v_context, [-1, 1], name='v_context_reshape'))  # 200 * 1
+            exps = tf.reshape(tf.exp(user_attscore), [-1, conf.num_steps])  # 20 * 10
+            alphas = exps / tf.reshape(tf.reduce_sum(exps, 1), [-1, 1], name='sum_exps_reshape')  # 200 * 1
+            alphas = tf.tile(tf.reshape(alphas, [-1, 1], name='alphas_reshape'), [1, conf.hidden_size],
+                             name='alphas_tile')  # repeat 200 * 25
+            output_att = tf.reduce_sum(tf.reshape(output_his, [-1, conf.num_steps, 1], name='output_his_reshape') *
+                                       tf.reshape(alphas, [-1, conf.num_steps, 1], name='alphas1_reshape'), 1,
+                                       name='output_att')  # 20 * 25
 
-        outputs_att.append(output_att)
+            outputs_att.append(output_att)
 
     output = tf.reshape(tf.concat(outputs, 1), [-1, config.hidden_size])
     outputs_att = tf.reshape(tf.concat(outputs_att, 1), [-1, config.hidden_size], name='outputs_att_reshape')  #加了att之后的output
@@ -551,6 +552,7 @@ def main(_):
     train_data, valid_data, test_data, _, dict_emb = raw_data
 
     config = get_config()
+    # FLAGS.save_path = conf.src_path + "/Res/w2v_1w_400d_att_prePro"
     eval_config = get_config()
     eval_config.batch_size = 1
     # eval_config.num_steps = 1

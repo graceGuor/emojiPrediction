@@ -479,7 +479,6 @@ def run_epoch(session, model, eval_op=None, verbose=False):
              iters * model.input.batch_size * max(1, FLAGS.num_gpus) /
              (time.time() - start_time),
              cost))
-      # session.run()
   acc_global = [format(rightCountTopK_global[i] / allCount_global, '.4f') for i in range(len(rightCountTopK))]
   return np.exp(costs / iters), rightCountTopK_global, allCount_global, acc_global
 
