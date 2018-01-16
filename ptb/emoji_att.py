@@ -552,7 +552,7 @@ def main(_):
     train_data, valid_data, test_data, _, dict_emb = raw_data
 
     config = get_config()
-    FLAGS.save_path = conf.src_path + "/Res/w2v_1w_400d_att_prePro"
+    # FLAGS.save_path = conf.src_path + "/Res/w2v_1w_400d_att_prePro"
     eval_config = get_config()
     eval_config.batch_size = 1
     # eval_config.num_steps = 1

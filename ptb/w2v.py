@@ -14,8 +14,7 @@ model = word2vec.Word2Vec(sentences,
                           min_count=conf.min_count,
                           size=conf.embedding_size)
 embs = []
-# print(model['first'])
-model.save(conf.emb_model_savePath)
+# model.save(conf.emb_model_savePath)
 # new_model = gensim.models.Word2Vec.load(conf.emb_model_savePath)
 # print('new model')
 # print(new_model['first'])

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executeMy.sh" afterPath="$PROJECT_DIR$/executeMy.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/emoji_att.py" afterPath="$PROJECT_DIR$/ptb/emoji_att.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/ptb_word_lm.py" afterPath="$PROJECT_DIR$/ptb/ptb_word_lm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,24 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="emoji_att.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptb/emoji_att.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="556" column="30" lean-forward="true" selection-start-line="556" selection-start-column="30" selection-end-line="556" selection-end-column="30" />
-              <folding>
-                <element signature="e#2368#2406#0" expanded="true" />
-                <element signature="e#9858#10221#0" expanded="false" />
-                <element signature="e#11360#11869#0" expanded="false" />
-                <element signature="e#13652#13716#0" expanded="false" />
-                <element signature="e#13752#14403#0" expanded="false" />
-                <element signature="e#16732#16998#0" expanded="false" />
-                <element signature="e#17030#17304#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/reader.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,8 +29,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ptb/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="32" />
+            <state relative-caret-position="324">
+              <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -62,27 +39,23 @@
       <file leaf-file-name="ptb_word_lm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="461" column="13" lean-forward="true" selection-start-line="461" selection-start-column="13" selection-end-line="461" selection-end-column="13" />
+            <state relative-caret-position="657">
+              <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
               <folding>
                 <element signature="e#2368#2406#0" expanded="true" />
                 <element signature="e#8972#10059#0" expanded="false" />
-                <element signature="e#10826#11037#0" expanded="false" />
                 <element signature="e#15166#15432#0" expanded="false" />
-                <element signature="e#15464#15738#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="w2v.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptb/w2v.py">
+      <file leaf-file-name="cudnn_rnn_ops.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-248">
-              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="174">
+              <caret line="1282" column="6" lean-forward="false" selection-start-line="1282" selection-start-column="6" selection-end-line="1282" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getMaxLexOfSeq</find>
       <find>def init</find>
       <find>acc</find>
       <find>reader</find>
@@ -138,8 +110,9 @@
       <find>summary</find>
       <find>tf.round</find>
       <find>_initial_state</find>
-      <find>readlines</find>
       <find>build_rnn_graph</find>
+      <find>readlines</find>
+      <find>BASIC</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,14 +149,14 @@
         <option value="$PROJECT_DIR$/executeMy.sh" />
         <option value="$PROJECT_DIR$/Service/test.py" />
         <option value="$PROJECT_DIR$/ptb/w2v.py" />
-        <option value="$PROJECT_DIR$/ptb/conf.py" />
         <option value="$PROJECT_DIR$/ptb/emoji_att.py" />
+        <option value="$PROJECT_DIR$/ptb/conf.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="147" />
-    <option name="y" value="119" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="690" />
+    <option name="y" value="108" />
     <option name="width" value="1426" />
     <option name="height" value="930" />
   </component>
@@ -270,7 +243,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.emoji_att">
+  <component name="RunManager" selected="Python.ptb_word_lm">
     <configuration name="emoji_att" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -365,9 +338,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.emoji_att" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
-        <item index="2" class="java.lang.String" itemvalue="Python.w2v" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ptb_word_lm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.w2v" />
+        <item index="2" class="java.lang.String" itemvalue="Python.emoji_att" />
         <item index="3" class="java.lang.String" itemvalue="Python.test" />
         <item index="4" class="java.lang.String" itemvalue="Python.preProcess_main" />
       </list>
@@ -404,16 +377,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="147" y="119" width="1426" height="930" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12737921" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14392324" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23612623" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3460283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4665826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17203514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40261152" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12526652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065565035" sideWeight="0.5123239" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38302502" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -514,8 +487,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ptb/w2v.py</url>
-          <line>26</line>
+          <line>25</line>
           <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
+          <line>258</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ptb/ptb_word_lm.py</url>
+          <line>242</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -525,18 +508,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="130" />
+      <option name="time" value="132" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Program Files/python36/Lib/collections/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Service/SaveInfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -825,14 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python36/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -867,24 +835,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+    <entry file="file://$PROJECT_DIR$/ptb/w2v.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="461" column="13" lean-forward="true" selection-start-line="461" selection-start-column="13" selection-end-line="461" selection-end-column="13" />
+        <state relative-caret-position="130">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
-            <element signature="e#2368#2406#0" expanded="true" />
-            <element signature="e#8972#10059#0" expanded="false" />
-            <element signature="e#10826#11037#0" expanded="false" />
-            <element signature="e#15166#15432#0" expanded="false" />
-            <element signature="e#15464#15738#0" expanded="false" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mylogs/rand_1w_400d_prePro.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2785">
-          <caret line="785" column="0" lean-forward="true" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="0" />
+        <state relative-caret-position="-16082">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -905,20 +869,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ptb/w2v.py">
+    <entry file="file://D:/Program Files/python36/Lib/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-248">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="174">
+          <caret line="1282" column="6" lean-forward="false" selection-start-line="1282" selection-start-column="6" selection-end-line="1282" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptb/ptb_word_lm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#2368#2406#0" expanded="true" />
+            <element signature="e#8972#10059#0" expanded="false" />
+            <element signature="e#15166#15432#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ptb/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="324">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding />
         </state>
       </provider>
