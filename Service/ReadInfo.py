@@ -17,6 +17,17 @@ def getMaxLexOfSeq(filename):
     f.close()
     return  maxLenOfSeq
 
+#达到文件中每个句子的长度
+def getLenOfSentences(filename):
+    f = open(filename, 'r', encoding='UTF-8')
+    lens = []
+    for line in f:
+        values = line.split()
+        l = len(values)
+        lens.append(l)
+    f.close()
+    return lens
+
 # 加载id特征向量文件至dict(embeddings_index){word:embedding}
 def loadEmbeddings(feaFile):
     words = []
