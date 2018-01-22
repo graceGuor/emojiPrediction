@@ -31,7 +31,7 @@ max_epoch = 4
 keep_prob = 0.5#1.0
 keep_probs = {0.5}
 lr_decay = 0.5#1 / 1.15#
-batch_size = 32#20
+batch_size = 128#32#20
 topK = [1, 3, 5]
 
 unkProportion = 0.8
