@@ -2,7 +2,7 @@ import os
 # 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-save_path = src_path + "/Res/rand_1w_400d_step25_batchSize32_prePro/0"#"w2v_1w_400d_prePro"
+save_path = src_path + "/Res/rand_1w_400d_step25_batchSize128_prePro/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -31,7 +31,7 @@ max_epoch = 4
 keep_prob = 0.5#1.0
 keep_probs = {0.5}
 lr_decay = 0.5#1 / 1.15#
-batch_size = 32#20
+batch_size = 128#32#20
 topK = [1, 3, 5]
 
 unkProportion = 0.8
