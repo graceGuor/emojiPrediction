@@ -1,0 +1,195 @@
+2018-01-22 20:25:08.665698: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-22 20:25:08.665732: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-22 20:25:08.665740: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-22 20:25:08.665746: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-22 20:25:08.665751: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-22 20:25:17.061375: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID f823:00:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2018-01-22 20:25:17.061419: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-01-22 20:25:17.061428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-01-22 20:25:17.061443: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: f823:00:00.0)
+2018-01-22 20:25:54.592943: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: f823:00:00.0)
+当前的日期和时间是 2018-01-22 20:25:08.665487
+keep_prob:0.5
+word_to_id.len:7206
+maxLenOfSeq:1024      conf.num_steps:25
+TrainInput epoch_size：22885
+ValidInput epoch_size：2861
+TestInput epoch_size：45895
+Epoch: 1 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 2408.170 speed: 2741 wps cost:  170
+step / (model.input.epoch_size // 10): 0.100 perplexity: 117.089 speed: 5767 wps cost:  108
+step / (model.input.epoch_size // 10): 0.200 perplexity: 90.784 speed: 5785 wps cost:  97
+step / (model.input.epoch_size // 10): 0.300 perplexity: 80.058 speed: 5790 wps cost:  104
+step / (model.input.epoch_size // 10): 0.400 perplexity: 73.899 speed: 5790 wps cost:  101
+step / (model.input.epoch_size // 10): 0.500 perplexity: 69.869 speed: 5792 wps cost:  99
+step / (model.input.epoch_size // 10): 0.600 perplexity: 66.900 speed: 5793 wps cost:  97
+step / (model.input.epoch_size // 10): 0.700 perplexity: 64.642 speed: 5794 wps cost:  97
+step / (model.input.epoch_size // 10): 0.800 perplexity: 62.864 speed: 5792 wps cost:  99
+step / (model.input.epoch_size // 10): 0.900 perplexity: 61.465 speed: 5792 wps cost:  98
+Epoch: 1 Train Perplexity: 60.285 train_allCount: 9154000 train_acc: ['0.3546', '0.4880', '0.5281'] rightCountTopK : [3245808, 4466950, 4834453]
+Epoch: 1 Valid Perplexity: 46.751 valid_allCount: 1144400 valid_acc: ['0.3722', '0.5101', '0.5500'] rightCountTopK : [425975, 583813, 629406]
+Epoch: 2 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 48.922 speed: 5438 wps cost:  88
+step / (model.input.epoch_size // 10): 0.100 perplexity: 49.882 speed: 5787 wps cost:  89
+step / (model.input.epoch_size // 10): 0.200 perplexity: 49.530 speed: 5789 wps cost:  94
+step / (model.input.epoch_size // 10): 0.300 perplexity: 49.257 speed: 5790 wps cost:  95
+step / (model.input.epoch_size // 10): 0.400 perplexity: 49.020 speed: 5790 wps cost:  101
+step / (model.input.epoch_size // 10): 0.500 perplexity: 48.855 speed: 5790 wps cost:  102
+step / (model.input.epoch_size // 10): 0.600 perplexity: 48.676 speed: 5789 wps cost:  88
+step / (model.input.epoch_size // 10): 0.700 perplexity: 48.493 speed: 5789 wps cost:  94
+step / (model.input.epoch_size // 10): 0.800 perplexity: 48.321 speed: 5789 wps cost:  85
+step / (model.input.epoch_size // 10): 0.900 perplexity: 48.207 speed: 5789 wps cost:  105
+Epoch: 2 Train Perplexity: 48.073 train_allCount: 9154000 train_acc: ['0.3690', '0.5065', '0.5469'] rightCountTopK : [3377579, 4636458, 5006720]
+Epoch: 2 Valid Perplexity: 43.756 valid_allCount: 1144400 valid_acc: ['0.3777', '0.5152', '0.5564'] rightCountTopK : [432237, 589545, 636759]
+Epoch: 3 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 46.584 speed: 5950 wps cost:  99
+step / (model.input.epoch_size // 10): 0.100 perplexity: 46.741 speed: 5791 wps cost:  88
+step / (model.input.epoch_size // 10): 0.200 perplexity: 46.499 speed: 5789 wps cost:  100
+step / (model.input.epoch_size // 10): 0.300 perplexity: 46.399 speed: 5788 wps cost:  96
+step / (model.input.epoch_size // 10): 0.400 perplexity: 46.343 speed: 5787 wps cost:  93
+step / (model.input.epoch_size // 10): 0.500 perplexity: 46.234 speed: 5788 wps cost:  88
+step / (model.input.epoch_size // 10): 0.600 perplexity: 46.154 speed: 5787 wps cost:  95
+step / (model.input.epoch_size // 10): 0.700 perplexity: 46.078 speed: 5787 wps cost:  99
+step / (model.input.epoch_size // 10): 0.800 perplexity: 45.991 speed: 5787 wps cost:  95
+step / (model.input.epoch_size // 10): 0.900 perplexity: 45.934 speed: 5787 wps cost:  101
+Epoch: 3 Train Perplexity: 45.841 train_allCount: 9154000 train_acc: ['0.3724', '0.5102', '0.5509'] rightCountTopK : [3409060, 4670096, 5042818]
+Epoch: 3 Valid Perplexity: 42.345 valid_allCount: 1144400 valid_acc: ['0.3820', '0.5179', '0.5593'] rightCountTopK : [437153, 592660, 640098]
+Epoch: 4 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 40.116 speed: 5938 wps cost:  89
+step / (model.input.epoch_size // 10): 0.100 perplexity: 45.396 speed: 5789 wps cost:  94
+step / (model.input.epoch_size // 10): 0.200 perplexity: 45.057 speed: 5789 wps cost:  100
+step / (model.input.epoch_size // 10): 0.300 perplexity: 45.031 speed: 5787 wps cost:  96
+step / (model.input.epoch_size // 10): 0.400 perplexity: 44.950 speed: 5786 wps cost:  95
+step / (model.input.epoch_size // 10): 0.500 perplexity: 44.867 speed: 5786 wps cost:  96
+step / (model.input.epoch_size // 10): 0.600 perplexity: 44.845 speed: 5786 wps cost:  95
+step / (model.input.epoch_size // 10): 0.700 perplexity: 44.783 speed: 5786 wps cost:  97
+step / (model.input.epoch_size // 10): 0.800 perplexity: 44.759 speed: 5786 wps cost:  97
+step / (model.input.epoch_size // 10): 0.900 perplexity: 44.718 speed: 5787 wps cost:  99
+Epoch: 4 Train Perplexity: 44.676 train_allCount: 9154000 train_acc: ['0.3743', '0.5121', '0.5530'] rightCountTopK : [3425913, 4687434, 5061933]
+Epoch: 4 Valid Perplexity: 41.615 valid_allCount: 1144400 valid_acc: ['0.3805', '0.5183', '0.5598'] rightCountTopK : [435431, 593197, 640674]
+Epoch: 5 Learning rate: 0.100
+step / (model.input.epoch_size // 10): 0.000 perplexity: 45.045 speed: 5950 wps cost:  96
+step / (model.input.epoch_size // 10): 0.100 perplexity: 43.593 speed: 5792 wps cost:  96
+step / (model.input.epoch_size // 10): 0.200 perplexity: 43.498 speed: 5791 wps cost:  91
+step / (model.input.epoch_size // 10): 0.300 perplexity: 43.517 speed: 5788 wps cost:  92
+step / (model.input.epoch_size // 10): 0.400 perplexity: 43.453 speed: 5788 wps cost:  95
+step / (model.input.epoch_size // 10): 0.500 perplexity: 43.306 speed: 5788 wps cost:  92
+step / (model.input.epoch_size // 10): 0.600 perplexity: 43.251 speed: 5788 wps cost:  83
+step / (model.input.epoch_size // 10): 0.700 perplexity: 43.201 speed: 5787 wps cost:  98
+step / (model.input.epoch_size // 10): 0.800 perplexity: 43.192 speed: 5787 wps cost:  95
+step / (model.input.epoch_size // 10): 0.900 perplexity: 43.163 speed: 5787 wps cost:  101
+Epoch: 5 Train Perplexity: 43.142 train_allCount: 9154000 train_acc: ['0.3780', '0.5151', '0.5561'] rightCountTopK : [3460106, 4715207, 5090666]
+Epoch: 5 Valid Perplexity: 40.741 valid_allCount: 1144400 valid_acc: ['0.3856', '0.5210', '0.5629'] rightCountTopK : [441326, 596180, 644148]
+Epoch: 6 Learning rate: 0.050
+step / (model.input.epoch_size // 10): 0.000 perplexity: 41.754 speed: 5384 wps cost:  81
+step / (model.input.epoch_size // 10): 0.100 perplexity: 42.580 speed: 5788 wps cost:  95
+step / (model.input.epoch_size // 10): 0.200 perplexity: 42.541 speed: 5786 wps cost:  94
+step / (model.input.epoch_size // 10): 0.300 perplexity: 42.508 speed: 5786 wps cost:  92
+step / (model.input.epoch_size // 10): 0.400 perplexity: 42.487 speed: 5483 wps cost:  92
+step / (model.input.epoch_size // 10): 0.500 perplexity: 42.445 speed: 5452 wps cost:  91
+step / (model.input.epoch_size // 10): 0.600 perplexity: 42.387 speed: 5504 wps cost:  84
+step / (model.input.epoch_size // 10): 0.700 perplexity: 42.348 speed: 5541 wps cost:  95
+step / (model.input.epoch_size // 10): 0.800 perplexity: 42.340 speed: 5570 wps cost:  86
+step / (model.input.epoch_size // 10): 0.900 perplexity: 42.312 speed: 5592 wps cost:  90
+Epoch: 6 Train Perplexity: 42.308 train_allCount: 9154000 train_acc: ['0.3800', '0.5168', '0.5581'] rightCountTopK : [3478402, 4731128, 5108430]
+Epoch: 6 Valid Perplexity: 40.303 valid_allCount: 1144400 valid_acc: ['0.3866', '0.5222', '0.5640'] rightCountTopK : [442387, 597584, 645449]
+Epoch: 7 Learning rate: 0.025
+step / (model.input.epoch_size // 10): 0.000 perplexity: 43.004 speed: 5400 wps cost:  88
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.919 speed: 5781 wps cost:  91
+step / (model.input.epoch_size // 10): 0.200 perplexity: 42.033 speed: 5779 wps cost:  89
+step / (model.input.epoch_size // 10): 0.300 perplexity: 42.034 speed: 5779 wps cost:  95
+step / (model.input.epoch_size // 10): 0.400 perplexity: 42.008 speed: 5777 wps cost:  92
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.948 speed: 5777 wps cost:  90
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.927 speed: 5777 wps cost:  95
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.903 speed: 5778 wps cost:  95
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.889 speed: 5777 wps cost:  97
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.826 speed: 5777 wps cost:  94
+Epoch: 7 Train Perplexity: 41.832 train_allCount: 9154000 train_acc: ['0.3813', '0.5179', '0.5591'] rightCountTopK : [3489969, 4740675, 5117939]
+Epoch: 7 Valid Perplexity: 40.033 valid_allCount: 1144400 valid_acc: ['0.3870', '0.5226', '0.5645'] rightCountTopK : [442911, 598097, 645972]
+Epoch: 8 Learning rate: 0.013
+step / (model.input.epoch_size // 10): 0.000 perplexity: 47.065 speed: 5942 wps cost:  94
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.760 speed: 5772 wps cost:  99
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.835 speed: 5779 wps cost:  82
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.780 speed: 5778 wps cost:  84
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.764 speed: 5778 wps cost:  97
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.736 speed: 5777 wps cost:  100
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.718 speed: 5778 wps cost:  92
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.677 speed: 5777 wps cost:  98
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.664 speed: 5778 wps cost:  89
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.622 speed: 5777 wps cost:  92
+Epoch: 8 Train Perplexity: 41.621 train_allCount: 9154000 train_acc: ['0.3819', '0.5182', '0.5596'] rightCountTopK : [3495581, 4743973, 5122167]
+Epoch: 8 Valid Perplexity: 39.908 valid_allCount: 1144400 valid_acc: ['0.3874', '0.5231', '0.5648'] rightCountTopK : [443358, 598597, 646394]
+Epoch: 9 Learning rate: 0.006
+step / (model.input.epoch_size // 10): 0.000 perplexity: 44.567 speed: 5953 wps cost:  90
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.646 speed: 5780 wps cost:  91
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.759 speed: 5776 wps cost:  99
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.736 speed: 5777 wps cost:  100
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.605 speed: 5778 wps cost:  102
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.590 speed: 5777 wps cost:  85
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.525 speed: 5777 wps cost:  96
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.537 speed: 5777 wps cost:  102
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.527 speed: 5777 wps cost:  91
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.508 speed: 5778 wps cost:  98
+Epoch: 9 Train Perplexity: 41.499 train_allCount: 9154000 train_acc: ['0.3822', '0.5186', '0.5599'] rightCountTopK : [3498449, 4747049, 5125382]
+Epoch: 9 Valid Perplexity: 39.893 valid_allCount: 1144400 valid_acc: ['0.3875', '0.5231', '0.5650'] rightCountTopK : [443503, 598658, 646586]
+Epoch: 10 Learning rate: 0.003
+step / (model.input.epoch_size // 10): 0.000 perplexity: 40.964 speed: 5396 wps cost:  97
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.696 speed: 5779 wps cost:  102
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.633 speed: 5776 wps cost:  96
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.634 speed: 5777 wps cost:  105
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.577 speed: 5776 wps cost:  91
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.515 speed: 5776 wps cost:  90
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.491 speed: 5776 wps cost:  96
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.487 speed: 5777 wps cost:  93
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.459 speed: 5777 wps cost:  89
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.471 speed: 5777 wps cost:  95
+Epoch: 10 Train Perplexity: 41.458 train_allCount: 9154000 train_acc: ['0.3823', '0.5186', '0.5599'] rightCountTopK : [3499617, 4747596, 5125337]
+Epoch: 10 Valid Perplexity: 39.935 valid_allCount: 1144400 valid_acc: ['0.3873', '0.5229', '0.5648'] rightCountTopK : [443257, 598461, 646406]
+Epoch: 11 Learning rate: 0.002
+step / (model.input.epoch_size // 10): 0.000 perplexity: 44.039 speed: 5898 wps cost:  91
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.604 speed: 5779 wps cost:  96
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.593 speed: 5780 wps cost:  96
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.587 speed: 5775 wps cost:  92
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.531 speed: 5774 wps cost:  94
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.518 speed: 5774 wps cost:  92
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.474 speed: 5775 wps cost:  86
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.470 speed: 5774 wps cost:  95
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.399 speed: 5775 wps cost:  96
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.416 speed: 5775 wps cost:  88
+Epoch: 11 Train Perplexity: 41.425 train_allCount: 9154000 train_acc: ['0.3826', '0.5187', '0.5602'] rightCountTopK : [3501866, 4748632, 5128099]
+Epoch: 11 Valid Perplexity: 39.881 valid_allCount: 1144400 valid_acc: ['0.3874', '0.5230', '0.5649'] rightCountTopK : [443390, 598540, 646469]
+Epoch: 12 Learning rate: 0.001
+step / (model.input.epoch_size // 10): 0.000 perplexity: 42.779 speed: 5943 wps cost:  87
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.655 speed: 5781 wps cost:  91
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.573 speed: 5780 wps cost:  84
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.538 speed: 5777 wps cost:  93
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.524 speed: 5775 wps cost:  87
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.502 speed: 5776 wps cost:  96
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.450 speed: 5776 wps cost:  96
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.451 speed: 5776 wps cost:  97
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.409 speed: 5775 wps cost:  87
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.409 speed: 5775 wps cost:  86
+Epoch: 12 Train Perplexity: 41.413 train_allCount: 9154000 train_acc: ['0.3825', '0.5187', '0.5601'] rightCountTopK : [3501101, 4748339, 5127258]
+Epoch: 12 Valid Perplexity: 39.862 valid_allCount: 1144400 valid_acc: ['0.3875', '0.5230', '0.5649'] rightCountTopK : [443495, 598497, 646489]
+Epoch: 13 Learning rate: 0.000
+step / (model.input.epoch_size // 10): 0.000 perplexity: 44.464 speed: 5472 wps cost:  98
+step / (model.input.epoch_size // 10): 0.100 perplexity: 41.837 speed: 5776 wps cost:  96
+step / (model.input.epoch_size // 10): 0.200 perplexity: 41.719 speed: 5777 wps cost:  87
+step / (model.input.epoch_size // 10): 0.300 perplexity: 41.534 speed: 5776 wps cost:  91
+step / (model.input.epoch_size // 10): 0.400 perplexity: 41.521 speed: 5775 wps cost:  103
+step / (model.input.epoch_size // 10): 0.500 perplexity: 41.436 speed: 5775 wps cost:  90
+step / (model.input.epoch_size // 10): 0.600 perplexity: 41.440 speed: 5776 wps cost:  93
+step / (model.input.epoch_size // 10): 0.700 perplexity: 41.437 speed: 5777 wps cost:  96
+step / (model.input.epoch_size // 10): 0.800 perplexity: 41.412 speed: 5776 wps cost:  90
+step / (model.input.epoch_size // 10): 0.900 perplexity: 41.405 speed: 5776 wps cost:  105
+Epoch: 13 Train Perplexity: 41.428 train_allCount: 9154000 train_acc: ['0.3823', '0.5187', '0.5600'] rightCountTopK : [3499165, 4748166, 5126380]
+Epoch: 13 Valid Perplexity: 39.876 valid_allCount: 1144400 valid_acc: ['0.3875', '0.5230', '0.5649'] rightCountTopK : [443503, 598577, 646472]
+Test Perplexity: 39.314 test_allCount: 1147375.000 test_acc: ['0.3886', '0.5250', '0.5671'] rightCountTopK : [445870, 602403, 650661]
+Saving model to /home/pubsrv/data/guorui/data/Res/rand_1w_400d_step25_batchSize32_prePro/0.
+Finished!
+当前的日期和时间是 2018-01-23 02:43:11.628762
