@@ -1,20 +1,20 @@
 import os
 # 服务器
-# src_path = "/home/pubsrv/data/guorui/data"
-# data_path = src_path + "/Fold/0"
-# save_path = src_path + "/Res/rand_1w_400d_step25_batchSize128_prePro/0"#"w2v_1w_400d_prePro"
-# num_GPU = 1
-# max_max_epoch = 13#55#需要修改
-# hidden_size = 400#400#20#需要修改
+src_path = "/home/pubsrv/data/guorui/data"
+data_path = src_path + "/Fold/0"
+save_path = src_path + "/Res/rand_1w_400d_step25_batchSize128_prePro/0"#"w2v_1w_400d_prePro"
+num_GPU = 1
+max_max_epoch = 13#55#需要修改
+hidden_size = 400#400#20#需要修改
 
 
 # 本机
-src_path = "E:\Data\EmojiPrediction"
-data_path = src_path + "\Fold_head\/0"
-save_path = src_path + "\Res\Fold_head_att\/0"
-num_GPU = 0
-max_max_epoch = 1#13#55#需要修改
-hidden_size = 25#400#20#需要修改
+# src_path = "E:\Data\EmojiPrediction"
+# data_path = src_path + "\Fold_head\/0"
+# save_path = src_path + "\Res\Fold_head_att\/0"
+# num_GPU = 0
+# max_max_epoch = 1#13#55#需要修改
+# hidden_size = 25#400#20#需要修改
 
 emb_path = os.path.join(src_path, 'w2v_400d.txt')  #src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
