@@ -18,8 +18,8 @@ def delSeqOfSingleWord(srcPath, resPath):
 def delSeqOfSingleWord_main():
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion_lower.txt'
     resPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion_lower_delProportion_singleWord.txt'
-    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion.txt'
-    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion.txt'
+    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord.txt'
     delSeqOfSingleWord(srcPath, resPath)
 
 if __name__ == "__main__":

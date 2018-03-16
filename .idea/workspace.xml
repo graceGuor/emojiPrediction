@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89649c56-d6e8-49c7-a18f-befab1ca5ae6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Service/test.py" afterPath="$PROJECT_DIR$/Service/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/dataDivision.py" afterPath="$PROJECT_DIR$/preProcessing/dataDivision.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/preProcess_main.py" afterPath="$PROJECT_DIR$/preProcessing/preProcess_main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/segFile.py" afterPath="$PROJECT_DIR$/preProcessing/segFile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptb/conf.py" afterPath="$PROJECT_DIR$/ptb/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py" afterPath="$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,20 +85,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delSeqOfSingleWord.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="delSeqOfSingleWord.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
-              <caret line="21" column="133" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="133" />
+              <caret line="21" column="136" lean-forward="true" selection-start-line="21" selection-start-column="136" selection-end-line="21" selection-end-column="136" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataDivision.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dataDivision.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="648">
               <caret line="37" column="136" lean-forward="true" selection-start-line="37" selection-start-column="136" selection-end-line="37" selection-end-column="136" />
               <folding />
             </state>
@@ -216,6 +211,7 @@
         <option value="$PROJECT_DIR$/preProcessing/preProcess.py" />
         <option value="$PROJECT_DIR$/preProcessing/preProcess_main.py" />
         <option value="$PROJECT_DIR$/preProcessing/dataDivision.py" />
+        <option value="$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py" />
       </list>
     </option>
   </component>
@@ -443,8 +439,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.48767605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23612623" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33188248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -945,18 +942,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py">
+    <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="133" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="133" />
+        <state relative-caret-position="648">
+          <caret line="37" column="136" lean-forward="true" selection-start-line="37" selection-start-column="136" selection-end-line="37" selection-end-column="136" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preProcessing/dataDivision.py">
+    <entry file="file://$PROJECT_DIR$/preProcessing/delSeqOfSingleWord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
-          <caret line="37" column="136" lean-forward="true" selection-start-line="37" selection-start-column="136" selection-end-line="37" selection-end-column="136" />
+          <caret line="21" column="136" lean-forward="true" selection-start-line="21" selection-start-column="136" selection-end-line="21" selection-end-column="136" />
           <folding />
         </state>
       </provider>
