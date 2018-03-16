@@ -35,7 +35,7 @@ def dataDivision811(srcPath,resPath, fold):
 def dataDivision811_main():
     srcPath = 'E:\Data\EmojiPrediction\emoji_sample_head_unk_delProportion.txt'
     resPath = 'E:\Data\EmojiPrediction\Fold'
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion.txt'
+    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord.txt'
     resPath = conf.src_path + '/Fold'
     dataDivision811(srcPath, resPath, conf.fold)
 

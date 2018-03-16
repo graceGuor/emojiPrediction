@@ -17,8 +17,10 @@ def segFile(srcPath,resPath,N):
 if __name__ == "__main__":
     # srcPath = conf.src_path + '\\emoji_sample_withBlankbeforePunc.txt'
     # resPath = conf.src_path + '\\emoji_sample_withBlankbeforePunc'
-    srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc.txt'
-    resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc'
+    # srcPath = conf.src_path + '/emoji_sample_withBlankbeforePunc.txt'
+    # resPath = conf.src_path + '/emoji_sample_withBlankbeforePunc'
+    srcPath = conf.src_path + '/emoji_sample.txt'
+    resPath = conf.src_path + '/emoji_sample'
     if not os.path.exists(resPath):
         os.mkdir(resPath)
         print('Successfully created directory', resPath)
