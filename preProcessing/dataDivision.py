@@ -41,4 +41,4 @@ def dataDivision811_main():
 
 if __name__ == "__main__":
     dataDivision811_main()
-    print(sys.argv[0] + 'Finished!')
+    print(sys.argv[0] + ' Finished!')

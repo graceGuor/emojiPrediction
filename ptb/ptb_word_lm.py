@@ -109,6 +109,7 @@ class PTBInput(object):
   """The input data."""
 
   def __init__(self, config, data, name=None):
+    self.top_k = config.top_k
     self.batch_size = batch_size = config.batch_size
     self.num_steps = num_steps = config.num_steps
     self.epoch_size = ((len(data) // batch_size) - 1) // num_steps
@@ -120,13 +121,14 @@ class PTBInput(object):
 class PTBModel(object):
   """The PTB model."""
 
-  def __init__(self, is_training, config, input_,dict_emb):
+  def __init__(self, is_training, config, input_, dict_emb):
     self._is_training = is_training
     self._input = input_
     self._rnn_params = None
     self._cell = None
     self.batch_size = input_.batch_size
     self.num_steps = input_.num_steps
+    self.top_k = input_.top_k
 
     size = config.hidden_size
     vocab_size = config.vocab_size
@@ -160,6 +162,9 @@ class PTBModel(object):
         average_across_timesteps=False,
         average_across_batch=True)
 
+    top_k_logits, top_k_prediction = tf.nn.top_k(logits, self.top_k, name="top_k_prediction")
+    _ = metric(input_.targets, top_k_logits, top_k_prediction)
+
     # rightCount = tf.cast(tf.equal(x=tf.argmax(logits, axis=2, name='logits_argmax'),
     #                               y=tf.cast(input_.targets, tf.int64, name='input_target_cast'), name='rightCount_cal'),
     #                      tf.int32, name='rightCount_cast')
@@ -187,6 +192,8 @@ class PTBModel(object):
     self._cost = tf.reduce_sum(loss, name='cost') #对整个batch求平均
     # print(tf.shape(self._cost))
     self._final_state = state
+    self._top_k_logits = top_k_logits
+    self._top_k_prediction = top_k_prediction
     self._rightCountTopK = [tf.reduce_sum(rightCountTopK0),
                             tf.reduce_sum(rightCountTopK1),
                             tf.reduce_sum(rightCountTopK2)]
@@ -340,6 +347,14 @@ class PTBModel(object):
     return self._cost
 
   @property
+  def top_k_logits(self):
+    return self._top_k_logits
+
+  @property
+  def top_k_prediction(self):
+    return self._top_k_prediction
+
+  @property
   def rightCountTopK(self):
     return self._rightCountTopK
 
@@ -383,6 +398,7 @@ class SmallConfig(object):
   batch_size = conf.batch_size
   vocab_size = conf.vocab_size
   rnn_mode = BASIC
+  top_k = conf.top_k
   # rnn_mode = CUDNN
 
 
@@ -437,6 +453,112 @@ class TestConfig(object):
   rnn_mode = BLOCK
 
 
+# def metric(targets, top_k_logits, top_k_prediction):  # 预测句子
+#
+#   print(sentence, end="")
+#
+#   previous_state, _, _ = self.predict_word_id(session, None, 0)
+#
+#   sentence = p5.sub(" ", sentence)
+#   sentence = sentence.lower()
+#
+#   words = sentence.split()
+#
+#   word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 1 for word in words]
+#
+#   word_num = 0
+#   emoji_num = 0
+#   same_num = 0
+#   diff_num = 0
+#   top1_cover_num = 0
+#   top3_cover_num = 0
+#   top1_emoji = 0
+#   top3_emoji = 0
+#   top1_same_cover = 0
+#   top3_same_cover = 0
+#   top1_diff_cover = 0
+#   top3_diff_cover = 0
+#
+#   for i in range(1, len(word_ids)):
+#     # 输入和目标错开一位，目标为输入的下一个词
+#     input_id = word_ids[i - 1]
+#     input_word = words[i - 1]
+#     goal_id = word_ids[i]
+#     goal_word = words[i]
+#
+#     previous_state, top_k_predictions, probs = self.predict_word_id(session, previous_state, input_id)
+#
+#     top_k_probs = [probs[0][s] for s in top_k_predictions[0]]
+#     top_k_words = [self.id_to_word[s] for s in top_k_predictions[0]]
+#
+#     for t, word_id in enumerate(top_k_predictions[0]):
+#       if word_id < 10:
+#         top_k_probs[t] = 0
+#
+#     top_k_probs, top_k_words = (list(t) for t in zip(*sorted(zip(top_k_probs, top_k_words), reverse=True)))
+#
+#     top_k_words = top_k_words[0:3]  # 只取前3个
+#
+#     top1_cover = False
+#     top3_cover = False
+#
+#     # 不是连续的emoji，输入是Word，目标是word
+#     if (input_id >= 808 or input_id == 1) and (goal_id >= 808 or goal_id == 1):
+#       word_num += 1  # 预测为word个数
+#       for j in range(len(top_k_words)):
+#         if top_k_words[j] == goal_word:
+#           if j + 1 <= 1:
+#             top1_cover_num += 1
+#             top1_cover = True
+#           if j + 1 <= 3:
+#             top3_cover_num += 1
+#             top3_cover = True
+#
+#     # 不是连续的emoji，输入是Word或者其他符号，目标是emoji
+#     if 10 < goal_id < 808 and (input_id <= 10 or input_id >= 808):
+#       emoji_num += 1  # 预测为emoji的个数
+#       for j in range(len(top_k_words)):
+#         if top_k_words[j] == goal_word:
+#           if j + 1 <= 1:
+#             top1_emoji += 1
+#             top1_cover = True
+#           if j + 1 <= 3:
+#             top3_emoji += 1
+#             top3_cover = True
+#
+#     # 连续的emoji，输入和目标都是emoji
+#     if 10 < goal_id < 808 and 10 < input_id < 808:
+#       if input_id == goal_id:  # 连续emoji且相同
+#         same_num += 1
+#         for j in range(len(top_k_words)):
+#           if top_k_words[j] == goal_word:
+#             if j + 1 <= 1:
+#               top1_same_cover += 1
+#               top1_cover = True
+#             if j + 1 <= 3:
+#               top3_same_cover += 1
+#               top3_cover = True
+#
+#       if input_id != goal_id:  # 连续emoji且不同
+#         diff_num += 1
+#         for j in range(len(top_k_words)):
+#           if top_k_words[j] == goal_word:
+#             if j + 1 <= 1:
+#               top1_diff_cover += 1
+#               top1_cover = True
+#             if j + 1 <= 3:
+#               top3_diff_cover += 1
+#               top3_cover = True
+#
+#     result = ", ".join(["'" + word + "'" for word in top_k_words])
+#     print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
+#       input_word, goal_word, result, top1_cover, top3_cover))
+#
+#   print()
+#
+#   return word_num, top1_cover_num, top3_cover_num, emoji_num, top1_emoji, top3_emoji, same_num, top1_same_cover, top3_same_cover, diff_num, top1_diff_cover, top3_diff_cover
+
+
 def run_epoch(session, model, eval_op=None, verbose=False):
   """Runs the model on the given data."""
   start_time = time.time()
@@ -451,6 +573,9 @@ def run_epoch(session, model, eval_op=None, verbose=False):
       "final_state": model.final_state,
       "rightCountTopK": model.rightCountTopK,
       "allCount": model.allCount,
+      "top_k_logits": model.top_k_logits,
+      "top_k_prediction": model.top_k_prediction,
+      "input_targets": model.input.targets
   }
   if eval_op is not None:
     fetches["eval_op"] = eval_op
@@ -466,6 +591,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     state = vals["final_state"]
     rightCountTopK = vals["rightCountTopK"]
     allCount = vals["allCount"]
+    top_k_prediction = vals["top_k_prediction"]
+    top_k_logits = vals["top_k_logits"]
+
+    # word_num, top1_cover_num, top3_cover_num, emoji_num, top1_emoji, top3_emoji, same_num, top1_same_cover, top3_same_cover, diff_num, top1_diff_cover, top3_diff_cover = metric(input.targets, top_k_logits, top_k_prediction)
+
 
     costs += cost
     iters += model.input.num_steps

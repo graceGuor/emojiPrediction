@@ -24,6 +24,7 @@ import os
 import sys
 
 import Service.ReadInfo as RI
+import Service.SaveInfo as SI
 import ptb.conf as conf
 
 import tensorflow as tf
@@ -43,10 +44,14 @@ def _read_words(filename):
 def _build_vocab(filename):
   data = _read_words(filename)
 
-  counter = collections.Counter(data)
-  count_pairs = sorted(counter.items(),reverse=True, key=lambda x: (-x[1], x[0]))
+  counter = collections.Counter(data)#只按照次数降序排序，次数相同时不排序
+  # print(counter)
+  count_pairs = sorted(counter.items(), reverse=True, key=lambda x: (x[0], x[1]))#按照emoji，word，符号排序
+  # count_pairs = sorted(counter.items(), reverse=True, key=lambda x: (x[1], x[0]))  # 按照次数降序排序，次数相同时按照Word排序
+  # print(count_pairs)
+  # print(len(count_pairs))
 
-  words, _ = list(zip(*count_pairs))
+  words, _ = list(zip(*count_pairs))#所有词，已经进行了预处理，总共只有10000个词
   # words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
   word_to_id = dict(zip(words, range(len(words))))
 
@@ -82,12 +87,8 @@ def ptb_raw_data(data_path=None):
   test_path = os.path.join(data_path, "test.txt")
 
   word_to_id = _build_vocab(train_path)
-  # pdb.set_trace()
-  if not conf.isRandomIni:
-    embedding = RI.loadEmbeddings(conf.emb_path)
-    dict_emb = RI.getDictEmb(word_to_id, embedding)
-  else:
-    dict_emb = None
+  f_res = open(os.path.join(conf.src_path, "word_to_id.txt"), 'w', encoding='utf-8')
+  f_res.write(str(word_to_id))
 
   print("word_to_id.len:" + str(len(word_to_id)))
   maxLenOfSeq = RI.getMaxLexOfSeq(train_path)
@@ -96,8 +97,11 @@ def ptb_raw_data(data_path=None):
   train_data = _file_to_word_ids(train_path, word_to_id)
   valid_data = _file_to_word_ids(valid_path, word_to_id)
   test_data = _file_to_word_ids(test_path, word_to_id)
+  # print(train_data)
+  # print(valid_data)
+  # print(test_data)
   vocabulary = len(word_to_id)
-  return train_data, valid_data, test_data, vocabulary,dict_emb
+  return train_data, valid_data, test_data, vocabulary, word_to_id
 
 
 def ptb_producer(raw_data, batch_size, num_steps, name=None):

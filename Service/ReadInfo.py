@@ -2,8 +2,10 @@
 from __future__ import print_function
 import numpy as np
 import random
+import ptb.conf as conf
 from sklearn import preprocessing
 import pdb
+import csv
 
 #得到文件中句子的最大长度
 def getMaxLexOfSeq(filename):
@@ -28,6 +30,28 @@ def getLenOfSentences(filename):
     f.close()
     return lens
 
+# 加载csv向量文件至dict{word(第一个词):embedding（除第一个词外）}
+# 将“×”表示为1
+def loadDict_csv(feaFile):
+    words = []
+    feaVec = []
+    lines = csv.reader(open(feaFile, 'r', encoding='utf8'))
+    for line in lines:
+        line = str(line).replace("'", "").replace('[', '').replace(']', '')
+        values = line.split(',')
+        words.append(values[0])
+        # coefs = np.asarray(values[1:])
+        coefs = values[1:]
+        feas = []
+        for item in coefs:
+            if 'X' in item:
+                item = 1
+            else:
+                item = 0
+            feas.append(item)
+        feaVec.append(feas)
+    return dict(zip(words, feaVec))
+
 # 加载id特征向量文件至dict(embeddings_index){word:embedding}
 def loadEmbeddings(feaFile):
     words = []
@@ -40,7 +64,7 @@ def loadEmbeddings(feaFile):
         # coefs = np.asarray(values[:], dtype='float32')
         feaVec.append(coefs)
     f.close()
-    return dict(zip(words,feaVec))
+    return dict(zip(words, feaVec))
     # return np.array(words),np.array(feaVec)
 
 
@@ -262,13 +286,16 @@ def fromPtoR(pre_pro):
         pre_cla.append(pre_cla_one)
     return np.array(pre_cla)
 
-#将在word_to_id中的词的embedding取出来
-def getDictEmb(word_to_id,embedding):
+#将embedding按照word_to_id中的顺序排列，如果该词没有embedding，则随机产生该词对应的embedding
+def getDictEmb_rand(word_to_id,embedding):
     ids = []
     embs = []
     count = 0
     for (k, v) in embedding.items():
         l = len(v)
+        # print(v)
+        typeOfEmb = type(v[0])
+        # print("typeOfEmb:" + str(typeOfEmb))
         print("embedding size:" + str(l))
         break
     for (word, id) in word_to_id.items():
@@ -278,14 +305,45 @@ def getDictEmb(word_to_id,embedding):
         else:
             count = count + 1
             # print(word)
-            embs.append(np.random.randn(l))
+            rand = np.random.randn(l)#维度要与embedding一致
+            # print(rand)
+            embs.append(rand)
     print("随机初始化的词：" + str(count))
-    # print(len(ids))
     # print(len(embs))
-    ids = np.reshape(ids, [len(ids), 1])
-    dict_id_emb = np.concatenate([ids, embs], axis=1)
+    # print(type(embs))
+    # print(len(ids))
+    # ids = np.reshape(ids, [len(ids), 1])
+    dict_id_emb = np.concatenate([embs], axis=1)#不进行拼接，直接返回embeddings
     res = []
     for f in dict_id_emb:
         res.append([float(i) for i in f])
-    # pdb.set_trace()
+    return res
+
+
+
+#将embedding按照word_to_id中的顺序排列，如果该词没有embedding，则该词对应的embedding均置为0
+def getDictEmb_0(word_to_id,embedding):
+    ids = []
+    embs = []
+    count = 0
+    for (k, v) in embedding.items():
+        l = len(v)
+        typeOfEmb = type(v[0])
+        # print("typeOfEmb:" + str(typeOfEmb))
+        print("embedding size:" + str(l))
+        break
+    for (word, id) in word_to_id.items():
+        ids.append(id)
+        if word in embedding:
+            embs.append(embedding[word])
+        else:
+            count = count + 1
+            # print(word)
+            zeros = np.zeros([l], dtype=typeOfEmb)#维度与embedding一致
+            embs.append(zeros)
+    print("liwc 类别中没有的词：" + str(count))
+    dict_id_emb = np.concatenate([embs], axis=1)#不进行拼接，直接返回embeddings
+    res = []
+    for f in dict_id_emb:
+        res.append([float(i) for i in f])
     return res

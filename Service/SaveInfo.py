@@ -3,15 +3,9 @@ from __future__ import print_function
 from sklearn.metrics import f1_score
 import os
 import numpy as np
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils.np_utils import to_categorical
 import sys
-from keras import backend as K
 import tensorflow as tf
-from keras.objectives import categorical_crossentropy
 
-from keras.metrics import categorical_accuracy as accuracy
 import time
 import glob
 

@@ -18,6 +18,8 @@ hidden_size = 400#400#20#需要修改
 
 emb_path = os.path.join(src_path, 'w2v_400d.txt')  #src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
+liwcCategory_path = os.path.join(src_path, 'LIWC2015 Results (emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord).csv')
+liwcCount_path = os.path.join(src_path, 'LIWC2015 Results (emoji_sample)Word category_fea.txt')
 
 model = "small"
 rnn_mode = "basic"
@@ -32,12 +34,15 @@ keep_prob = 0.5#1.0
 keep_probs = {0.5}
 lr_decay = 0.5#1 / 1.15#
 batch_size = 128#32#20
+top_k = 5
 topK = [1, 3, 5]
 
 unkProportion = 0.8
 fold = 10
 isRandomIni = True#False#是否随机初始化
-
+isLiwcCategory = True#False#是否与liwc每个词的类别进行拼接
+isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
+isEmojiCoOccur = False#True#是否与emoji共现次数特征进行拼接
 
 #word2vec
 embedding_size = 400
