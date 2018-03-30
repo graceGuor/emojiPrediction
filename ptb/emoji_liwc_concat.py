@@ -154,8 +154,13 @@ class PTBModel(object):
                 # print(dict_liwc_category[216])
                 # ndarr = np.array(dict_liwc_category)
                 # print(ndarr.shape)
+            else:
+                dict_liwc_category = None
 
-            embedding_concat = tf.concat([embedding, dict_liwc_category], 1)
+            if dict_liwc_category is None:
+                embedding_concat = tf.concat([embedding], 1)
+            else:
+                embedding_concat = tf.concat([embedding, dict_liwc_category], 1)
             print(embedding_concat.get_shape())
 
             inputs = tf.nn.embedding_lookup(embedding_concat, input_.input_data)
