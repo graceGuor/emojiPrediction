@@ -492,12 +492,16 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
   diff_num = 0#预测为连续emoji，且为不同emoji个数
   top1_cover_num = 0#预测为word且top 1正确的个数
   top3_cover_num = 0#预测为word且top 3正确的个数
+  top5_cover_num = 0  # 预测为word且top 5正确的个数
   top1_emoji = 0#预测为emoji且top 1正确的个数
   top3_emoji = 0#预测为emoji且top 3正确的个数
+  top5_emoji = 0  # 预测为emoji且top 5正确的个数
   top1_same_cover = 0#预测为连续emoji，且为相同emoji,top 1正确个数
   top3_same_cover = 0#预测为连续emoji，且为相同emoji,top 3正确个数
+  top5_same_cover = 0  # 预测为连续emoji，且为相同emoji,top 5正确个数
   top1_diff_cover = 0#预测为连续emoji，且为不同emoji,top 1正确个数
   top3_diff_cover = 0#预测为连续emoji，且为不同emoji,top 3正确个数
+  top5_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 5正确个数
 
   # input_data, targets为numpy.ndarray
   shape = input_data.shape
@@ -514,6 +518,7 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
 
         top1_cover = False
         top3_cover = False
+        top5_cover = False
 
         # if input_id == 2:#当输入是<eos>时不做预测
         #     continue
@@ -529,6 +534,9 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
               if j + 1 <= 3:
                 top3_cover_num += 1
                 top3_cover = True
+              if j + 1 <= 5:
+                top5_cover_num += 1
+                top5_cover = True
 
         # 不是连续的emoji，输入不是emoji，目标是emoji
         if (goal_id < 42) and (input_id >= 42):
@@ -541,6 +549,9 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
               if j + 1 <= 3:
                 top3_emoji += 1
                 top3_cover = True
+              if j + 1 <= 5:
+                top5_emoji += 1
+                top5_cover = True
 
         # 连续的emoji，输入和目标都是emoji
         if goal_id < 42 and input_id < 42:
@@ -554,6 +565,9 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
                 if j + 1 <= 3:
                   top3_same_cover += 1
                   top3_cover = True
+                if j + 1 <= 5:
+                  top5_same_cover += 1
+                  top5_cover = True
 
           if input_id != goal_id:  # 连续emoji且不同
             diff_num += 1
@@ -565,6 +579,9 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
                 if j + 1 <= 3:
                   top3_diff_cover += 1
                   top3_cover = True
+                if j + 1 <= 5:
+                  top5_diff_cover += 1
+                  top5_cover = True
 
         # result = ", ".join(["'" + word + "'" for word in top_k_words])
         # print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
