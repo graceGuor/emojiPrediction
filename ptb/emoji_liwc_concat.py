@@ -134,11 +134,11 @@ class PTBModel(object):
 
             #词向量
             if conf.isRandomIni:
-                print("随机初始化")
+                # print("随机初始化")
                 embedding = tf.get_variable(
-                    "embedding", [vocab_size, size], dtype=data_type())
+                    "embedding", [len(word_to_id), size], dtype=data_type())
             else:
-                print("使用word2vec词向量初始化")
+                # print("使用word2vec词向量初始化")
                 emb = RI.loadEmbeddings(conf.emb_path)
                 dict_emb = RI.getDictEmb_rand(word_to_id, emb)
                 embedding = tf.get_variable(
@@ -147,7 +147,7 @@ class PTBModel(object):
 
 
             if conf.isLiwcCategory:
-                print("拼接liwc每个词类别")
+                # print("拼接liwc每个词类别")
                 liwc_category = RI.loadDict_csv(conf.liwcCategory_path)
                 dict_liwc_category = RI.getDictEmb_0(word_to_id, liwc_category)
                 # print(type(dict_liwc_category))
@@ -164,7 +164,7 @@ class PTBModel(object):
             print(embedding_concat.get_shape())
 
             inputs = tf.nn.embedding_lookup(embedding_concat, input_.input_data)
-            print(input_.input_data.get_shape())
+            # print(input_.input_data.get_shape())
 
         if is_training and config.keep_prob < 1:
             inputs = tf.nn.dropout(inputs, config.keep_prob)
@@ -188,8 +188,8 @@ class PTBModel(object):
 
         top_k_logits, top_k_prediction = tf.nn.top_k(logits, self.top_k, name="top_k_prediction")
 
-        print("shape:")
-        print(input_.targets.get_shape(), top_k_logits.get_shape(), top_k_prediction.get_shape())
+        # print("shape:")
+        # print(input_.targets.get_shape(), top_k_logits.get_shape(), top_k_prediction.get_shape())
 
 
         # rightCount = tf.cast(tf.equal(x=tf.argmax(logits, axis=2, name='logits_argmax'),
@@ -486,7 +486,7 @@ class TestConfig(object):
     vocab_size = 10000
     rnn_mode = BLOCK
 
-def get_metric(input_data, targets, top_k_logits, top_k_predictions):
+def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
 
   # words = sentence.split()
   # word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 4531 for word in words]#<unk>的id为4531
@@ -525,8 +525,9 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
         top3_cover = False
         top5_cover = False
 
-        # if input_id == 2:#当输入是<eos>时不做预测
-        #     continue
+        if input_id == idOfEos:#当输入是<eos>时不做预测
+            # print("输入为<eos>   " + str(idOfEos))
+            continue
 
         # 不是连续的emoji，输入不是emoji，目标不是emoji
         if (goal_id >= 42) and (input_id >= 42):
@@ -591,7 +592,7 @@ def get_metric(input_data, targets, top_k_logits, top_k_predictions):
         # result = ", ".join(["'" + word + "'" for word in top_k_words])
         # print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
         #   input_id, goal_id, result, top1_cover, top3_cover))
-  return word_num, top1_cover_num, top3_cover_num, emoji_num, top1_emoji, top3_emoji, same_num, top1_same_cover, top3_same_cover, diff_num, top1_diff_cover, top3_diff_cover
+  return word_num, top1_cover_num, top3_cover_num, top5_cover_num, emoji_num, top1_emoji, top3_emoji, top5_emoji, same_num, top1_same_cover, top3_same_cover, top5_same_cover, diff_num, top1_diff_cover, top3_diff_cover, top5_diff_cover
 
 
 def run_epoch(session, model, eval_op=None, verbose=False):
@@ -606,15 +607,19 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     word_total = 0
     word_top1_total = 0
     word_top3_total = 0
+    word_top5_total = 0
     emoji_total = 0
     emoji_top1_total = 0
     emoji_top3_total = 0
+    emoji_top5_total = 0
     same_total = 0
     same_top1_total = 0
     same_top3_total = 0
+    same_top5_total = 0
     diff_total = 0
     diff_top1_total = 0
     diff_top3_total = 0
+    diff_top5_total = 0
 
     fetches = {
         "cost": model.cost,
@@ -641,7 +646,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
         state = vals["final_state"]
         rightCountTopK = vals["rightCountTopK"]
         allCount = vals["allCount"]
-        embedding_concat = vals["embedding_concat"]
+        # embedding_concat = vals["embedding_concat"]
         top_k_logits = vals["top_k_logits"]
         top_k_preds = vals["top_k_preds"]
         input_data = vals["input_data"]
@@ -663,21 +668,26 @@ def run_epoch(session, model, eval_op=None, verbose=False):
         allCount_global += allCount
 
         # 取出来，最后一起统计
-        metric = get_metric(input_data, targets, top_k_logits, top_k_preds)
+        metric = get_metric(model.word_to_id["<eos>"], input_data, targets, top_k_logits, top_k_preds)
 
-        word, top1, top3, emoji, emoji_top1, emoji_top3, same, same_top1, same_top3, diff, diff_top1, diff_top3 = metric
+        word, top1, top3, top5, emoji, emoji_top1, emoji_top3, emoji_top5, \
+        same, same_top1, same_top3, same_top5, diff, diff_top1, diff_top3, diff_top5 = metric
         word_total += word
         word_top1_total += top1
         word_top3_total += top3
+        word_top5_total += top5
         emoji_total += emoji
         emoji_top1_total += emoji_top1
         emoji_top3_total += emoji_top3
+        emoji_top5_total += emoji_top5
         same_total += same
         same_top1_total += same_top1
         same_top3_total += same_top3
+        same_top5_total += same_top5
         diff_total += diff
         diff_top1_total += diff_top1
         diff_top3_total += diff_top3
+        diff_top5_total += diff_top5
 
         if verbose and step % (model.input.epoch_size // 10) == 10:  # 每完成10%的epoch即进行展示训练进度
             print("step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps cost: % .0f" %
@@ -699,7 +709,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     if diff_total == 0:
         diff_total = 0.1
 
-    return np.exp(costs / iters), rightCountTopK_global, allCount_global, acc_global, word_total, word_top1_total, word_top3_total, emoji_total, emoji_top1_total, emoji_top3_total, same_total, same_top1_total, same_top3_total, diff_total, diff_top1_total, diff_top3_total
+    return np.exp(costs / iters), rightCountTopK_global, allCount_global, acc_global, \
+           word_total, word_top1_total, word_top3_total, word_top5_total, \
+           emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
+           same_total, same_top1_total, same_top3_total, same_top5_total, \
+           diff_total, diff_top1_total, diff_top3_total, diff_top5_total
 
 
 def get_config():
@@ -741,6 +755,10 @@ def main(_):
         train_data, valid_data, test_data, _, word_to_id = raw_data
 
         config = get_config()
+        print("isRandomIni:" + str(conf.isRandomIni))
+        print("isLiwcCategory:" + str(conf.isLiwcCategory))
+        print("isEmojiCoOccur:" + str(conf.isEmojiCoOccur))
+        print("isLiwcCount:" + str(conf.isLiwcCount))
         eval_config = get_config()
         eval_config.batch_size = 1
         # eval_config.num_steps = 1
@@ -813,7 +831,11 @@ def main(_):
                     m.assign_lr(session, config.learning_rate * lr_decay)
 
                     print("Epoch: %d Learning rate: %.3f" % (i + 1, session.run(m.lr)))
-                    train_perplexity, train_rightCountTopK, train_allCount, train_acc, word_total, word_top1_total, word_top3_total, emoji_total, emoji_top1_total, emoji_top3_total, same_total, same_top1_total, same_top3_total, diff_total, diff_top1_total, diff_top3_total \
+                    train_perplexity, train_rightCountTopK, train_allCount, train_acc, \
+                    word_total, word_top1_total, word_top3_total, word_top5_total, \
+                    emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
+                    same_total, same_top1_total, same_top3_total, same_top5_total, \
+                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total\
                         = run_epoch(session, m, eval_op=m.train_op, verbose=True)
                     print("Epoch: %d Train Perplexity: %.3f train_allCount: %s train_acc: %s rightCountTopK : %s" %
                           (i + 1, train_perplexity, train_allCount, train_acc, train_rightCountTopK))
@@ -823,25 +845,38 @@ def main(_):
                         word_top1_total / word_total))
                     print("word top3 hit total: " + str(word_top3_total) + "   accuracy: " + str(
                         word_top3_total / word_total))
+                    print("word top5 hit total: " + str(word_top5_total) + "   accuracy: " + str(
+                        word_top5_total / word_total))
                     print("emoji prediction total: " + str(emoji_total))
                     print("emoji top1 hit total: " + str(emoji_top1_total) + "   accuracy: " + str(
                         emoji_top1_total / emoji_total))
                     print("emoji top3 hit total: " + str(emoji_top3_total) + "   accuracy: " + str(
                         emoji_top3_total / emoji_total))
+                    print("emoji top5 hit total: " + str(emoji_top5_total) + "   accuracy: " + str(
+                        emoji_top5_total / emoji_total))
                     print("same emoji prediction total: " + str(same_total))
                     print("same emoji top1 hit total: " + str(same_top1_total) + "   accuracy: " + str(
                         same_top1_total / same_total))
                     print("same emoji top3 hit total: " + str(same_top3_total) + "   accuracy: " + str(
                         same_top3_total / same_total))
+                    print("same emoji top5 hit total: " + str(same_top5_total) + "   accuracy: " + str(
+                        same_top5_total / same_total))
                     print("diff emoji prediction total: " + str(diff_total))
                     print("diff emoji top1 hit total: " + str(diff_top1_total) + "   accuracy: " + str(
                         diff_top1_total / diff_total))
                     print("diff emoji top3 hit total: " + str(diff_top3_total) + "   accuracy: " + str(
                         diff_top3_total / diff_total))
+                    print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
+                        diff_top5_total / diff_total))
 
 
 
-                    valid_perplexity, val_rightCountTopK, valid_allCount, valid_acc, word_total, word_top1_total, word_top3_total, emoji_total, emoji_top1_total, emoji_top3_total, same_total, same_top1_total, same_top3_total, diff_total, diff_top1_total, diff_top3_total = run_epoch(session, mvalid)
+                    valid_perplexity, val_rightCountTopK, valid_allCount, valid_acc, \
+                    word_total, word_top1_total, word_top3_total, word_top5_total, \
+                    emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
+                    same_total, same_top1_total, same_top3_total, same_top5_total,\
+                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total \
+                        = run_epoch(session, mvalid)
                     print("Epoch: %d Valid Perplexity: %.3f valid_allCount: %s valid_acc: %s rightCountTopK : %s" %
                           (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
 
@@ -850,23 +885,36 @@ def main(_):
                         word_top1_total / word_total))
                     print("word top3 hit total: " + str(word_top3_total) + "   accuracy: " + str(
                         word_top3_total / word_total))
+                    print("word top5 hit total: " + str(word_top5_total) + "   accuracy: " + str(
+                        word_top5_total / word_total))
                     print("emoji prediction total: " + str(emoji_total))
                     print("emoji top1 hit total: " + str(emoji_top1_total) + "   accuracy: " + str(
                         emoji_top1_total / emoji_total))
                     print("emoji top3 hit total: " + str(emoji_top3_total) + "   accuracy: " + str(
                         emoji_top3_total / emoji_total))
+                    print("emoji top5 hit total: " + str(emoji_top5_total) + "   accuracy: " + str(
+                        emoji_top5_total / emoji_total))
                     print("same emoji prediction total: " + str(same_total))
                     print("same emoji top1 hit total: " + str(same_top1_total) + "   accuracy: " + str(
                         same_top1_total / same_total))
                     print("same emoji top3 hit total: " + str(same_top3_total) + "   accuracy: " + str(
                         same_top3_total / same_total))
+                    print("same emoji top5 hit total: " + str(same_top5_total) + "   accuracy: " + str(
+                        same_top5_total / same_total))
                     print("diff emoji prediction total: " + str(diff_total))
                     print("diff emoji top1 hit total: " + str(diff_top1_total) + "   accuracy: " + str(
                         diff_top1_total / diff_total))
                     print("diff emoji top3 hit total: " + str(diff_top3_total) + "   accuracy: " + str(
                         diff_top3_total / diff_total))
+                    print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
+                        diff_top5_total / diff_total))
 
-                test_perplexity, test_rightCountTopK, test_allCount, test_acc, word_total, word_top1_total, word_top3_total, emoji_total, emoji_top1_total, emoji_top3_total, same_total, same_top1_total, same_top3_total, diff_total, diff_top1_total, diff_top3_total = run_epoch(session, mtest)
+                test_perplexity, test_rightCountTopK, test_allCount, test_acc, \
+                word_total, word_top1_total, word_top3_total, word_top5_total, \
+                emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
+                same_total, same_top1_total, same_top3_total, same_top5_total, \
+                diff_total, diff_top1_total, diff_top3_total, diff_top5_total\
+                    = run_epoch(session, mtest)
                 print("Test Perplexity: %.3f test_allCount: %.3f test_acc: %s rightCountTopK : %s" %
                       (test_perplexity, test_allCount, test_acc, test_rightCountTopK))
 
@@ -875,21 +923,29 @@ def main(_):
                     word_top1_total / word_total))
                 print("word top3 hit total: " + str(word_top3_total) + "   accuracy: " + str(
                     word_top3_total / word_total))
+                print("word top5 hit total: " + str(word_top5_total) + "   accuracy: " + str(
+                    word_top5_total / word_total))
                 print("emoji prediction total: " + str(emoji_total))
                 print("emoji top1 hit total: " + str(emoji_top1_total) + "   accuracy: " + str(
                     emoji_top1_total / emoji_total))
                 print("emoji top3 hit total: " + str(emoji_top3_total) + "   accuracy: " + str(
                     emoji_top3_total / emoji_total))
+                print("emoji top5 hit total: " + str(emoji_top5_total) + "   accuracy: " + str(
+                    emoji_top5_total / emoji_total))
                 print("same emoji prediction total: " + str(same_total))
                 print("same emoji top1 hit total: " + str(same_top1_total) + "   accuracy: " + str(
                     same_top1_total / same_total))
                 print("same emoji top3 hit total: " + str(same_top3_total) + "   accuracy: " + str(
                     same_top3_total / same_total))
+                print("same emoji top5 hit total: " + str(same_top5_total) + "   accuracy: " + str(
+                    same_top5_total / same_total))
                 print("diff emoji prediction total: " + str(diff_total))
                 print("diff emoji top1 hit total: " + str(diff_top1_total) + "   accuracy: " + str(
                     diff_top1_total / diff_total))
                 print("diff emoji top3 hit total: " + str(diff_top3_total) + "   accuracy: " + str(
                     diff_top3_total / diff_total))
+                print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
+                    diff_top5_total / diff_total))
 
 
 

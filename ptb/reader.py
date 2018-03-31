@@ -54,6 +54,7 @@ def _build_vocab(filename):
   words, _ = list(zip(*count_pairs))#所有词，已经进行了预处理，总共只有10000个词
   # words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
   word_to_id = dict(zip(words, range(len(words))))
+  # print(word_to_id["<eos>"])
 
   return word_to_id
 
