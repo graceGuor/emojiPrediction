@@ -92,8 +92,8 @@ def ptb_raw_data(data_path=None):
   valid_path = os.path.join(data_path, "validation.txt")
   test_path = os.path.join(data_path, "test.txt")
 
-  word_to_id = _build_vocab(conf.alldata_path)
-  # word_to_id = _build_vocab(train_path)
+  # word_to_id = _build_vocab(conf.alldata_path)
+  word_to_id = _build_vocab(train_path)
   f_res = open(os.path.join(conf.src_path, "word_to_id.txt"), 'w', encoding='utf-8')
   f_res.write(str(word_to_id))
   print("word_to_id.len:" + str(len(word_to_id)))
