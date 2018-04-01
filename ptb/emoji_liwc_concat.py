@@ -868,6 +868,17 @@ def main(_):
                         diff_top3_total / diff_total))
                     print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
                         diff_top5_total / diff_total))
+                    all_emoji_total = emoji_total + same_total + diff_total
+                    all_emoji_hit1 = emoji_top1_total + same_top1_total + diff_top1_total
+                    all_emoji_hit3 = emoji_top3_total + same_top3_total + diff_top3_total
+                    all_emoji_hit5 = emoji_top5_total + same_top5_total + diff_top5_total
+                    print("all emoji prediction total: " + str(all_emoji_total))
+                    print("all emoji top1 hit total: " + str(all_emoji_hit1) + "   recall: " + str(
+                        all_emoji_hit1 / all_emoji_total))
+                    print("all emoji top3 hit total: " + str(all_emoji_hit3) + "   recall: " + str(
+                        all_emoji_hit3 / all_emoji_total))
+                    print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
+                        all_emoji_hit5 / all_emoji_total))
 
 
 
@@ -908,6 +919,18 @@ def main(_):
                         diff_top3_total / diff_total))
                     print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
                         diff_top5_total / diff_total))
+                    all_emoji_total = emoji_total + same_total + diff_total
+                    all_emoji_hit1 = emoji_top1_total + same_top1_total + diff_top1_total
+                    all_emoji_hit3 = emoji_top3_total + same_top3_total + diff_top3_total
+                    all_emoji_hit5 = emoji_top5_total + same_top5_total + diff_top5_total
+                    print("all emoji prediction total: " + str(all_emoji_total))
+                    print("all emoji top1 hit total: " + str(all_emoji_hit1) + "   recall: " + str(
+                        all_emoji_hit1 / all_emoji_total))
+                    print("all emoji top3 hit total: " + str(all_emoji_hit3) + "   recall: " + str(
+                        all_emoji_hit3 / all_emoji_total))
+                    print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
+                        all_emoji_hit5 / all_emoji_total))
+
 
                 test_perplexity, test_rightCountTopK, test_allCount, test_acc, \
                 word_total, word_top1_total, word_top3_total, word_top5_total, \
@@ -946,6 +969,18 @@ def main(_):
                     diff_top3_total / diff_total))
                 print("diff emoji top5 hit total: " + str(diff_top5_total) + "   accuracy: " + str(
                     diff_top5_total / diff_total))
+                all_emoji_total = emoji_total + same_total + diff_total
+                all_emoji_hit1 = emoji_top1_total + same_top1_total + diff_top1_total
+                all_emoji_hit3 = emoji_top3_total + same_top3_total + diff_top3_total
+                all_emoji_hit5 = emoji_top5_total + same_top5_total + diff_top5_total
+                print("all emoji prediction total: " + str(all_emoji_total))
+                print("all emoji top1 hit total: " + str(all_emoji_hit1) + "   recall: " + str(
+                    all_emoji_hit1 / all_emoji_total))
+                print("all emoji top3 hit total: " + str(all_emoji_hit3) + "   recall: " + str(
+                    all_emoji_hit3 / all_emoji_total))
+                print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
+                    all_emoji_hit5 / all_emoji_total))
+
 
 
 

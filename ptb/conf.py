@@ -2,7 +2,7 @@ import os
 # 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-save_path = src_path + "/Res/rand_liwcCategory/0"#"w2v_1w_400d_prePro"
+save_path = src_path + "/Res/rand/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -41,7 +41,7 @@ topK = [1, 3, 5]
 unkProportion = 0.8
 fold = 10
 isRandomIni = True#False#是否随机初始化
-isLiwcCategory = True#False#是否与liwc每个词的类别进行拼接
+isLiwcCategory = False#True#是否与liwc每个词的类别进行拼接
 isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
 isEmojiCoOccur = False#True#是否与emoji共现次数特征进行拼接
 
