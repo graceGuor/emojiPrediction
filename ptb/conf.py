@@ -41,7 +41,7 @@ topK = [1, 3, 5]
 
 unkProportion = 0.8
 fold = 10
-isRandomIni = False#True#是否随机初始化
+isRandomIni = True#False#是否随机初始化
 isLiwcCategory = False#True#是否与liwc每个词的类别进行拼接
 isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
 isEmojiCoOccur = False#True#是否与emoji共现次数特征进行拼接
