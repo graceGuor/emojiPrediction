@@ -635,6 +635,10 @@ diff emoji prediction total: 207
 diff emoji top1 hit total: 57   accuracy: 0.2753623188405797
 diff emoji top3 hit total: 98   accuracy: 0.47342995169082125
 diff emoji top5 hit total: 120   accuracy: 0.5797101449275363
+all emoji prediction total: 7014
+all emoji top1 hit total: 4229   recall: 0.602936
+all emoji top3 hit total: 4799   recall: 0.684203
+all emoji top5 hit total: 5002   recall: 0.713145
 Saving model to /home/pubsrv/data/guorui/data/Res/rand_liwcCategory/0.
 Finished!
 当前的日期和时间是 2018-04-01 04:40:07.106217
