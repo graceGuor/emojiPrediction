@@ -49,12 +49,17 @@ def _build_vocab(filename):
   count_pairs = sorted(counter.items(), reverse=True, key=lambda x: (x[0], x[1]))#按照emoji，word，符号排序
   # count_pairs = sorted(counter.items(), reverse=True, key=lambda x: (x[1], x[0]))  # 按照次数降序排序，次数相同时按照Word排序
   # print(count_pairs)
-  # print(len(count_pairs))
 
   words, _ = list(zip(*count_pairs))#所有词，已经进行了预处理，总共只有10000个词
   # words, _ = list(zip(*count_pairs[0:conf.vocab_size - 1]))
-  word_to_id = dict(zip(words, range(len(words))))
+  # print(words)
+  # print(dict(zip(words, range(len(words)))))
+  word_to_id = dict(zip(words, range(len(words))))#word_to_id是按照words顺序编号的
+  # print(word_to_id)#结果是乱序的，并不是按照ids的顺序打印
+  # word_to_id = sorted(word_to_id.items(), reverse=True, key=lambda x: (x[0], x[1]))#变为了list
+  # print(word_to_id)#结果是有序的，按照ids的顺序打印，但是是list，而不是dict
   # print(word_to_id["<eos>"])
+  # print("id of <eos>:" + str(word_to_id["<eos>"]))
 
   return word_to_id
 
@@ -87,20 +92,20 @@ def ptb_raw_data(data_path=None):
   valid_path = os.path.join(data_path, "validation.txt")
   test_path = os.path.join(data_path, "test.txt")
 
-  word_to_id = _build_vocab(train_path)
+  word_to_id = _build_vocab(conf.alldata_path)
+  # word_to_id = _build_vocab(train_path)
   f_res = open(os.path.join(conf.src_path, "word_to_id.txt"), 'w', encoding='utf-8')
   f_res.write(str(word_to_id))
-
   print("word_to_id.len:" + str(len(word_to_id)))
-  maxLenOfSeq = RI.getMaxLexOfSeq(train_path)
-  # conf.num_steps = maxLenOfSeq
-  print("maxLenOfSeq:" + str(maxLenOfSeq) + "      conf.num_steps:" + str(conf.num_steps))
+  # maxLenOfSeq = RI.getMaxLexOfSeq(train_path)
+  # conf.num_steps = maxLenOfSeq#没用
+  # print("maxLenOfSeq:" + str(maxLenOfSeq) + "      conf.num_steps:" + str(conf.num_steps))
   train_data = _file_to_word_ids(train_path, word_to_id)
   valid_data = _file_to_word_ids(valid_path, word_to_id)
   test_data = _file_to_word_ids(test_path, word_to_id)
-  # print(train_data)
-  # print(valid_data)
-  # print(test_data)
+  print(train_data)
+  print(valid_data)
+  print(test_data)
   vocabulary = len(word_to_id)
   return train_data, valid_data, test_data, vocabulary, word_to_id
 

@@ -104,6 +104,7 @@ class PTBInput(object):
         self.top_k = config.top_k
         self.batch_size = batch_size = config.batch_size
         self.num_steps = num_steps = config.num_steps
+        print(len(data))
         self.epoch_size = ((len(data) // batch_size) - 1) // num_steps
         print(name + " epoch_size：" + str(self.epoch_size))
         self.input_data, self.targets = reader.ptb_producer(
@@ -491,6 +492,8 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
   # words = sentence.split()
   # word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 4531 for word in words]#<unk>的id为4531
 
+  # print("id of <eos> :  " + str(idOfEos))
+  idOfLastEmoji = 327
   word_num = 0#预测为word个数
   emoji_num = 0#预测为emoji个数
   same_num = 0#预测为连续emoji，且为相同emoji个数
@@ -526,11 +529,10 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
         top5_cover = False
 
         if input_id == idOfEos:#当输入是<eos>时不做预测
-            # print("输入为<eos>   " + str(idOfEos))
             continue
 
         # 不是连续的emoji，输入不是emoji，目标不是emoji
-        if (goal_id >= 42) and (input_id >= 42):
+        if (goal_id >= idOfLastEmoji) and (input_id >= idOfLastEmoji):
           word_num += 1  # 预测为word个数
           for j in range(len(top_k_ids)):
             if top_k_ids[j] == goal_id:
@@ -545,7 +547,7 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
                 top5_cover = True
 
         # 不是连续的emoji，输入不是emoji，目标是emoji
-        if (goal_id < 42) and (input_id >= 42):
+        if (goal_id < idOfLastEmoji) and (input_id >= idOfLastEmoji):
           emoji_num += 1  # 预测为emoji的个数
           for j in range(len(top_k_ids)):
             if top_k_ids[j] == goal_id:
@@ -560,7 +562,7 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
                 top5_cover = True
 
         # 连续的emoji，输入和目标都是emoji
-        if goal_id < 42 and input_id < 42:
+        if goal_id < idOfLastEmoji and input_id < idOfLastEmoji:
           if input_id == goal_id:  # 连续emoji且相同
             same_num += 1
             for j in range(len(top_k_ids)):

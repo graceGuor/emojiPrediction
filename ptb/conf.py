@@ -7,7 +7,6 @@ num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
 
-
 # 本机
 # src_path = "E:\Data\EmojiPrediction"
 # src_path = "D:\office_qty\Data\EmojiPrediction"
@@ -17,7 +16,9 @@ hidden_size = 400#400#20#需要修改
 # max_max_epoch = 1#13#55#需要修改
 # hidden_size = 25#400#20#需要修改
 
-emb_path = os.path.join(src_path, 'w2v_400d.txt')  #src_path + "\glove.twitter.27B\glove.twitter.27B.25d.txt"
+alldata_path = os.path.join(src_path, 'emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord.txt')
+
+emb_path = os.path.join(src_path, 'w2v_400d.txt')  #"glove.twitter.27B\glove.twitter.27B.25d.txt"
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
 liwcCategory_path = os.path.join(src_path, 'liwc_category.csv')
 liwcCount_path = os.path.join(src_path, 'LIWC2015 Results (emoji_sample)Word category_fea.txt')
