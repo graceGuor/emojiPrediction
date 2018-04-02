@@ -68,6 +68,7 @@ def getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5):
     f_res3.writelines(res3)
     f_res5 = open(resPath5, 'w', encoding='utf8')
     f_res5.writelines(res5)
+    return  res_matric1, res_matric3, res_matric5
 
 def getEmojiCoOccur_main():
     srcPath = os.path.join(conf.data_path, "train.txt")

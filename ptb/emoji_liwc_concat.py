@@ -63,6 +63,7 @@ import ptb.reader as reader
 import ptb.util as util
 import ptb.conf as conf
 import Service.ReadInfo as RI
+import preProcessing.emojiCoOccur as emojiCoOccur_pro
 import pdb
 
 from tensorflow.python.client import device_lib
@@ -160,8 +161,17 @@ class PTBModel(object):
                 dict_liwc_category = None
 
             if conf.isEmojiCoOccur:
-                emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)
-                dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur)
+                # emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)
+
+                srcPath = os.path.join(conf.data_path, "train.txt")
+                # data_path = conf.src_path + "\Fold_head\/all"
+                # srcPath = os.path.join(data_path, "train.txt")
+                resPath1 = os.path.join(conf.src_path, "emoji_coOccur1_fea.txt")
+                resPath3 = os.path.join(conf.src_path, "emoji_coOccur3_fea.txt")
+                resPath5 = os.path.join(conf.src_path, "emoji_coOccur5_fea.txt")
+                emojiCoOccur = emojiCoOccur_pro.getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5)
+
+                dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur[1])
                 ndarr = np.array(dict_emojiCoOccur)
                 print(ndarr.shape)
             else:
