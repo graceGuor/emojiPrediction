@@ -103,9 +103,9 @@ def ptb_raw_data(data_path=None):
   train_data = _file_to_word_ids(train_path, word_to_id)
   valid_data = _file_to_word_ids(valid_path, word_to_id)
   test_data = _file_to_word_ids(test_path, word_to_id)
-  print(train_data)
-  print(valid_data)
-  print(test_data)
+  # print(train_data)
+  # print(valid_data)
+  # print(test_data)
   vocabulary = len(word_to_id)
   return train_data, valid_data, test_data, vocabulary, word_to_id
 

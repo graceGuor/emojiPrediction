@@ -158,10 +158,23 @@ class PTBModel(object):
             else:
                 dict_liwc_category = None
 
-            if dict_liwc_category is None:
-                embedding_concat = tf.concat([embedding], 1)
+            if conf.isEmojiCoOccur:
+                emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)
+                dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur)
+                # ndarr = np.array(dict_emojiCoOccur)
+                # print(ndarr.shape)
             else:
+                dict_emojiCoOccur = None
+
+
+            if dict_liwc_category is None and dict_emojiCoOccur is None:
+                embedding_concat = tf.concat([embedding], 1)
+            elif dict_liwc_category is not None and dict_emojiCoOccur is None:
                 embedding_concat = tf.concat([embedding, dict_liwc_category], 1)
+            elif dict_liwc_category is None and dict_emojiCoOccur is not None:
+                embedding_concat = tf.concat([embedding, dict_emojiCoOccur], 1)
+            else:
+                embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur], 1)
             print(embedding_concat.get_shape())
 
             inputs = tf.nn.embedding_lookup(embedding_concat, input_.input_data)
@@ -760,6 +773,8 @@ def main(_):
         print("isRandomIni:" + str(conf.isRandomIni))
         print("isLiwcCategory:" + str(conf.isLiwcCategory))
         print("isEmojiCoOccur:" + str(conf.isEmojiCoOccur))
+        if conf.isEmojiCoOccur:
+            print("emojiCoOccur_path:" + conf.emojiCoOccur_path)
         print("isLiwcCount:" + str(conf.isLiwcCount))
         eval_config = get_config()
         eval_config.batch_size = 1

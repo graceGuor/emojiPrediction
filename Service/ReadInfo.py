@@ -19,7 +19,7 @@ def getMaxLexOfSeq(filename):
     f.close()
     return  maxLenOfSeq
 
-#达到文件中每个句子的长度
+#得到文件中每个句子的长度
 def getLenOfSentences(filename):
     f = open(filename, 'r', encoding='UTF-8')
     lens = []
@@ -29,6 +29,20 @@ def getLenOfSentences(filename):
         lens.append(l)
     f.close()
     return lens
+
+#得到文件中句子的平均长度
+def getAverageLenOfSentences(filename):
+    f = open(filename, 'r', encoding='UTF-8')
+    sum_lens = 0
+    lines = f.readlines()
+    for line in lines:
+        values = line.split()
+        l = len(values)
+        sum_lens = sum_lens + l
+    lenOfLines = len(lines)
+    f.close()
+    averageLen = sum_lens/lenOfLines
+    return averageLen
 
 # 加载csv向量文件至dict{word(第一个词):embedding（除第一个词外）}
 # 将“×”表示为1
@@ -286,6 +300,11 @@ def fromPtoR(pre_pro):
         pre_cla.append(pre_cla_one)
     return np.array(pre_cla)
 
+#将dict中的可以与value对调
+def from_wordIdDict_to_idWordDict(word_to_id):
+    id_to_word = dict(zip(word_to_id.values(), word_to_id.keys()))
+    return id_to_word
+
 #将embedding按照word_to_id中的顺序排列，如果该词没有embedding，则随机产生该词对应的embedding
 def getDictEmb_rand(word_to_id,embedding):
     ids = []
@@ -295,7 +314,7 @@ def getDictEmb_rand(word_to_id,embedding):
         l = len(v)
         # print(v)
         typeOfEmb = type(v[0])
-        # print("typeOfEmb:" + str(typeOfEmb))
+        print("typeOfEmb:" + str(typeOfEmb))
         print("embedding size:" + str(l))
         break
     for (word, id) in word_to_id.items():
@@ -329,7 +348,7 @@ def getDictEmb_0(word_to_id,embedding):
     for (k, v) in embedding.items():
         l = len(v)
         typeOfEmb = type(v[0])
-        # print("typeOfEmb:" + str(typeOfEmb))
+        print("typeOfEmb:" + str(typeOfEmb))
         print("embedding size:" + str(l))
         break
     for (word, id) in word_to_id.items():
@@ -340,8 +359,9 @@ def getDictEmb_0(word_to_id,embedding):
             count = count + 1
             # print(word)
             zeros = np.zeros([l], dtype=typeOfEmb)#维度与embedding一致
+            zeros = np.zeros([l])  # 维度与embedding一致
             embs.append(zeros)
-    print("liwc 类别中没有的词：" + str(count))
+    print("dict中没有的词：" + str(count))
     dict_id_emb = np.concatenate([embs], axis=1)#不进行拼接，直接返回embeddings
     res = []
     for f in dict_id_emb:
