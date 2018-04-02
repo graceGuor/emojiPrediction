@@ -36,8 +36,8 @@ def getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5):
 
     for i in range(len(data)):
         if data[i] < idOfFirstWord:
-            print(data[i])
-            print(id_to_word[data[i]])
+            # print(data[i])
+            # print(id_to_word[data[i]])
             # print(res_matric1[id_to_word[data[i]]])
             # print(res_matric1[id_to_word[data[i]]][data[i]])
             for j in range(-5, 6):
