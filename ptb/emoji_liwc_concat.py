@@ -147,9 +147,10 @@ class PTBModel(object):
                 dict_emb = RI.getDictEmb_rand(word_to_id, emb)
                 embedding = tf.get_variable(
                     "embedding", initializer=dict_emb, dtype=data_type(), trainable=True)
-                print("ini:" + str(embedding.get_shape()))
+                print("w2v ini:" + str(embedding.get_shape()))
 
-
+                # scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(embedding)
+                # embedding = tf.cast(scaler.transform(embedding), tf.float32)
 
             if conf.isLiwcCategory:
                 # print("拼接liwc每个词类别")
@@ -179,8 +180,12 @@ class PTBModel(object):
                 emojiCoOccur = emojiCoOccur_pro.getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5)
 
                 dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur[1])
-                ndarr = np.array(dict_emojiCoOccur)
-                print(ndarr.shape)
+
+                scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_emojiCoOccur)
+                dict_emojiCoOccur = tf.cast(scaler.transform(dict_emojiCoOccur), tf.float32)
+
+                # ndarr = np.array(dict_emojiCoOccur)
+                # print(ndarr.shape)
             else:
                 dict_emojiCoOccur = None
 
