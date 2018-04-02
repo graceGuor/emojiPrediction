@@ -143,7 +143,7 @@ def loadFeaturesScale(feaFile):
         feaVec.append(coefs)
     f.close()
     feaVec = np.array(feaVec)
-    scaler = preprocessing.StandardScaler(copy=False,with_mean=True,with_std=True).fit(feaVec)
+    scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(feaVec)
     #StandardScaler() 的参数with_mean 默认为True表示使用密集矩阵，使用稀疏矩阵则会报错 ，with_mean= False 适用于稀疏矩阵
     # with_std默认为True,如果为True，则将数据缩放为单位方差（单位标准偏差）
     # copy默认为True,如果为False，避免产生一个副本，并执行inplace缩放。 如果数据不是NumPy数组或scipy.sparseCSR矩阵，则仍可能返回副本

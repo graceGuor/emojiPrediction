@@ -58,6 +58,7 @@ import os
 
 import numpy as np
 import tensorflow as tf
+from sklearn import preprocessing
 
 import ptb.reader as reader
 import ptb.util as util
@@ -149,10 +150,16 @@ class PTBModel(object):
                 print("ini:" + str(embedding.get_shape()))
 
 
+
             if conf.isLiwcCategory:
                 # print("拼接liwc每个词类别")
                 liwc_category = RI.loadDict_csv(conf.liwcCategory_path)
                 dict_liwc_category = RI.getDictEmb_0(word_to_id, liwc_category)
+
+                scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
+                dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
+                # print(dict_liwc_category)
+
                 # print(type(dict_liwc_category))
                 # print(dict_liwc_category[216])
                 # ndarr = np.array(dict_liwc_category)
@@ -161,7 +168,7 @@ class PTBModel(object):
                 dict_liwc_category = None
 
             if conf.isEmojiCoOccur:
-                # emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)
+                # emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)#axis 1 is out of bounds for array of dimension 1,都是7203，问题在哪？
 
                 srcPath = os.path.join(conf.data_path, "train.txt")
                 # data_path = conf.src_path + "\Fold_head\/all"
@@ -178,15 +185,24 @@ class PTBModel(object):
                 dict_emojiCoOccur = None
 
 
-            if dict_liwc_category is None and dict_emojiCoOccur is None:
-                embedding_concat = tf.concat([embedding], 1)
-            elif dict_liwc_category is not None and dict_emojiCoOccur is None:
-                embedding_concat = tf.concat([embedding, dict_liwc_category], 1)
-            elif dict_liwc_category is None and dict_emojiCoOccur is not None:
-                embedding_concat = tf.concat([embedding, dict_emojiCoOccur], 1)
+            if conf.isLiwcCount:
+                dict_liwcCount = None
             else:
-                embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur], 1)
+                dict_liwcCount = None
+
+            if dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is None:
+                embedding_concat = tf.concat([embedding], 1)
+            elif dict_liwc_category is not None and dict_emojiCoOccur is None and dict_liwcCount is None:
+                embedding_concat = tf.concat([embedding, dict_liwc_category], 1)
+            elif dict_liwc_category is None and dict_emojiCoOccur is not None and dict_liwcCount is None:
+                embedding_concat = tf.concat([embedding, dict_emojiCoOccur], 1)
+            elif dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is not None:
+                embedding_concat = tf.concat([embedding, dict_liwcCount], 1)
+            else:
+                embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur, dict_liwcCount], 1)
             print(embedding_concat.get_shape())
+
+
 
             inputs = tf.nn.embedding_lookup(embedding_concat, input_.input_data)
             # print(input_.input_data.get_shape())
@@ -318,6 +334,7 @@ class PTBModel(object):
         # different than reported in the paper.
         def make_cell():
             cell = self._get_lstm_cell(config, is_training)
+
             if is_training and config.keep_prob < 1:
                 cell = tf.contrib.rnn.DropoutWrapper(
                     cell, output_keep_prob=config.keep_prob)

@@ -77,7 +77,7 @@ def getEmojiCoOccur_main():
     resPath1 = os.path.join(conf.src_path, "emoji_coOccur1_fea.txt")
     resPath3 = os.path.join(conf.src_path, "emoji_coOccur3_fea.txt")
     resPath5 = os.path.join(conf.src_path, "emoji_coOccur5_fea.txt")
-    getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5)
+    res_matric1, res_matric3, res_matric5 = getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5)
 
 if __name__ == "__main__":
     # print(RI.getAverageLenOfSentences(conf.alldata_path))
