@@ -144,7 +144,7 @@ class PTBModel(object):
                 dict_emb = RI.getDictEmb_rand(word_to_id, emb)
                 embedding = tf.get_variable(
                     "embedding", initializer=dict_emb, dtype=data_type(), trainable=True)
-                # print(embedding.get_shape())
+                print(embedding.get_shape())
 
 
             if conf.isLiwcCategory:
@@ -161,8 +161,8 @@ class PTBModel(object):
             if conf.isEmojiCoOccur:
                 emojiCoOccur = RI.loadEmbeddings(conf.emojiCoOccur_path)
                 dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur)
-                # ndarr = np.array(dict_emojiCoOccur)
-                # print(ndarr.shape)
+                ndarr = np.array(dict_emojiCoOccur)
+                print(ndarr.shape)
             else:
                 dict_emojiCoOccur = None
 
