@@ -359,7 +359,7 @@ def getDictEmb_0(word_to_id,embedding):
             count = count + 1
             # print(word)
             zeros = np.zeros([l], dtype=typeOfEmb)#维度与embedding一致
-            zeros = np.zeros([l])  # 维度与embedding一致
+            # zeros = np.zeros([l])  # 维度与embedding一致
             embs.append(zeros)
     print("dict中没有的词：" + str(count))
     dict_id_emb = np.concatenate([embs], axis=1)#不进行拼接，直接返回embeddings
