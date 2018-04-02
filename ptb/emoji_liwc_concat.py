@@ -138,13 +138,14 @@ class PTBModel(object):
                 # print("随机初始化")
                 embedding = tf.get_variable(
                     "embedding", [len(word_to_id), size], dtype=data_type())
+                print("rand ini:" + str(embedding.get_shape()))
             else:
                 # print("使用word2vec词向量初始化")
                 emb = RI.loadEmbeddings(conf.emb_path)
                 dict_emb = RI.getDictEmb_rand(word_to_id, emb)
                 embedding = tf.get_variable(
                     "embedding", initializer=dict_emb, dtype=data_type(), trainable=True)
-                print(embedding.get_shape())
+                print("ini:" + str(embedding.get_shape()))
 
 
             if conf.isLiwcCategory:

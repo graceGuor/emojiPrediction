@@ -71,6 +71,8 @@ def getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5):
 
 def getEmojiCoOccur_main():
     srcPath = os.path.join(conf.data_path, "train.txt")
+    # data_path = conf.src_path + "\Fold_head\/all"
+    # srcPath = os.path.join(data_path, "train.txt")
     resPath1 = os.path.join(conf.src_path, "emoji_coOccur1_fea.txt")
     resPath3 = os.path.join(conf.src_path, "emoji_coOccur3_fea.txt")
     resPath5 = os.path.join(conf.src_path, "emoji_coOccur5_fea.txt")
