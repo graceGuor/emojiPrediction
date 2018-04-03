@@ -2,8 +2,8 @@ import os
 # 服务器
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
-data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
-save_path = src_path + "/Res/rand_emojiCoOccur_scale_part/0"#"w2v_1w_400d_prePro"
+# data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
+save_path = src_path + "/Res/rand_emojiCoOccur1_scale/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -22,7 +22,9 @@ alldata_path = os.path.join(src_path, 'emoji_sample_withBlankbeforePunc_blankEmo
 emb_path = os.path.join(src_path, 'w2v_400d.txt')  #"glove.twitter.27B\glove.twitter.27B.25d.txt"
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
 liwcCategory_path = os.path.join(src_path, 'liwc_category.csv')
-emojiCoOccur_window = 3#1#5
+emojiCoOccur_windows_index = 0
+emojiCoOccur_windows = [1, 3, 5]
+emojiCoOccur_window = emojiCoOccur_windows[emojiCoOccur_windows_index]
 emojiCoOccur_path = os.path.join(src_path, 'emoji_coOccur' + str(emojiCoOccur_window) + '_fea.txt')
 liwcCount_path = os.path.join(src_path, 'LIWC2015 Results (emoji_sample)Word category_fea.txt')
 

@@ -179,7 +179,7 @@ class PTBModel(object):
                 resPath5 = os.path.join(conf.src_path, "emoji_coOccur5_fea.txt")
                 emojiCoOccur = emojiCoOccur_pro.getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5)
 
-                dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur[1])
+                dict_emojiCoOccur = RI.getDictEmb_0(word_to_id, emojiCoOccur[conf.emojiCoOccur_windows_index])
 
                 scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_emojiCoOccur)
                 dict_emojiCoOccur = tf.cast(scaler.transform(dict_emojiCoOccur), tf.float32)
