@@ -204,7 +204,7 @@ class PTBModel(object):
             elif dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is not None:
                 embedding_concat = tf.concat([embedding, dict_liwcCount], 1)
             else:
-                embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur, dict_liwcCount], 1)
+                embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur], 1)
             print(embedding_concat.get_shape())
 
 
