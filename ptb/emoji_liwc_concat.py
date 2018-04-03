@@ -65,6 +65,7 @@ import ptb.util as util
 import ptb.conf as conf
 import Service.ReadInfo as RI
 import preProcessing.emojiCoOccur as emojiCoOccur_pro
+import preProcessing.getLiwcFea as getLiwcCountFea
 import pdb
 
 from tensorflow.python.client import device_lib
@@ -145,12 +146,13 @@ class PTBModel(object):
                 # print("使用word2vec词向量初始化")
                 emb = RI.loadEmbeddings(conf.emb_path)
                 dict_emb = RI.getDictEmb_rand(word_to_id, emb)
+
+                scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_emb)
+                dict_emb = tf.cast(scaler.transform(dict_emb), tf.float32)
+
                 embedding = tf.get_variable(
                     "embedding", initializer=dict_emb, dtype=data_type(), trainable=True)
                 print("w2v ini:" + str(embedding.get_shape()))
-
-                # scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(embedding)
-                # embedding = tf.cast(scaler.transform(embedding), tf.float32)
 
             if conf.isLiwcCategory:
                 # print("拼接liwc每个词类别")
@@ -191,10 +193,14 @@ class PTBModel(object):
 
 
             if conf.isLiwcCount:
-                dict_liwcCount = None
+                dict_liwcCount = getLiwcCountFea.getLiwcFea()
             else:
                 dict_liwcCount = None
 
+
+
+            # if dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is None:
+            #     embedding_concat = tf.concat([embedding)
             if dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is None:
                 embedding_concat = tf.concat([embedding], 1)
             elif dict_liwc_category is not None and dict_emojiCoOccur is None and dict_liwcCount is None:
@@ -207,13 +213,13 @@ class PTBModel(object):
                 embedding_concat = tf.concat([embedding, dict_liwc_category, dict_emojiCoOccur], 1)
             print(embedding_concat.get_shape())
 
-
-
             inputs = tf.nn.embedding_lookup(embedding_concat, input_.input_data)
             # print(input_.input_data.get_shape())
 
         if is_training and config.keep_prob < 1:
             inputs = tf.nn.dropout(inputs, config.keep_prob)
+
+        # inputs = tf.concat([inputs, dict_liwcCount], 1)
 
         output, state = self._build_rnn_graph(inputs, config, is_training)
 

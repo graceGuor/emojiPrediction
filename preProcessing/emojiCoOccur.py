@@ -40,7 +40,7 @@ def getEmojiCoOccur(srcPath, resPath1, resPath3, resPath5):
             # print(id_to_word[data[i]])
             # print(res_matric1[id_to_word[data[i]]])
             # print(res_matric1[id_to_word[data[i]]][data[i]])
-            for j in range(-5, 6):
+            for j in range(-5, 1):
                 if j in range(-1, 2) and i+j in range(0, len(data)):
                     res_matric1[id_to_word[data[i + j]]][data[i]] += 1
                     res_matric3[id_to_word[data[i + j]]][data[i]] += 1

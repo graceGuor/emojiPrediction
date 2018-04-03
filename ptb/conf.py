@@ -3,7 +3,7 @@ import os
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
 # data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
-save_path = src_path + "/Res/rand_emojiCoOccur5_scale/0"#"w2v_1w_400d_prePro"
+save_path = src_path + "/Res/rand_emojiCoOccur3before_scale/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
 max_max_epoch = 13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -22,11 +22,18 @@ alldata_path = os.path.join(src_path, 'emoji_sample_withBlankbeforePunc_blankEmo
 emb_path = os.path.join(src_path, 'w2v_400d.txt')  #"glove.twitter.27B\glove.twitter.27B.25d.txt"
 emb_model_savePath = os.path.join(src_path, 'w2v_400d')
 liwcCategory_path = os.path.join(src_path, 'liwc_category.csv')
-emojiCoOccur_windows_index = 2
+emojiCoOccur_windows_index = 1
 emojiCoOccur_windows = [1, 3, 5]
 emojiCoOccur_window = emojiCoOccur_windows[emojiCoOccur_windows_index]
 emojiCoOccur_path = os.path.join(src_path, 'emoji_coOccur' + str(emojiCoOccur_window) + '_fea.txt')
 liwcCount_path = os.path.join(src_path, 'LIWC2015 Results (emoji_sample)Word category_fea.txt')
+
+unkProportion = 0.8
+fold = 10
+isRandomIni = True#False#是否随机初始化
+isLiwcCategory = False#True#是否与liwc每个词的类别进行拼接
+isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
+isEmojiCoOccur = True#False#是否与emoji共现次数特征进行拼接
 
 model = "small"
 rnn_mode = "basic"
@@ -43,13 +50,6 @@ lr_decay = 0.5#1 / 1.15#
 batch_size = 128#32#20
 top_k = 5
 topK = [1, 3, 5]
-
-unkProportion = 0.8
-fold = 10
-isRandomIni = True#False#是否随机初始化
-isLiwcCategory = False#True#是否与liwc每个词的类别进行拼接
-isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
-isEmojiCoOccur = True#False#是否与emoji共现次数特征进行拼接
 
 #word2vec
 embedding_size = 400
