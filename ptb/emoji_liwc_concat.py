@@ -217,7 +217,7 @@ class PTBModel(object):
             # print(input_.input_data.get_shape())
 
         if is_training and config.keep_prob < 1:
-            inputs = tf.nn.dropout(inputs, config.keep_prob)
+            inputs = tf.nn.dropout(inputs, config.keep_prob)#出错
 
         # inputs = tf.concat([inputs, dict_liwcCount], 1)
 
