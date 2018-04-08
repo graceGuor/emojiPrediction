@@ -589,8 +589,9 @@ def get_metric(idOfEos, idOfUnk, input_data, targets, top_k_logits, top_k_predic
 
         if input_id == idOfEos:#当输入是<eos>时不做预测
             continue
-        if goal_id == idOfUnk:
+        if goal_id == idOfUnk:#当输出是<unk>时不做预测
             goal_unk_count += 1
+            continue
 
         # 预测为unk
         for j in range(len(top_k_ids)):
