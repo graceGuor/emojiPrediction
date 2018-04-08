@@ -3,7 +3,7 @@ import os
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
 # data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
-save_path = src_path + "/Res/rand_emojiCoOccur1before_scale/0"#"w2v_1w_400d_prePro"
+save_path = src_path + "/Res/rand/0"#"rand_emojiCoOccur1before_scale"
 num_GPU = 1
 max_max_epoch = 0#13#55#需要修改
 hidden_size = 400#400#20#需要修改
@@ -33,7 +33,7 @@ fold = 10
 isRandomIni = True#False#是否随机初始化
 isLiwcCategory = False#True#是否与liwc每个词的类别进行拼接
 isLiwcCount = False#True#是否与liwc到目前为止每个类别词的个数进行拼接
-isEmojiCoOccur = True#False#是否与emoji共现次数特征进行拼接
+isEmojiCoOccur = False#True#是否与emoji共现次数特征进行拼接
 
 model = "small"
 rnn_mode = "basic"
