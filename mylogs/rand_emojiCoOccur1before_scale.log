@@ -761,3 +761,78 @@ all emoji top5 hit total: 93859   recall: 0.7727373768143385
 Saving model to /home/pubsrv/data/guorui/data/Res/rand_emojiCoOccur1before_scale/0.
 Finished!
 当前的日期和时间是 2018-04-04 22:16:12.321585
+2018-04-08 20:46:59.108185: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-04-08 20:46:59.480318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: c4da:00:00.0
+totalMemory: 11.17GiB freeMemory: 2.99GiB
+2018-04-08 20:46:59.480355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: c4da:00:00.0, compute capability: 3.7)
+2018-04-08 20:48:32.650331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: c4da:00:00.0, compute capability: 3.7)
+/usr/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+当前的日期和时间是 2018-04-08 20:46:59.107935
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:False
+isEmojiCoOccur:True
+emojiCoOccur_path:/home/pubsrv/data/guorui/data/emoji_coOccur1_fea.txt
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：16579
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+830197
+ValidInput epoch_size：2075
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+831242
+TestInput epoch_size：33249
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+Test Perplexity: 37.444 test_allCount: 831225.000 test_acc: ['0.3656', '0.5219', '0.5735'] rightCountTopK : [303888, 433790, 476687]
+words prediction total: 517745
+word top1 hit total: 211684   accuracy: 0.40885764227563764
+word top3 hit total: 295160   accuracy: 0.5700875913818578
+word top5 hit total: 321194   accuracy: 0.6203710320717728
+emoji prediction total: 22369
+emoji top1 hit total: 599   accuracy: 0.026778130448388393
+emoji top3 hit total: 3173   accuracy: 0.1418480933434664
+emoji top5 hit total: 5476   accuracy: 0.2448030756850999
+same emoji prediction total: 77758
+same emoji top1 hit total: 71321   accuracy: 0.9172175210267753
+same emoji top3 hit total: 77478   accuracy: 0.9963990843385889
+same emoji top5 hit total: 77631   accuracy: 0.9983667275392886
+diff emoji prediction total: 21291
+diff emoji top1 hit total: 1253   accuracy: 0.058851157766192284
+diff emoji top3 hit total: 7154   accuracy: 0.33601052087736605
+diff emoji top5 hit total: 10655   accuracy: 0.5004461979240055
+all emoji prediction total: 121418
+all emoji top1 hit total: 73173   recall: 0.602653642787725
+all emoji top3 hit total: 87805   recall: 0.7231629577163188
+all emoji top5 hit total: 93762   recall: 0.7722248760480325
+top1_emoji_total: 115182   pred1_emoji_ratio: 0.18020755269000238
+top3_emoji_total: 348724   pred3_emoji_ratio: 0.545594785680648
+goal_unk_total: 32641   goal_unk_ratio: 0.05106835032691191
+top1_unk_total: 115182   pred1_unk_ratio: 0.09885115377454577
+top3_unk_total: 348724   pred3_unk_ratio: 0.45580861220064367
+Saving model to /home/pubsrv/data/guorui/data/Res/rand_emojiCoOccur1before_scale/0.
+Finished!
+当前的日期和时间是 2018-04-08 21:08:35.322357
