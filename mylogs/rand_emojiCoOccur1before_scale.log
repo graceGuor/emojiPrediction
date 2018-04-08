@@ -836,3 +836,84 @@ top3_unk_total: 348724   pred3_unk_ratio: 0.45580861220064367
 Saving model to /home/pubsrv/data/guorui/data/Res/rand_emojiCoOccur1before_scale/0.
 Finished!
 当前的日期和时间是 2018-04-08 21:08:35.322357
+2018-04-08 22:04:54.493216: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-08 22:04:54.493244: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-08 22:04:54.493251: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-08 22:04:54.493256: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-08 22:04:54.493261: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-08 22:04:54.809779: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 6c17:00:00.0
+Total memory: 11.17GiB
+Free memory: 398.38MiB
+2018-04-08 22:04:54.809886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-04-08 22:04:54.809895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-04-08 22:04:54.809925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+2018-04-08 22:06:27.652740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+当前的日期和时间是 2018-04-08 22:04:54.493007
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:False
+isEmojiCoOccur:True
+emojiCoOccur_path:/home/pubsrv/data/guorui/data/emoji_coOccur1_fea.txt
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：16579
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+830197
+ValidInput epoch_size：2075
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+831242
+TestInput epoch_size：33249
+rand ini:(7203, 400)
+word size:7203
+typeOfEmb:<class 'int'>
+embedding size:327
+dict中没有的词：0
+
+(7203, 727)
+Test Perplexity: 37.457 test_allCount: 831225.000 test_acc: ['0.3656', '0.5218', '0.5734'] rightCountTopK : [303885, 433719, 476635]
+words prediction total: 486190
+word top1 hit total: 198542   accuracy: 0.40836298566404083
+word top3 hit total: 268850   accuracy: 0.5529731175055019
+word top5 hit total: 291897   accuracy: 0.6003763960591538
+emoji prediction total: 22353
+emoji top1 hit total: 605   accuracy: 0.027065718248109872
+emoji top3 hit total: 3171   accuracy: 0.14186015299959737
+emoji top5 hit total: 5468   accuracy: 0.2446204088936608
+same emoji prediction total: 77819
+same emoji top1 hit total: 71423   accuracy: 0.9178092753697683
+same emoji top3 hit total: 77542   accuracy: 0.9964404579858389
+same emoji top5 hit total: 77693   accuracy: 0.9983808581451831
+diff emoji prediction total: 21260
+diff emoji top1 hit total: 1254   accuracy: 0.05898400752587018
+diff emoji top3 hit total: 7161   accuracy: 0.336829727187206
+diff emoji top5 hit total: 10656   accuracy: 0.5012229539040451
+all emoji prediction total: 121432
+all emoji top1 hit total: 73282   recall: 0.6034817840437446
+all emoji top3 hit total: 87874   recall: 0.7236478028855656
+all emoji top5 hit total: 93817   recall: 0.7725887739640293
+top1_emoji_total: 114359   pred1_emoji_ratio: 0.1882074710922251
+top3_emoji_total: 345169   pred3_emoji_ratio: 0.5680653432561691
+goal_unk_total: 32618   goal_unk_ratio: 0.0536814006076146
+top1_unk_total: 114359   pred1_unk_ratio: 0.08243611982449615
+top3_unk_total: 345169   pred3_unk_ratio: 0.43585156561151506
+Saving model to /home/pubsrv/data/guorui/data/Res/rand_emojiCoOccur1before_scale/0.
+Finished!
+当前的日期和时间是 2018-04-08 22:33:45.046418
