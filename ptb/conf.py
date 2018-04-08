@@ -5,7 +5,7 @@ data_path = src_path + "/Fold/0"
 # data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
 save_path = src_path + "/Res/rand_emojiCoOccur1before_scale/0"#"w2v_1w_400d_prePro"
 num_GPU = 1
-max_max_epoch = 13#55#需要修改
+max_max_epoch = 0#13#55#需要修改
 hidden_size = 400#400#20#需要修改
 
 # 本机
@@ -14,7 +14,7 @@ hidden_size = 400#400#20#需要修改
 # data_path = src_path + "\Fold_head\/0"
 # save_path = src_path + "\Res\Fold_head_att\/0"
 # num_GPU = 0
-# max_max_epoch = 1#13#55#需要修改
+# max_max_epoch = 0#13#55#需要修改
 # hidden_size = 25#400#20#需要修改
 
 alldata_path = os.path.join(src_path, 'emoji_sample_withBlankbeforePunc_blankEmo_merge_filter_lower_stopwords_unk_delProportion_singleWord.txt')

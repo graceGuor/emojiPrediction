@@ -539,12 +539,13 @@ class TestConfig(object):
     vocab_size = 10000
     rnn_mode = BLOCK
 
-def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
+def get_metric(idOfEos, idOfUnk, input_data, targets, top_k_logits, top_k_predictions):
 
   # words = sentence.split()
   # word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 4531 for word in words]#<unk>的id为4531
 
   # print("id of <eos> :  " + str(idOfEos))
+  # print("id of <unk> :  " + str(idOfUnk))
   idOfLastEmoji = 327
   word_num = 0#预测为word个数
   emoji_num = 0#预测为emoji个数
@@ -562,6 +563,12 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
   top1_diff_cover = 0#预测为连续emoji，且为不同emoji,top 1正确个数
   top3_diff_cover = 0#预测为连续emoji，且为不同emoji,top 3正确个数
   top5_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 5正确个数
+  top1_emoji_count = 0  # 预测top1为emoji的个数
+  top3_emoji_count = 0
+  goal_unk_count = 0 # 目标为unk的个数
+  top1_unk_count = 0
+  top3_unk_count = 0
+
 
   # input_data, targets为numpy.ndarray
   shape = input_data.shape
@@ -582,6 +589,25 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
 
         if input_id == idOfEos:#当输入是<eos>时不做预测
             continue
+        if goal_id == idOfUnk:
+            goal_unk_count += 1
+
+        # 预测为unk
+        for j in range(len(top_k_ids)):
+            if top_k_ids[j] == idOfUnk:
+                if j + 1 <= 1:
+                    top1_unk_count += 1
+                if j + 1 <= 3:
+                    top3_unk_count += 1
+
+        # 预测为emoji
+        for j in range(len(top_k_ids)):
+            if top_k_ids[j] < idOfLastEmoji:
+                if j + 1 <= 1:
+                    top1_emoji_count += 1
+                if j + 1 <= 3:
+                    top3_emoji_count += 1
+                continue #如果top_k_ids中包含几个emoji，只计数一次
 
         # 不是连续的emoji，输入不是emoji，目标不是emoji
         if (goal_id >= idOfLastEmoji) and (input_id >= idOfLastEmoji):
@@ -646,7 +672,11 @@ def get_metric(idOfEos, input_data, targets, top_k_logits, top_k_predictions):
         # result = ", ".join(["'" + word + "'" for word in top_k_words])
         # print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
         #   input_id, goal_id, result, top1_cover, top3_cover))
-  return word_num, top1_cover_num, top3_cover_num, top5_cover_num, emoji_num, top1_emoji, top3_emoji, top5_emoji, same_num, top1_same_cover, top3_same_cover, top5_same_cover, diff_num, top1_diff_cover, top3_diff_cover, top5_diff_cover
+  return word_num, top1_cover_num, top3_cover_num, top5_cover_num, emoji_num, \
+         top1_emoji, top3_emoji, top5_emoji, same_num, \
+         top1_same_cover, top3_same_cover, top5_same_cover, \
+         diff_num, top1_diff_cover, top3_diff_cover, top5_diff_cover, \
+         goal_unk_count, top1_emoji_count, top3_emoji_count, top1_unk_count, top3_unk_count
 
 
 def run_epoch(session, model, eval_op=None, verbose=False):
@@ -674,6 +704,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     diff_top1_total = 0
     diff_top3_total = 0
     diff_top5_total = 0
+    top1_emoji_total = 0#预测top1为emoji的个数
+    top3_emoji_total = 0
+    goal_unk_total = 0
+    top1_unk_total = 0
+    top3_unk_total = 0
 
     fetches = {
         "cost": model.cost,
@@ -722,10 +757,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
         allCount_global += allCount
 
         # 取出来，最后一起统计
-        metric = get_metric(model.word_to_id["<eos>"], input_data, targets, top_k_logits, top_k_preds)
+        metric = get_metric(model.word_to_id["<eos>"], model.word_to_id["<unk>"], input_data, targets, top_k_logits, top_k_preds)
 
         word, top1, top3, top5, emoji, emoji_top1, emoji_top3, emoji_top5, \
-        same, same_top1, same_top3, same_top5, diff, diff_top1, diff_top3, diff_top5 = metric
+        same, same_top1, same_top3, same_top5, diff, diff_top1, diff_top3, diff_top5, \
+        goal_unk_count, top1_emoji_count, top3_emoji_count, top1_unk_count, top3_unk_count = metric
         word_total += word
         word_top1_total += top1
         word_top3_total += top3
@@ -742,6 +778,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
         diff_top1_total += diff_top1
         diff_top3_total += diff_top3
         diff_top5_total += diff_top5
+        top1_emoji_total += top1_emoji_count
+        top3_emoji_total += top3_emoji_count
+        top1_unk_total += top1_unk_count
+        top3_unk_total += top3_unk_count
+        goal_unk_total += goal_unk_count
 
         if verbose and step % (model.input.epoch_size // 10) == 10:  # 每完成10%的epoch即进行展示训练进度
             print("step / (model.input.epoch_size // 10): %.3f perplexity: %.3f speed: %.0f wps cost: % .0f" %
@@ -767,7 +808,8 @@ def run_epoch(session, model, eval_op=None, verbose=False):
            word_total, word_top1_total, word_top3_total, word_top5_total, \
            emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
            same_total, same_top1_total, same_top3_total, same_top5_total, \
-           diff_total, diff_top1_total, diff_top3_total, diff_top5_total
+           diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
+           goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total
 
 
 def get_config():
@@ -815,6 +857,8 @@ def main(_):
         if conf.isEmojiCoOccur:
             print("emojiCoOccur_path:" + conf.emojiCoOccur_path)
         print("isLiwcCount:" + str(conf.isLiwcCount))
+        print("id of <eos> :  " + str(word_to_id['<eos>']))
+        print("id of <unk> :  " + str(word_to_id['<unk>']))
         eval_config = get_config()
         eval_config.batch_size = 1
         # eval_config.num_steps = 1
@@ -891,7 +935,8 @@ def main(_):
                     word_total, word_top1_total, word_top3_total, word_top5_total, \
                     emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
                     same_total, same_top1_total, same_top3_total, same_top5_total, \
-                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total\
+                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
+                    goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total\
                         = run_epoch(session, m, eval_op=m.train_op, verbose=True)
                     print("Epoch: %d Train Perplexity: %.3f train_allCount: %s train_acc: %s rightCountTopK : %s" %
                           (i + 1, train_perplexity, train_allCount, train_acc, train_rightCountTopK))
@@ -942,7 +987,8 @@ def main(_):
                     word_total, word_top1_total, word_top3_total, word_top5_total, \
                     emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
                     same_total, same_top1_total, same_top3_total, same_top5_total,\
-                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total \
+                    diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
+                    goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total \
                         = run_epoch(session, mvalid)
                     print("Epoch: %d Valid Perplexity: %.3f valid_allCount: %s valid_acc: %s rightCountTopK : %s" %
                           (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
@@ -992,7 +1038,8 @@ def main(_):
                 word_total, word_top1_total, word_top3_total, word_top5_total, \
                 emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
                 same_total, same_top1_total, same_top3_total, same_top5_total, \
-                diff_total, diff_top1_total, diff_top3_total, diff_top5_total\
+                diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
+                goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total\
                     = run_epoch(session, mtest)
                 print("Test Perplexity: %.3f test_allCount: %.3f test_acc: %s rightCountTopK : %s" %
                       (test_perplexity, test_allCount, test_acc, test_rightCountTopK))
@@ -1036,6 +1083,20 @@ def main(_):
                     all_emoji_hit3 / all_emoji_total))
                 print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
                     all_emoji_hit5 / all_emoji_total))
+                pred1_emoji_ratio = top1_emoji_total / (word_total + all_emoji_total)
+                pred3_emoji_ratio = top3_emoji_total / (word_total + all_emoji_total)
+                print("top1_emoji_total: " + str(top1_emoji_total) + "   pred1_emoji_ratio: " + str(
+                    pred1_emoji_ratio))
+                print("top3_emoji_total: " + str(top3_emoji_total) + "   pred3_emoji_ratio: " + str(
+                    pred3_emoji_ratio))
+                pred1_unk_ratio = top1_unk_total / (word_total + all_emoji_total)
+                pred3_unk_ratio = top3_unk_total / (word_total + all_emoji_total)
+                print("goal_unk_total: " + str(goal_unk_total) + "   goal_unk_ratio: " + str(
+                    goal_unk_total / (word_total + all_emoji_total)))
+                print("top1_unk_total: " + str(top1_emoji_total) + "   pred1_unk_ratio: " + str(
+                    pred1_unk_ratio))
+                print("top3_unk_total: " + str(top3_emoji_total) + "   pred3_unk_ratio: " + str(
+                    pred3_unk_ratio))
 
 
 
