@@ -1,0 +1,67 @@
+2018-04-25 15:07:27.671689: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:07:27.671823: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:07:27.671831: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:07:27.671836: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:07:27.671841: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:07:32.975304: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 6c17:00:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2018-04-25 15:07:32.975343: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-04-25 15:07:32.975350: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-04-25 15:07:32.975365: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+2018-04-25 15:08:06.734608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+/usr/local/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+当前的日期和时间是 2018-04-25 15:07:27.671298
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:False
+isEmojiCoOccur:False
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：16579
+rand ini:(7203, 400)
+(7203, 400)
+830197
+ValidInput epoch_size：2075
+rand ini:(7203, 400)
+(7203, 400)
+831242
+TestInput epoch_size：33249
+rand ini:(7203, 400)
+(7203, 400)
+Test Perplexity: 35.884 test_allCount: 831225.000 test_acc: ['0.3703', '0.5257', '0.5777'] rightCountTopK : [307796, 436964, 480202]
+words prediction total: 486277
+word top1 hit total: 200936   accuracy: 0.41321304523964736
+word top3 hit total: 271661   accuracy: 0.5586548407594848
+word top5 hit total: 294937   accuracy: 0.6065205633825989
+emoji prediction total: 22331
+emoji top1 hit total: 652   accuracy: 0.029197080291970802
+emoji top3 hit total: 3328   accuracy: 0.1490304957234338
+emoji top5 hit total: 5726   accuracy: 0.25641484931261477
+same emoji prediction total: 77638
+same emoji top1 hit total: 72174   accuracy: 0.9296220922744017
+same emoji top3 hit total: 77488   accuracy: 0.9980679564130966
+same emoji top5 hit total: 77563   accuracy: 0.9990339782065484
+diff emoji prediction total: 21301
+diff emoji top1 hit total: 1882   accuracy: 0.08835265949955401
+diff emoji top3 hit total: 7599   accuracy: 0.3567438148443735
+diff emoji top5 hit total: 10955   accuracy: 0.5142951035162668
+all emoji prediction total: 121270
+all emoji top1 hit total: 74708   recall: 0.6160468376350293
+all emoji top3 hit total: 88415   recall: 0.7290756163931723
+all emoji top5 hit total: 94244   recall: 0.7771419147357137
+top1_emoji_total: 114913   pred1_emoji_ratio: 0.18914256839388557
+top3_emoji_total: 345063   pred3_emoji_ratio: 0.5679609972561793
+goal_unk_total: 32677   goal_unk_ratio: 0.05378513925671594
+top1_unk_total: 114913   pred1_unk_ratio: 0.07466089043316813
+top3_unk_total: 345063   pred3_unk_ratio: 0.42744841139862433
+Saving model to /home/pubsrv/data/guorui/data/Res/rand/0.
+Finished!
+当前的日期和时间是 2018-04-25 15:17:22.422649
