@@ -110,7 +110,7 @@ class PTBInput(object):
         print(len(data))
         self.epoch_size = ((len(data) // batch_size) - 1) // num_steps
         print(name + " epoch_size：" + str(self.epoch_size))
-        self.input_data, self.targets = reader.ptb_producer(
+        self.input_data, self.targets, self.mask = reader.ptb_producer(
             data, batch_size, num_steps, name=name)
         # print("input_data:")
         # print(self.input_data)
@@ -136,7 +136,7 @@ class PTBModel(object):
 
         with tf.device("/cpu:0"):
 
-            # 词向量
+            #词向量
             if conf.isRandomIni:
                 # print("随机初始化")
                 embedding = tf.get_variable(
@@ -191,10 +191,13 @@ class PTBModel(object):
             else:
                 dict_emojiCoOccur = None
 
+
             if conf.isLiwcCount:
                 dict_liwcCount = getLiwcCountFea.getLiwcFea()
             else:
                 dict_liwcCount = None
+
+
 
             # if dict_liwc_category is None and dict_emojiCoOccur is None and dict_liwcCount is None:
             #     embedding_concat = tf.concat([embedding)
@@ -214,7 +217,7 @@ class PTBModel(object):
             # print(input_.input_data.get_shape())
 
         if is_training and config.keep_prob < 1:
-            inputs = tf.nn.dropout(inputs, config.keep_prob)  # 出错
+            inputs = tf.nn.dropout(inputs, config.keep_prob)#出错
 
         # inputs = tf.concat([inputs, dict_liwcCount], 1)
 
@@ -227,18 +230,28 @@ class PTBModel(object):
         # Reshape logits to be a 3-D tensor for sequence loss
         logits = tf.reshape(logits, [self.batch_size, self.num_steps, vocab_size], name='logits_reshape')
 
+        mask = tf.ones([self.batch_size, self.num_steps], dtype=data_type())
+        mask[input_.targets < 808] = 6.0
+
         # Use the contrib sequence loss and average over the batches
         loss = tf.contrib.seq2seq.sequence_loss(
             logits,
             input_.targets,
-            tf.ones([self.batch_size, self.num_steps], dtype=data_type()),
+            tf.convert_to_tensor(input_.mask, dtype=data_type()),
             average_across_timesteps=False,
             average_across_batch=True)
+        # loss = tf.contrib.seq2seq.sequence_loss(
+        #     logits,
+        #     input_.targets,
+        #     tf.ones([self.batch_size, self.num_steps], dtype=data_type()),
+        #     average_across_timesteps=False,
+        #     average_across_batch=True)
 
         top_k_logits, top_k_prediction = tf.nn.top_k(logits, self.top_k, name="top_k_prediction")
 
         # print("shape:")
         # print(input_.targets.get_shape(), top_k_logits.get_shape(), top_k_prediction.get_shape())
+
 
         # rightCount = tf.cast(tf.equal(x=tf.argmax(logits, axis=2, name='logits_argmax'),
         #                               y=tf.cast(input_.targets, tf.int64, name='input_target_cast'), name='rightCount_cal'),
@@ -438,11 +451,12 @@ class PTBModel(object):
 
     @property
     def top_k_preds(self):
-        return self._top_k_preds
+      return self._top_k_preds
 
     @property
     def embedding_concat(self):
-        return self._embedding_concat
+      return self._embedding_concat
+
 
     @property
     def final_state(self):
@@ -534,144 +548,145 @@ class TestConfig(object):
     vocab_size = 10000
     rnn_mode = BLOCK
 
-
 def get_metric(idOfEos, idOfUnk, input_data, targets, top_k_logits, top_k_predictions):
-    # words = sentence.split()
-    # word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 4531 for word in words]#<unk>的id为4531
 
-    # print("id of <eos> :  " + str(idOfEos))
-    # print("id of <unk> :  " + str(idOfUnk))
-    idOfLastEmoji = 327
-    word_num = 0  # 预测为word个数
-    emoji_num = 0  # 预测为emoji个数
-    same_num = 0  # 预测为连续emoji，且为相同emoji个数
-    diff_num = 0  # 预测为连续emoji，且为不同emoji个数
-    top1_cover_num = 0  # 预测为word且top 1正确的个数
-    top3_cover_num = 0  # 预测为word且top 3正确的个数
-    top5_cover_num = 0  # 预测为word且top 5正确的个数
-    top1_emoji = 0  # 预测为emoji且top 1正确的个数
-    top3_emoji = 0  # 预测为emoji且top 3正确的个数
-    top5_emoji = 0  # 预测为emoji且top 5正确的个数
-    top1_same_cover = 0  # 预测为连续emoji，且为相同emoji,top 1正确个数
-    top3_same_cover = 0  # 预测为连续emoji，且为相同emoji,top 3正确个数
-    top5_same_cover = 0  # 预测为连续emoji，且为相同emoji,top 5正确个数
-    top1_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 1正确个数
-    top3_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 3正确个数
-    top5_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 5正确个数
-    top1_emoji_count = 0  # 预测top1为emoji的个数
-    top3_emoji_count = 0
-    goal_unk_count = 0  # 目标为unk的个数
-    top1_unk_count = 0
-    top3_unk_count = 0
+  # words = sentence.split()
+  # word_ids = [self.word_to_id[word] if self.word_to_id.__contains__(word) else 4531 for word in words]#<unk>的id为4531
 
-    # input_data, targets为numpy.ndarray
-    shape = input_data.shape
-    # print(shape)
-    # print(targets.shape)
-    # print(input_data[0][0])
-    for i in range(shape[0]):
-        for j in range(shape[1]):
-            input_id = input_data[i][j]
-            goal_id = targets[i][j]
-            # print(goal_id)
-            top_k_probs = top_k_logits[i][j]
-            top_k_ids = top_k_predictions[i][j]
+  # print("id of <eos> :  " + str(idOfEos))
+  # print("id of <unk> :  " + str(idOfUnk))
+  idOfLastEmoji = conf.idOfLastEmoji
+  word_num = 0#预测为word个数
+  emoji_num = 0#预测为emoji个数
+  same_num = 0#预测为连续emoji，且为相同emoji个数
+  diff_num = 0#预测为连续emoji，且为不同emoji个数
+  top1_cover_num = 0#预测为word且top 1正确的个数
+  top3_cover_num = 0#预测为word且top 3正确的个数
+  top5_cover_num = 0  # 预测为word且top 5正确的个数
+  top1_emoji = 0#预测为emoji且top 1正确的个数
+  top3_emoji = 0#预测为emoji且top 3正确的个数
+  top5_emoji = 0  # 预测为emoji且top 5正确的个数
+  top1_same_cover = 0#预测为连续emoji，且为相同emoji,top 1正确个数
+  top3_same_cover = 0#预测为连续emoji，且为相同emoji,top 3正确个数
+  top5_same_cover = 0  # 预测为连续emoji，且为相同emoji,top 5正确个数
+  top1_diff_cover = 0#预测为连续emoji，且为不同emoji,top 1正确个数
+  top3_diff_cover = 0#预测为连续emoji，且为不同emoji,top 3正确个数
+  top5_diff_cover = 0  # 预测为连续emoji，且为不同emoji,top 5正确个数
+  top1_emoji_count = 0  # 预测top1为emoji的个数
+  top3_emoji_count = 0
+  goal_unk_count = 0 # 目标为unk的个数
+  top1_unk_count = 0
+  top3_unk_count = 0
 
-            top1_cover = False
-            top3_cover = False
-            top5_cover = False
 
-            if input_id == idOfEos:  # 当输入是<eos>时不做预测
-                continue
-            if goal_id == idOfUnk:  # 当输出是<unk>时不做预测
-                goal_unk_count += 1
-                continue
+  # input_data, targets为numpy.ndarray
+  shape = input_data.shape
+  # print(shape)
+  # print(targets.shape)
+  # print(input_data[0][0])
+  for i in range(shape[0]):
+      for j in range(shape[1]):
+        input_id = input_data[i][j]
+        goal_id = targets[i][j]
+        # print(goal_id)
+        top_k_probs = top_k_logits[i][j]
+        top_k_ids = top_k_predictions[i][j]
 
-            # 预测为unk
+        top1_cover = False
+        top3_cover = False
+        top5_cover = False
+
+        if input_id == idOfEos:#当输入是<eos>时不做预测
+            continue
+        if goal_id == idOfUnk:#当输出是<unk>时不做预测
+            goal_unk_count += 1
+            continue
+
+        # 预测为unk
+        for j in range(len(top_k_ids)):
+            if top_k_ids[j] == idOfUnk:
+                if j + 1 <= 1:
+                    top1_unk_count += 1
+                if j + 1 <= 3:
+                    top3_unk_count += 1
+
+        # 预测为emoji
+        for j in range(len(top_k_ids)):
+            if top_k_ids[j] < idOfLastEmoji:
+                if j + 1 <= 1:
+                    top1_emoji_count += 1
+                if j + 1 <= 3:
+                    top3_emoji_count += 1
+                continue #如果top_k_ids中包含几个emoji，只计数一次
+
+        # 不是连续的emoji，输入不是emoji，目标不是emoji
+        if (goal_id >= idOfLastEmoji) and (input_id >= idOfLastEmoji):
+          word_num += 1  # 预测为word个数
+          for j in range(len(top_k_ids)):
+            if top_k_ids[j] == goal_id:
+              if j + 1 <= 1:
+                top1_cover_num += 1
+                top1_cover = True
+              if j + 1 <= 3:
+                top3_cover_num += 1
+                top3_cover = True
+              if j + 1 <= 5:
+                top5_cover_num += 1
+                top5_cover = True
+
+        # 不是连续的emoji，输入不是emoji，目标是emoji
+        if (goal_id < idOfLastEmoji) and (input_id >= idOfLastEmoji):
+          emoji_num += 1  # 预测为emoji的个数
+          for j in range(len(top_k_ids)):
+            if top_k_ids[j] == goal_id:
+              if j + 1 <= 1:
+                top1_emoji += 1
+                top1_cover = True
+              if j + 1 <= 3:
+                top3_emoji += 1
+                top3_cover = True
+              if j + 1 <= 5:
+                top5_emoji += 1
+                top5_cover = True
+
+        # 连续的emoji，输入和目标都是emoji
+        if goal_id < idOfLastEmoji and input_id < idOfLastEmoji:
+          if input_id == goal_id:  # 连续emoji且相同
+            same_num += 1
             for j in range(len(top_k_ids)):
-                if top_k_ids[j] == idOfUnk:
-                    if j + 1 <= 1:
-                        top1_unk_count += 1
-                    if j + 1 <= 3:
-                        top3_unk_count += 1
+              if top_k_ids[j] == goal_id:
+                if j + 1 <= 1:
+                  top1_same_cover += 1
+                  top1_cover = True
+                if j + 1 <= 3:
+                  top3_same_cover += 1
+                  top3_cover = True
+                if j + 1 <= 5:
+                  top5_same_cover += 1
+                  top5_cover = True
 
-            # 预测为emoji
+          if input_id != goal_id:  # 连续emoji且不同
+            diff_num += 1
             for j in range(len(top_k_ids)):
-                if top_k_ids[j] < idOfLastEmoji:
-                    if j + 1 <= 1:
-                        top1_emoji_count += 1
-                    if j + 1 <= 3:
-                        top3_emoji_count += 1
-                    continue  # 如果top_k_ids中包含几个emoji，只计数一次
+              if top_k_ids[j] == goal_id:
+                if j + 1 <= 1:
+                  top1_diff_cover += 1
+                  top1_cover = True
+                if j + 1 <= 3:
+                  top3_diff_cover += 1
+                  top3_cover = True
+                if j + 1 <= 5:
+                  top5_diff_cover += 1
+                  top5_cover = True
 
-            # 不是连续的emoji，输入不是emoji，目标不是emoji
-            if (goal_id >= idOfLastEmoji) and (input_id >= idOfLastEmoji):
-                word_num += 1  # 预测为word个数
-                for j in range(len(top_k_ids)):
-                    if top_k_ids[j] == goal_id:
-                        if j + 1 <= 1:
-                            top1_cover_num += 1
-                            top1_cover = True
-                        if j + 1 <= 3:
-                            top3_cover_num += 1
-                            top3_cover = True
-                        if j + 1 <= 5:
-                            top5_cover_num += 1
-                            top5_cover = True
-
-            # 不是连续的emoji，输入不是emoji，目标是emoji
-            if (goal_id < idOfLastEmoji) and (input_id >= idOfLastEmoji):
-                emoji_num += 1  # 预测为emoji的个数
-                for j in range(len(top_k_ids)):
-                    if top_k_ids[j] == goal_id:
-                        if j + 1 <= 1:
-                            top1_emoji += 1
-                            top1_cover = True
-                        if j + 1 <= 3:
-                            top3_emoji += 1
-                            top3_cover = True
-                        if j + 1 <= 5:
-                            top5_emoji += 1
-                            top5_cover = True
-
-            # 连续的emoji，输入和目标都是emoji
-            if goal_id < idOfLastEmoji and input_id < idOfLastEmoji:
-                if input_id == goal_id:  # 连续emoji且相同
-                    same_num += 1
-                    for j in range(len(top_k_ids)):
-                        if top_k_ids[j] == goal_id:
-                            if j + 1 <= 1:
-                                top1_same_cover += 1
-                                top1_cover = True
-                            if j + 1 <= 3:
-                                top3_same_cover += 1
-                                top3_cover = True
-                            if j + 1 <= 5:
-                                top5_same_cover += 1
-                                top5_cover = True
-
-                if input_id != goal_id:  # 连续emoji且不同
-                    diff_num += 1
-                    for j in range(len(top_k_ids)):
-                        if top_k_ids[j] == goal_id:
-                            if j + 1 <= 1:
-                                top1_diff_cover += 1
-                                top1_cover = True
-                            if j + 1 <= 3:
-                                top3_diff_cover += 1
-                                top3_cover = True
-                            if j + 1 <= 5:
-                                top5_diff_cover += 1
-                                top5_cover = True
-
-            # result = ", ".join(["'" + word + "'" for word in top_k_words])
-            # print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
-            #   input_id, goal_id, result, top1_cover, top3_cover))
-    return word_num, top1_cover_num, top3_cover_num, top5_cover_num, emoji_num, \
-           top1_emoji, top3_emoji, top5_emoji, same_num, \
-           top1_same_cover, top3_same_cover, top5_same_cover, \
-           diff_num, top1_diff_cover, top3_diff_cover, top5_diff_cover, \
-           goal_unk_count, top1_emoji_count, top3_emoji_count, top1_unk_count, top3_unk_count
+        # result = ", ".join(["'" + word + "'" for word in top_k_words])
+        # print("word: %s, goal: %s, prediction: %s, top1: %s, top3: %s" % (
+        #   input_id, goal_id, result, top1_cover, top3_cover))
+  return word_num, top1_cover_num, top3_cover_num, top5_cover_num, emoji_num, \
+         top1_emoji, top3_emoji, top5_emoji, same_num, \
+         top1_same_cover, top3_same_cover, top5_same_cover, \
+         diff_num, top1_diff_cover, top3_diff_cover, top5_diff_cover, \
+         goal_unk_count, top1_emoji_count, top3_emoji_count, top1_unk_count, top3_unk_count
 
 
 def run_epoch(session, model, eval_op=None, verbose=False):
@@ -699,7 +714,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     diff_top1_total = 0
     diff_top3_total = 0
     diff_top5_total = 0
-    top1_emoji_total = 0  # 预测top1为emoji的个数
+    top1_emoji_total = 0#预测top1为emoji的个数
     top3_emoji_total = 0
     goal_unk_total = 0
     top1_unk_total = 0
@@ -752,8 +767,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
         allCount_global += allCount
 
         # 取出来，最后一起统计
-        metric = get_metric(model.word_to_id["<eos>"], model.word_to_id["<unk>"], input_data, targets, top_k_logits,
-                            top_k_preds)
+        metric = get_metric(model.word_to_id["<eos>"], model.word_to_id["<unk>"], input_data, targets, top_k_logits, top_k_preds)
 
         word, top1, top3, top5, emoji, emoji_top1, emoji_top3, emoji_top5, \
         same, same_top1, same_top3, same_top5, diff, diff_top1, diff_top3, diff_top5, \
@@ -790,7 +804,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
 
     acc_global = [format(rightCountTopK_global[i] / allCount_global, '.4f') for i in range(len(rightCountTopK))]
 
-    # 如果总数等于0，置为0.1，以免除以0的情况发生
+    #如果总数等于0，置为0.1，以免除以0的情况发生
     if word_total == 0:
         word_total = 0.1
     if emoji_total == 0:
@@ -932,7 +946,7 @@ def main(_):
                     emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
                     same_total, same_top1_total, same_top3_total, same_top5_total, \
                     diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
-                    goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total \
+                    goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total\
                         = run_epoch(session, m, eval_op=m.train_op, verbose=True)
                     print("Epoch: %d Train Perplexity: %.3f train_allCount: %s train_acc: %s rightCountTopK : %s" %
                           (i + 1, train_perplexity, train_allCount, train_acc, train_rightCountTopK))
@@ -977,15 +991,15 @@ def main(_):
                     print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
                         all_emoji_hit5 / all_emoji_total))
 
+
+
                     valid_perplexity, val_rightCountTopK, valid_allCount, valid_acc, \
                     word_total, word_top1_total, word_top3_total, word_top5_total, \
                     emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
-                    same_total, same_top1_total, same_top3_total, same_top5_total, \
+                    same_total, same_top1_total, same_top3_total, same_top5_total,\
                     diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
                     goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total \
                         = run_epoch(session, mvalid)
-                    i = datetime.datetime.now()
-                    print("当前的日期和时间是 %s" % i)
                     print("Epoch: %d Valid Perplexity: %.3f valid_allCount: %s valid_acc: %s rightCountTopK : %s" %
                           (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
 
@@ -1029,12 +1043,13 @@ def main(_):
                     print("all emoji top5 hit total: " + str(all_emoji_hit5) + "   recall: " + str(
                         all_emoji_hit5 / all_emoji_total))
 
+
                 test_perplexity, test_rightCountTopK, test_allCount, test_acc, \
                 word_total, word_top1_total, word_top3_total, word_top5_total, \
                 emoji_total, emoji_top1_total, emoji_top3_total, emoji_top5_total, \
                 same_total, same_top1_total, same_top3_total, same_top5_total, \
                 diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
-                goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total \
+                goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total\
                     = run_epoch(session, mtest)
                 print("Test Perplexity: %.3f test_allCount: %.3f test_acc: %s rightCountTopK : %s" %
                       (test_perplexity, test_allCount, test_acc, test_rightCountTopK))
@@ -1092,6 +1107,9 @@ def main(_):
                     pred1_unk_ratio))
                 print("top3_unk_total: " + str(top3_emoji_total) + "   pred3_unk_ratio: " + str(
                     pred3_unk_ratio))
+
+
+
 
                 if FLAGS.save_path:
                     print("Saving model to %s." % FLAGS.save_path)
