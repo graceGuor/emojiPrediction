@@ -1,0 +1,59 @@
+2018-04-25 15:12:48.947365: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-04-25 15:12:49.749624: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: c4da:00:00.0
+totalMemory: 11.17GiB freeMemory: 2.99GiB
+2018-04-25 15:12:49.749662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: c4da:00:00.0, compute capability: 3.7)
+2018-04-25 15:13:24.968840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K80, pci bus id: c4da:00:00.0, compute capability: 3.7)
+/usr/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+当前的日期和时间是 2018-04-25 15:12:48.947113
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:False
+isEmojiCoOccur:False
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：16579
+rand ini:(7203, 400)
+(7203, 400)
+830197
+ValidInput epoch_size：2075
+rand ini:(7203, 400)
+(7203, 400)
+831242
+TestInput epoch_size：33249
+rand ini:(7203, 400)
+(7203, 400)
+Test Perplexity: 35.905 test_allCount: 831225.000 test_acc: ['0.3704', '0.5257', '0.5777'] rightCountTopK : [307845, 436959, 480192]
+words prediction total: 486087
+word top1 hit total: 200770   accuracy: 0.4130330578682417
+word top3 hit total: 271455   accuracy: 0.5584494133766178
+word top5 hit total: 294712   accuracy: 0.6062947579342792
+emoji prediction total: 22342
+emoji top1 hit total: 647   accuracy: 0.028958911467191838
+emoji top3 hit total: 3319   accuracy: 0.14855429236415718
+emoji top5 hit total: 5711   accuracy: 0.25561722316712915
+same emoji prediction total: 77836
+same emoji top1 hit total: 72361   accuracy: 0.9296597975229971
+same emoji top3 hit total: 77685   accuracy: 0.998060023639447
+same emoji top5 hit total: 77762   accuracy: 0.9990492831080734
+diff emoji prediction total: 21362
+diff emoji top1 hit total: 1892   accuracy: 0.08856848609680741
+diff emoji top3 hit total: 7614   accuracy: 0.3564273008145305
+diff emoji top5 hit total: 10982   accuracy: 0.5140904409699466
+all emoji prediction total: 121540
+all emoji top1 hit total: 74900   recall: 0.6162580220503537
+all emoji top3 hit total: 88618   recall: 0.7291262135922331
+all emoji top5 hit total: 94455   recall: 0.777151555043607
+top1_emoji_total: 115144   pred1_emoji_ratio: 0.1894978333747513
+top3_emoji_total: 345696   pred3_emoji_ratio: 0.5689279771965366
+goal_unk_total: 32644   goal_unk_ratio: 0.053723748286366474
+top1_unk_total: 115144   pred1_unk_ratio: 0.0746806840380694
+top3_unk_total: 345696   pred3_unk_ratio: 0.4274760667317285
+Saving model to /home/pubsrv/data/guorui/data/Res/rand/0.
+Finished!
+当前的日期和时间是 2018-04-25 15:36:02.108125
