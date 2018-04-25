@@ -65,3 +65,86 @@ top3_unk_total: 345063   pred3_unk_ratio: 0.42744841139862433
 Saving model to /home/pubsrv/data/guorui/data/Res/rand/0.
 Finished!
 当前的日期和时间是 2018-04-25 15:17:22.422649
+2018-04-25 15:45:37.319540: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:45:37.319567: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:45:37.319574: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:45:37.319579: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:45:37.319584: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-25 15:45:44.060678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 6c17:00:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2018-04-25 15:45:44.060716: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-04-25 15:45:44.060723: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-04-25 15:45:44.060738: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+2018-04-25 15:46:09.569746: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+/usr/local/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "/usr/local/anaconda3/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/local/anaconda3/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/pubsrv/data/guorui/Code/emojiPridiction/ptb/emoji_liwc_concat.py", line 1107, in <module>
+    tf.app.run()
+  File "/usr/local/anaconda3/lib/python3.6/site-packages/tensorflow/python/platform/app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "/home/pubsrv/data/guorui/Code/emojiPridiction/ptb/emoji_liwc_concat.py", line 990, in main
+    (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
+TypeError: unsupported operand type(s) for +: 'datetime.datetime' and 'int'
+当前的日期和时间是 2018-04-25 15:45:37.319332
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:False
+isEmojiCoOccur:False
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：103621
+rand ini:(7203, 400)
+(7203, 400)
+830197
+ValidInput epoch_size：12971
+rand ini:(7203, 400)
+(7203, 400)
+831242
+TestInput epoch_size：207810
+rand ini:(7203, 400)
+(7203, 400)
+Epoch: 1 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 7339.938 speed: 1160 wps cost:  34
+step / (model.input.epoch_size // 10): 0.100 perplexity: 101.818 speed: 3009 wps cost:  15
+step / (model.input.epoch_size // 10): 0.200 perplexity: 83.275 speed: 3026 wps cost:  16
+step / (model.input.epoch_size // 10): 0.300 perplexity: 75.019 speed: 3055 wps cost:  13
+step / (model.input.epoch_size // 10): 0.400 perplexity: 70.286 speed: 3065 wps cost:  15
+step / (model.input.epoch_size // 10): 0.500 perplexity: 66.988 speed: 3078 wps cost:  16
+step / (model.input.epoch_size // 10): 0.600 perplexity: 64.466 speed: 3087 wps cost:  16
+step / (model.input.epoch_size // 10): 0.700 perplexity: 62.600 speed: 3094 wps cost:  14
+step / (model.input.epoch_size // 10): 0.800 perplexity: 61.045 speed: 3098 wps cost:  15
+step / (model.input.epoch_size // 10): 0.900 perplexity: 59.808 speed: 3101 wps cost:  14
+Epoch: 1 Train Perplexity: 58.783 train_allCount: 6631744 train_acc: ['0.3240', '0.4795', '0.5282'] rightCountTopK : [2148398, 3180145, 3502892]
+words prediction total: 3895577
+word top1 hit total: 1415951   accuracy: 0.3634765786942473
+word top3 hit total: 1958734   accuracy: 0.5028097249778403
+word top5 hit total: 2125922   accuracy: 0.5457271156493634
+emoji prediction total: 178465
+emoji top1 hit total: 3220   accuracy: 0.01804275348107472
+emoji top3 hit total: 17256   accuracy: 0.09669122797187124
+emoji top5 hit total: 34239   accuracy: 0.1918527442355644
+same emoji prediction total: 602647
+same emoji top1 hit total: 459612   accuracy: 0.7626554185119979
+same emoji top3 hit total: 563877   accuracy: 0.9356671484301755
+same emoji top5 hit total: 572328   accuracy: 0.9496902830346787
+diff emoji prediction total: 163746
+diff emoji top1 hit total: 7382   accuracy: 0.045082017270650886
+diff emoji top3 hit total: 43650   accuracy: 0.2665713971639002
+diff emoji top5 hit total: 64223   accuracy: 0.39221110744689947
+all emoji prediction total: 944858
+all emoji top1 hit total: 470214   recall: 0.4976557323957674
+all emoji top3 hit total: 624783   recall: 0.6612453934876987
+all emoji top5 hit total: 670790   recall: 0.7099373662497434
+当前的日期和时间是 2018-04-25 16:25:12.750708
