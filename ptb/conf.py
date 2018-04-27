@@ -3,7 +3,7 @@ import os
 src_path = "/home/pubsrv/data/guorui/data"
 data_path = src_path + "/Fold/0"
 # data_path = src_path + "/Fold_part/0"#所有数据的1/10，用来测试
-save_path = src_path + "/Res/rand_numstep8_epoch2/0"#"rand_emojiCoOccur1before_scale"
+save_path = src_path + "/Res/rand_numstep4_epoch2/0"#"rand_emojiCoOccur1before_scale"
 num_GPU = 1
 max_max_epoch = 2#13#55#需要修改
 hidden_size = 400#20#需要修改
@@ -44,7 +44,7 @@ init_scale = 0.1
 learning_rate = 1.0
 max_grad_norm = 5
 num_layers = 2
-num_steps = 8#4#25#10#
+num_steps = 4#8#25#10#
 max_epoch = 4
 keep_prob = 0.5#1.0
 keep_probs = {0.5}
