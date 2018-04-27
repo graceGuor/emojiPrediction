@@ -12,10 +12,10 @@ idOfLastEmoji = 327
 # 本机
 # src_path = "E:\Data\EmojiPrediction"
 # src_path = "D:\office_qty\Data\EmojiPrediction"
-# data_path = src_path + "\Fold_head\/all"
+# data_path = src_path + "\Fold_head\/0"
 # save_path = src_path + "\Res\Fold_head_att\/0"
 # num_GPU = 0
-# max_max_epoch = 1#13#55#需要修改
+# max_max_epoch = 2#13#55#需要修改
 # hidden_size = 25#400#20#需要修改
 # idOfLastEmoji = 327
 
