@@ -984,8 +984,6 @@ def main(_):
                     diff_total, diff_top1_total, diff_top3_total, diff_top5_total, \
                     goal_unk_total, top1_emoji_total, top3_emoji_total, top1_unk_total, top3_unk_total \
                         = run_epoch(session, mvalid)
-                    i = datetime.datetime.now()
-                    print("当前的日期和时间是 %s" % i)
                     print("Epoch: %d Valid Perplexity: %.3f valid_allCount: %s valid_acc: %s rightCountTopK : %s" %
                           (i + 1, valid_perplexity, valid_allCount, valid_acc, val_rightCountTopK))
 
