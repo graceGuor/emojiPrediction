@@ -161,10 +161,16 @@ class PTBModel(object):
                 dict_liwc_category = np.array(dict_liwc_category)
                 print("hhhhhhh" + str(dict_liwc_category.shape))
                 dict_liwc_category = getpart_dict_liwc_category(dict_liwc_category)
-                print(dict_liwc_category.shape)
+                print(dict_liwc_category.shape[1])
 
-                scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
-                dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
+                #加权值
+                w_liwcCategory = tf.get_variable(
+                    "w_liwcCategory", [len(word_to_id), dict_liwc_category.shape[1]], dtype=data_type())
+                dict_liwc_category = dict_liwc_category * w_liwcCategory
+                print("rand ini:" + str(embedding.get_shape()))
+
+                # scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
+                # dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
             else:
                 dict_liwc_category = None
 
