@@ -163,14 +163,14 @@ class PTBModel(object):
                 dict_liwc_category = getpart_dict_liwc_category(dict_liwc_category)
                 # print(dict_liwc_category.shape[1])
 
-                scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
-                dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
+                # scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
+                # dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
 
-                #加权值
-                w_liwcCategory = tf.get_variable(
-                    "w_liwcCategory", [len(word_to_id), dict_liwc_category.shape[1]], dtype=data_type())
-                dict_liwc_category = dict_liwc_category * w_liwcCategory
-                print("dict_liwc_category:" + str(embedding.get_shape()))
+                # #加权值
+                # w_liwcCategory = tf.get_variable(
+                #     "w_liwcCategory", [len(word_to_id), dict_liwc_category.shape[1]], dtype=data_type())
+                # dict_liwc_category = dict_liwc_category * w_liwcCategory
+                # print("dict_liwc_category:" + str(embedding.get_shape()))
 
 
             else:
@@ -541,16 +541,16 @@ class TestConfig(object):
     rnn_mode = BLOCK
 
 def getpart_dict_liwc_category(dict_liwc_category):
-    dict_liwc_category = np.concatenate((dict_liwc_category[:, 15:22],
-                                         dict_liwc_category[:, 27:28], dict_liwc_category[:, 32:33],
-                                         dict_liwc_category[:, 39:40], dict_liwc_category[:, 43:44],
-                                         dict_liwc_category[:, 48:49],
-                                         dict_liwc_category[:, 58:59], dict_liwc_category[:, 62:73]), axis=1)
-    # dict_liwc_category = np.concatenate((dict_liwc_category[:, 0:2], dict_liwc_category[:, 9:22],
+    # dict_liwc_category = np.concatenate((dict_liwc_category[:, 15:22],
     #                                      dict_liwc_category[:, 27:28], dict_liwc_category[:, 32:33],
     #                                      dict_liwc_category[:, 39:40], dict_liwc_category[:, 43:44],
-    #                                      dict_liwc_category[:, 48:49], dict_liwc_category[:, 54:55],
+    #                                      dict_liwc_category[:, 48:49],
     #                                      dict_liwc_category[:, 58:59], dict_liwc_category[:, 62:73]), axis=1)
+    dict_liwc_category = np.concatenate((dict_liwc_category[:, 0:2], dict_liwc_category[:, 9:22],
+                                         dict_liwc_category[:, 27:28], dict_liwc_category[:, 32:33],
+                                         dict_liwc_category[:, 39:40], dict_liwc_category[:, 43:44],
+                                         dict_liwc_category[:, 48:49], dict_liwc_category[:, 54:55],
+                                         dict_liwc_category[:, 58:59], dict_liwc_category[:, 62:73]), axis=1)
     return dict_liwc_category
 
 def get_metric(idOfEos, idOfUnk, input_data, targets, top_k_logits, top_k_predictions):
