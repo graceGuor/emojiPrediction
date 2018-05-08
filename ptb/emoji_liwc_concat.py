@@ -161,12 +161,13 @@ class PTBModel(object):
 
                 scaler = preprocessing.StandardScaler(copy=False, with_mean=True, with_std=True).fit(dict_liwc_category)
                 dict_liwc_category = tf.cast(scaler.transform(dict_liwc_category), tf.float32)
+                dict_liwc_category = getpart_dict_liwc_category(dict_liwc_category)
                 # print(dict_liwc_category)
 
                 # print(type(dict_liwc_category))
                 # print(dict_liwc_category[216])
-                # ndarr = np.array(dict_liwc_category)
-                # print(ndarr.shape)
+                ndarr = np.array(dict_liwc_category)
+                print(ndarr.shape)
             else:
                 dict_liwc_category = None
 
@@ -534,6 +535,12 @@ class TestConfig(object):
     vocab_size = 10000
     rnn_mode = BLOCK
 
+def getpart_dict_liwc_category(dict_liwc_category):
+    dict_liwc_category = dict_liwc_category[0:2] + dict_liwc_category[9:22]
+    + dict_liwc_category[27:28] + dict_liwc_category[32:33] + dict_liwc_category[39:40]
+    + dict_liwc_category[43:44] + dict_liwc_category[48:49] + dict_liwc_category[54:55]
+    + dict_liwc_category[58:59] + dict_liwc_category[62:73]
+    return dict_liwc_category
 
 def get_metric(idOfEos, idOfUnk, input_data, targets, top_k_logits, top_k_predictions):
     # words = sentence.split()
