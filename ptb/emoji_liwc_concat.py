@@ -539,7 +539,7 @@ class TestConfig(object):
     rnn_mode = BLOCK
 
 def getpart_dict_liwc_category(dict_liwc_category):
-    dict_liwc_category = np.concatenate((dict_liwc_category[:, 0:0], dict_liwc_category[:, 62:68]), axis=1)
+    dict_liwc_category = np.concatenate((dict_liwc_category[:, 0:0], dict_liwc_category[:, 15:21]), axis=1)
     # dict_liwc_category = np.concatenate((dict_liwc_category[:, 0:2], dict_liwc_category[:, 9:22],
     #                                      dict_liwc_category[:, 27:28], dict_liwc_category[:, 32:33],
     #                                      dict_liwc_category[:, 39:40], dict_liwc_category[:, 43:44],
