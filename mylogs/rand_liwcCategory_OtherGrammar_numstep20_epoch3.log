@@ -1,0 +1,238 @@
+2018-05-09 11:35:59.015746: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-09 11:35:59.015779: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-09 11:35:59.015786: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-09 11:35:59.015790: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-09 11:35:59.015794: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-05-09 11:36:05.648103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 6c17:00:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2018-05-09 11:36:05.648144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-05-09 11:36:05.648152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-05-09 11:36:05.648166: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+2018-05-09 11:36:35.651271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 6c17:00:00.0)
+当前的日期和时间是 2018-05-09 11:35:59.015533
+keep_prob:0.5
+word_to_id.len:7203
+isRandomIni:True
+isLiwcCategory:True
+isEmojiCoOccur:False
+isLiwcCount:False
+id of <eos> :  7033
+id of <unk> :  7032
+6631784
+TrainInput epoch_size：20724
+rand ini:(7203, 400)
+typeOfEmb:<class 'int'>
+embedding size:73
+dict中没有的词：472
+
+(7203, 406)
+830197
+ValidInput epoch_size：2594
+rand ini:(7203, 400)
+typeOfEmb:<class 'int'>
+embedding size:73
+dict中没有的词：472
+
+(7203, 406)
+831242
+TestInput epoch_size：41562
+rand ini:(7203, 400)
+typeOfEmb:<class 'int'>
+embedding size:73
+dict中没有的词：472
+
+(7203, 406)
+Epoch: 1 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 2639.470 speed: 2372 wps cost:  135
+step / (model.input.epoch_size // 10): 0.100 perplexity: 138.173 speed: 4234 wps cost:  95
+step / (model.input.epoch_size // 10): 0.200 perplexity: 103.252 speed: 4188 wps cost:  85
+step / (model.input.epoch_size // 10): 0.300 perplexity: 89.092 speed: 4165 wps cost:  83
+step / (model.input.epoch_size // 10): 0.400 perplexity: 81.176 speed: 4147 wps cost:  80
+step / (model.input.epoch_size // 10): 0.500 perplexity: 75.962 speed: 4137 wps cost:  83
+step / (model.input.epoch_size // 10): 0.600 perplexity: 72.116 speed: 4128 wps cost:  81
+step / (model.input.epoch_size // 10): 0.700 perplexity: 69.183 speed: 4132 wps cost:  86
+step / (model.input.epoch_size // 10): 0.800 perplexity: 66.913 speed: 4129 wps cost:  77
+step / (model.input.epoch_size // 10): 0.900 perplexity: 65.119 speed: 4129 wps cost:  78
+Epoch: 1 Train Perplexity: 63.631 train_allCount: 6631680 train_acc: ['0.3178', '0.4721', '0.5205'] rightCountTopK : [2107785, 3131126, 3452055]
+words prediction total: 3895404
+word top1 hit total: 1392378   accuracy: 0.35744123074269063
+word top3 hit total: 1927016   accuracy: 0.4946896393801516
+word top5 hit total: 2094223   accuracy: 0.537613813612144
+emoji prediction total: 178353
+emoji top1 hit total: 2858   accuracy: 0.016024401047361133
+emoji top3 hit total: 16760   accuracy: 0.09397094526024233
+emoji top5 hit total: 33749   accuracy: 0.1892258610732648
+same emoji prediction total: 602800
+same emoji top1 hit total: 439773   accuracy: 0.7295504313205043
+same emoji top3 hit total: 548242   accuracy: 0.9094923689449237
+same emoji top5 hit total: 557484   accuracy: 0.9248241539482416
+diff emoji prediction total: 163782
+diff emoji top1 hit total: 6437   accuracy: 0.0393022432257513
+diff emoji top3 hit total: 41779   accuracy: 0.25508908182828394
+diff emoji top5 hit total: 61509   accuracy: 0.3755540901930615
+all emoji prediction total: 944935
+all emoji top1 hit total: 449068   recall: 0.4752369210580622
+all emoji top3 hit total: 606781   recall: 0.6421404646880473
+all emoji top5 hit total: 652742   recall: 0.6907797890860218
+Epoch: 1 Valid Perplexity: 46.322 valid_allCount: 830080 valid_acc: ['0.3454', '0.5014', '0.5521'] rightCountTopK : [286696, 416213, 458249]
+words prediction total: 487807
+word top1 hit total: 187636   accuracy: 0.38465212676324856
+word top3 hit total: 257435   accuracy: 0.5277394543333737
+word top5 hit total: 279763   accuracy: 0.5735116552242998
+emoji prediction total: 22516
+emoji top1 hit total: 702   accuracy: 0.03117782909930716
+emoji top3 hit total: 3111   accuracy: 0.13816841357257062
+emoji top5 hit total: 5344   accuracy: 0.23734233434002486
+same emoji prediction total: 74351
+same emoji top1 hit total: 63875   accuracy: 0.8591007518392489
+same emoji top3 hit total: 73133   accuracy: 0.983618243197805
+same emoji top5 hit total: 73456   accuracy: 0.9879625021855792
+diff emoji prediction total: 21070
+diff emoji top1 hit total: 614   accuracy: 0.02914095870906502
+diff emoji top3 hit total: 6036   accuracy: 0.2864736592311343
+diff emoji top5 hit total: 9380   accuracy: 0.44518272425249167
+all emoji prediction total: 117937
+all emoji top1 hit total: 65191   recall: 0.5527612199733756
+all emoji top3 hit total: 82280   recall: 0.6976606154133139
+all emoji top5 hit total: 88180   recall: 0.7476873245885515
+Epoch: 2 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 50.033 speed: 4047 wps cost:  78
+step / (model.input.epoch_size // 10): 0.100 perplexity: 50.470 speed: 4166 wps cost:  77
+step / (model.input.epoch_size // 10): 0.200 perplexity: 49.955 speed: 4155 wps cost:  74
+step / (model.input.epoch_size // 10): 0.300 perplexity: 49.656 speed: 4152 wps cost:  71
+step / (model.input.epoch_size // 10): 0.400 perplexity: 49.318 speed: 4152 wps cost:  83
+step / (model.input.epoch_size // 10): 0.500 perplexity: 49.088 speed: 4154 wps cost:  77
+step / (model.input.epoch_size // 10): 0.600 perplexity: 48.861 speed: 4149 wps cost:  77
+step / (model.input.epoch_size // 10): 0.700 perplexity: 48.622 speed: 4145 wps cost:  74
+step / (model.input.epoch_size // 10): 0.800 perplexity: 48.422 speed: 4146 wps cost:  79
+step / (model.input.epoch_size // 10): 0.900 perplexity: 48.288 speed: 4146 wps cost:  78
+Epoch: 2 Train Perplexity: 48.100 train_allCount: 6631680 train_acc: ['0.3393', '0.4969', '0.5463'] rightCountTopK : [2250067, 3295529, 3622741]
+words prediction total: 3895074
+word top1 hit total: 1478836   accuracy: 0.3796682681766765
+word top3 hit total: 2033950   accuracy: 0.5221852011027261
+word top5 hit total: 2206480   accuracy: 0.5664796098867442
+emoji prediction total: 178269
+emoji top1 hit total: 3961   accuracy: 0.022219230488755758
+emoji top3 hit total: 20504   accuracy: 0.1150171931182651
+emoji top5 hit total: 38583   accuracy: 0.216431348131195
+same emoji prediction total: 603515
+same emoji top1 hit total: 489438   accuracy: 0.8109790146060992
+same emoji top3 hit total: 593094   accuracy: 0.9827328235420826
+same emoji top5 hit total: 597360   accuracy: 0.989801413386577
+diff emoji prediction total: 163845
+diff emoji top1 hit total: 8201   accuracy: 0.05005340413195398
+diff emoji top3 hit total: 47812   accuracy: 0.29181238365528395
+diff emoji top5 hit total: 70310   accuracy: 0.4291250877353596
+all emoji prediction total: 945629
+all emoji top1 hit total: 501600   recall: 0.5304405850497393
+all emoji top3 hit total: 661410   recall: 0.6994392092459093
+all emoji top5 hit total: 706253   recall: 0.7468605552494689
+Epoch: 2 Valid Perplexity: 42.731 valid_allCount: 830080 valid_acc: ['0.3520', '0.5082', '0.5587'] rightCountTopK : [292213, 421855, 463791]
+words prediction total: 487637
+word top1 hit total: 191830   accuracy: 0.3933868840961617
+word top3 hit total: 261746   accuracy: 0.536764027340009
+word top5 hit total: 284407   accuracy: 0.5832350703494608
+emoji prediction total: 22510
+emoji top1 hit total: 573   accuracy: 0.02545535317636606
+emoji top3 hit total: 2366   accuracy: 0.10510884051532653
+emoji top5 hit total: 4505   accuracy: 0.20013327410039983
+same emoji prediction total: 74371
+same emoji top1 hit total: 69952   accuracy: 0.9405816783423646
+same emoji top3 hit total: 73896   accuracy: 0.9936131018811095
+same emoji top5 hit total: 74079   accuracy: 0.9960737384195453
+diff emoji prediction total: 21112
+diff emoji top1 hit total: 1042   accuracy: 0.04935581659719591
+diff emoji top3 hit total: 6839   accuracy: 0.3239389920424403
+diff emoji top5 hit total: 9950   accuracy: 0.4712959454338765
+all emoji prediction total: 117993
+all emoji top1 hit total: 71567   recall: 0.6065359809480223
+all emoji top3 hit total: 83101   recall: 0.7042875424813336
+all emoji top5 hit total: 88534   recall: 0.7503326468519319
+Epoch: 3 Learning rate: 0.200
+step / (model.input.epoch_size // 10): 0.000 perplexity: 42.511 speed: 4212 wps cost:  78
+step / (model.input.epoch_size // 10): 0.100 perplexity: 46.279 speed: 4184 wps cost:  71
+step / (model.input.epoch_size // 10): 0.200 perplexity: 45.965 speed: 4175 wps cost:  67
+step / (model.input.epoch_size // 10): 0.300 perplexity: 45.896 speed: 4160 wps cost:  81
+step / (model.input.epoch_size // 10): 0.400 perplexity: 45.849 speed: 4153 wps cost:  81
+step / (model.input.epoch_size // 10): 0.500 perplexity: 45.685 speed: 4152 wps cost:  77
+step / (model.input.epoch_size // 10): 0.600 perplexity: 45.607 speed: 4146 wps cost:  69
+step / (model.input.epoch_size // 10): 0.700 perplexity: 45.489 speed: 4142 wps cost:  76
+step / (model.input.epoch_size // 10): 0.800 perplexity: 45.395 speed: 4148 wps cost:  73/usr/local/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+
+step / (model.input.epoch_size // 10): 0.900 perplexity: 45.339 speed: 4147 wps cost:  77
+Epoch: 3 Train Perplexity: 45.238 train_allCount: 6631680 train_acc: ['0.3440', '0.5019', '0.5517'] rightCountTopK : [2281197, 3328394, 3658493]
+words prediction total: 3895564
+word top1 hit total: 1499534   accuracy: 0.38493373488408866
+word top3 hit total: 2058856   accuracy: 0.5285129444670913
+word top5 hit total: 2234523   accuracy: 0.5736070566418624
+emoji prediction total: 178394
+emoji top1 hit total: 4415   accuracy: 0.024748590199221945
+emoji top3 hit total: 21868   accuracy: 0.1225825980694418
+emoji top5 hit total: 39873   accuracy: 0.22351088041077616
+same emoji prediction total: 602926
+same emoji top1 hit total: 496497   accuracy: 0.8234791665975593
+same emoji top3 hit total: 596361   accuracy: 0.9891114332438806
+same emoji top5 hit total: 599551   accuracy: 0.9944022981261382
+diff emoji prediction total: 163673
+diff emoji top1 hit total: 9908   accuracy: 0.060535335699840535
+diff emoji top3 hit total: 49476   accuracy: 0.3022856549339231
+diff emoji top5 hit total: 72548   accuracy: 0.44324965021720136
+all emoji prediction total: 944993
+all emoji top1 hit total: 510820   recall: 0.5405542686559583
+all emoji top3 hit total: 667705   recall: 0.7065713714281482
+all emoji top5 hit total: 711972   recall: 0.7534151046621509
+Epoch: 3 Valid Perplexity: 40.825 valid_allCount: 830080 valid_acc: ['0.3575', '0.5125', '0.5633'] rightCountTopK : [296737, 425432, 467618]
+words prediction total: 487654
+word top1 hit total: 193477   accuracy: 0.396750564949739
+word top3 hit total: 263857   accuracy: 0.541074204251375
+word top5 hit total: 286707   accuracy: 0.587931197119269
+emoji prediction total: 22548
+emoji top1 hit total: 757   accuracy: 0.03357282242327479
+emoji top3 hit total: 3257   accuracy: 0.14444740109987583
+emoji top5 hit total: 5564   accuracy: 0.24676246230264326
+same emoji prediction total: 74295
+same emoji top1 hit total: 67455   accuracy: 0.9079345850999394
+same emoji top3 hit total: 74000   accuracy: 0.9960293424860354
+same emoji top5 hit total: 74117   accuracy: 0.9976041456356417
+diff emoji prediction total: 21237
+diff emoji top1 hit total: 1283   accuracy: 0.0604134293920987
+diff emoji top3 hit total: 6898   accuracy: 0.3248104722889297
+diff emoji top5 hit total: 10092   accuracy: 0.47520836276310213
+all emoji prediction total: 118080
+all emoji top1 hit total: 69495   recall: 0.5885416666666666
+all emoji top3 hit total: 84155   recall: 0.712694783197832
+all emoji top5 hit total: 89773   recall: 0.7602726964769647
+Test Perplexity: 40.069 test_allCount: 831240.000 test_acc: ['0.3597', '0.5150', '0.5664'] rightCountTopK : [299009, 428056, 470831]
+words prediction total: 486151
+word top1 hit total: 192959   accuracy: 0.39691165913471327
+word top3 hit total: 263599   accuracy: 0.5422163072790142
+word top5 hit total: 286575   accuracy: 0.589477343459131
+emoji prediction total: 22359
+emoji top1 hit total: 647   accuracy: 0.028936893420993783
+emoji top3 hit total: 3190   accuracy: 0.14267185473411154
+emoji top5 hit total: 5565   accuracy: 0.24889306319602844
+same emoji prediction total: 77630
+same emoji top1 hit total: 70970   accuracy: 0.914208424578127
+same emoji top3 hit total: 77340   accuracy: 0.9962643307999485
+same emoji top5 hit total: 77468   accuracy: 0.9979131778951437
+diff emoji prediction total: 21365
+diff emoji top1 hit total: 853   accuracy: 0.03992511116311725
+diff emoji top3 hit total: 6790   accuracy: 0.3178095015211795
+diff emoji top5 hit total: 10203   accuracy: 0.4775567516967002
+all emoji prediction total: 121354
+all emoji top1 hit total: 72470   recall: 0.5971785025627503
+all emoji top3 hit total: 87320   recall: 0.7195477693359922
+all emoji top5 hit total: 93236   recall: 0.7682977075333323
+top1_emoji_total: 113642   pred1_emoji_ratio: 0.18706348095900446
+top3_emoji_total: 344990   pred3_emoji_ratio: 0.5678800997522654
+goal_unk_total: 32653   goal_unk_ratio: 0.05374935185718636
+top1_unk_total: 113642   pred1_unk_ratio: 0.095742421873071
+top3_unk_total: 344990   pred3_unk_ratio: 0.4670035637566769
+Saving model to /home/pubsrv/data/guorui/data/Res/rand_liwcCategory_OtherGrammar_numstep20_epoch3/0.
+Finished!
+当前的日期和时间是 2018-05-09 13:12:28.189948
